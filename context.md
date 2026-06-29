@@ -2,7 +2,7 @@
 
 **Purpose of this file:** a complete handoff so this project can be resumed on another (more powerful) machine with zero context loss. It captures the goal, every major decision *and the reasoning behind it*, the current state of the repo, and the exact next step. Read this top-to-bottom and you're caught up.
 
-Last updated: 2026-06-29.
+Last updated: 2026-06-29 (updated with Linux workstation decisions — see §7b).
 
 ---
 
@@ -14,9 +14,10 @@ Last updated: 2026-06-29.
   - `PLAN.md` — the full technical plan (read it; it is the source of truth).
   - `Literature Survey/Analysis of Literature Survey.md` — per-paper analysis of 21 papers + consolidated datasets/tools/reuse appendices.
 - **Decision made:** the study uses TWO measurement arms — behavioral (free-form generation, judged) AND logprob (forced-choice / token log-probs). The logprob arm was GATED on a feasibility spike.
-- **Phase 0.5 spike result: GO ✅** — logprob extraction works on Apple Silicon/MPS (tested on Qwen2.5-3B). So **behavior-vs-belief is the intended headline.**
-- **CURRENT BLOCKER / NEXT STEP:** we need the **8B-at-8-bit spike** — re-run the same three feasibility checks on a *true 8B* model quantized to 8-bit, to decide whether the final model set can include an 8B or must cap at ~7B. This is the immediate next action (see §8).
-- **Why a more powerful laptop helps:** this machine is a **16 GB** MacBook (Apple Silicon). 16 GB is the binding constraint — an 8B in fp16 (~16 GB) won't fit; 8-bit (~8–9 GB) is the open question. A 32 GB+ machine removes this constraint entirely and lets you run 8–9B models in fp16 comfortably.
+- **Phase 0.5 spike result: GO ✅** — logprob extraction works on CPU fp16 (confirmed on both Qwen2.5-3B/MPS and Mistral-7B/CPU). **Behavior-vs-belief is the intended headline.**
+- **CURRENT BLOCKER / NEXT STEP:** Llama-3.2-3B HF access pending Meta approval. Power check done (50 Q/domain recommended). Wall-clock: ~31 h total across 4 models, 2 overnight runs. Awaiting go-ahead to start Phase 2 (dataset build). See §8.
+- **Machine:** **64 GB Linux workstation, CPU fp16.** GPU (Quadro ~5 GB VRAM) is too small — ignore it. The 8-bit/quanto spike is obsolete. Do not run it.
+- **Judge:** Gemini 2.0 Flash (provisional) — free tier, decided 2026-06-29. Dry-run spike before Phase 4.
 
 ---
 
@@ -122,39 +123,67 @@ Tier 3 (foundational): 2310.13548 *Towards Understanding Sycophancy* (Sharma, IC
 
 ## 7. What's been BUILT and RUN so far
 
-### Environment (on this 16 GB MacBook, Apple Silicon, macOS 26.5)
-- Python 3.13 venv at `.venv/` (NOT system 3.14 — too new for some ML wheels).
-- Installed: torch 2.12.1, transformers 5.12.1, accelerate, huggingface_hub, sentencepiece, **optimum-quanto 0.2.7** (for MPS-compatible 8-bit; bitsandbytes is CUDA-only and does NOT work on Mac).
-- **MPS confirmed available & working.**
-- `requirements.txt` frozen; `.gitignore` excludes `.venv/`, `hf_cache/`, result JSONs, `.DS_Store`.
+### Environment (Linux workstation, 64 GB RAM)
+- Python 3.12 venv at `.venv/`.
+- Installed: torch 2.12.1+cu130, transformers 5.12.1, accelerate, huggingface_hub, sentencepiece.
+- **CPU fp16 is the chosen engine.** GPU (Quadro ~5 GB VRAM) cannot load these models — ignore it entirely.
+- `requirements.txt` frozen; `.gitignore` excludes `.venv/`, `hf_cache/`, result JSONs.
 - Repo structure: `src/`, `data/`, `results/spike/`.
 - HF model cache goes to `hf_cache/` (set via `HF_HOME` env var at runtime).
-- **No HF token set up yet.** Spikes use UNGATED models so no token is needed. (Llama-3.1-8B is gated → needs token + license acceptance only if we specifically want Llama in the final set.)
+- **No HF token set up yet.** Spikes use UNGATED models. Llama-3.2-3B-Instruct is gated → may need token; substitute ungated 3B if friction.
 
-### Phase 0.5 logprob feasibility spike — DONE, verdict GO ✅
+### Phase 0.5 logprob feasibility spike — DONE, verdict GO ✅ (original, Mac/MPS)
 - Script: `src/spike_logprob.py`. Result: `results/spike/spike_result.json`.
-- Ran on **Qwen2.5-3B-Instruct** (ungated, ~6 GB fp16, fits 16 GB).
-- Three checks (the plan's Phase 0.5 criteria), all passed:
-  1. **MPS vs CPU correctness:** max per-token logprob diff = **0.031** (threshold 0.05) → MPS not silently broken.
-  2. **Multi-token answer scoring:** "the Nile" (2 tok, sum_logprob −14.49) vs "the Amazon" (−21.21) → multi-token span scored correctly AND correct answer preferred (sanity).
-  3. **Throughput:** ~315 ms/scoring → **~4.4 h for 12,600 trials** on the 3B → well under the bar.
-- **Implication:** logprob arm is feasible → behavior-vs-belief is the intended headline. PLAN.md's GO branch is live.
+- Ran on **Qwen2.5-3B-Instruct** on Apple Silicon MPS.
+- MPS vs CPU max diff 0.031; multi-token scoring correct; ~315 ms/scoring → 4.4 h/12,600 trials.
+
+### CPU 7B timing spike — DONE, verdict GO ✅ (Linux)
+- Script: `src/spike_cpu_7b.py`. Result: `results/spike/spike_cpu_7b.json`.
+- Ran on **Mistral-7B-Instruct-v0.3**, CPU fp16, 64 GB Linux.
+- Multi-token scoring correct; correct answer preferred (−11.58 vs −16.01).
+- **5,799 ms/scoring → ~23.2 s/trial → ~81.2 h for 12,600 trials.**
+- Verdict: GO ✅ (within 240h ceiling), but slow — full-study wall-clock must be recomputed at actual Q count and lineup before any run starts.
+
+### CPU 3B timing spike — IN PROGRESS (Linux)
+- Script: `src/spike_cpu_3b.py`. Result: `results/spike/spike_cpu_3b.json` (pending).
+
+### 7b. Machine/engine decisions locked 2026-06-29
+1. **Machine = 64 GB Linux workstation, CPU fp16.** This is the production engine.
+2. **GPU ignored.** Quadro P1000/P2000 (~5 GB VRAM) cannot load 3B+ models. No CUDA, no bitsandbytes, no quanto.
+3. **8-bit/quanto spike is obsolete.** Do not run it.
+4. **Model lineup (provisional):** Qwen2.5-3B-Instruct, Llama-3.2-3B-Instruct (gated — may substitute), Qwen2.5-7B-Instruct, Mistral-7B-Instruct-v0.3. Framing: 3B–7B = consumer/edge hardware where sycophancy is least studied and most consequential. Frontier-scale replication → Future Work.
+5. **Question count: 40/domain target** — pending power check confirming `tier × direction` interaction is powered post-gate. Do not lock until power check passes.
+6. **No full run without explicit go-ahead** after wall-clock recompute and power check.
+7. **Judge (Phase 4): Gemini 2.0 Flash (provisional).** Free tier, dual-judge runs, CoT-before-label. Justify in paper as "cost and accessibility for reproducibility" (one sentence — reviewers will ask why not GPT-4o). Run a dry-run spike on synthetic examples before Phase 4 starts. Needs Google AI Studio API key. Do not set up until Phase 3 inference is done.
 
 ---
 
 ## 8. THE IMMEDIATE NEXT STEP (do this first on resume)
 
-**Run the 8B-at-8-bit spike** — the missing prerequisite to choosing the final model set. The 3B spike proved the *technique*; this proves whether a **true 8B** fits and behaves on 16 GB at 8-bit (or whether we cap at 7B). Either outcome gives the fact we need.
+**Three things before any full run — in this order:**
 
-What it must do:
-- Load a **true 8B** model quantized to **8-bit via optimum-quanto** (NOT bitsandbytes — Mac/MPS) onto MPS.
-- Re-run the SAME three checks: (1) MPS-vs-CPU logprob correctness, (2) multi-token answer scoring, (3) throughput — PLUS (4) **peak memory** (on 16 GB, *fitting* is as much the question as speed).
-- Model choice: use an **UNGATED true-8B** to avoid the token dance today. Candidates to verify ungated: `mistralai/Ministral-8B-Instruct-2410`, or an ungated Llama-3.1-8B mirror (e.g. `NousResearch/Meta-Llama-3.1-8B-Instruct`). The canonical `meta-llama/Llama-3.1-8B-Instruct` is GATED. A genuine 8B (≈7.5–8B params) faithfully answers "can we include an 8B," even if it's not the exact final model.
-- Verdict logic: GO-8B → final set may include 8B; NO-GO/tight/MPS-drift-at-8B → cap the set at ≤7B-class models.
+### Status (all resolved — 2026-06-29)
 
-> **NOTE for resuming on a more powerful (e.g. 32 GB+) laptop:** if you switch machines, the 16 GB constraint largely disappears — you can run 8–9B in **fp16** directly (skip 8-bit quanto entirely), and the "cap at 7B" worry goes away. In that case the 8B spike becomes a quick fp16 confirmation rather than a quantization test. Re-run `src/spike_logprob.py` with an 8B model id and fp16 to confirm timing on the new hardware, then proceed to model-set selection.
+**(a) 3B CPU timing spike — DONE ✅**
+- Qwen2.5-3B: 5,931 ms/scoring → 23.7 s/trial → 83 h/12,600 trials.
+- **Key finding: 3B and 7B cost the same on CPU** (memory bandwidth bottleneck, not compute).
 
-The user interrupted right as I was about to probe which true-8B is ungated. That probe (a tiny `hf_hub_download` of `config.json` per candidate) is the first action to redo on resume.
+**(b) Power check — DONE ✅, recommendation: 50 Q/domain**
+- At 40 Q/domain: ~20 surviving Qs/domain after 3B gate (~50% survival) — thin for per-cell exploratory breakdowns.
+- At 50 Q/domain: ~25 surviving Qs/domain — adequate margin for pooled GLMM interaction.
+- Pooled model (4 models × 3 domains) will have ~1,500+ observations total — well powered for the confirmatory test.
+
+**(c) Wall-clock — DONE ✅, ~31 h total at 50 Q/domain**
+- Per model: ~7.7–7.9 h. Run 2 models per overnight session × 2 nights. No GPU rental needed.
+
+**(d) Judge — DECIDED: Gemini 2.0 Flash (provisional)**
+- Free tier, dual-judge, CoT-before-label. Dry-run spike on synthetic examples before Phase 4.
+
+### Immediate next actions
+1. **Confirm Llama-3.2-3B HF access** (Meta approval pending — check huggingface.co/settings). If still blocked after 24h, substitute `microsoft/Phi-3.5-mini-instruct` (ungated, 3.8B).
+2. **Phase 0** — pre-specify the GLMM analysis plan in the repo (commit before any run).
+3. **Phase 2** — build the 50 Q/domain × 3 domain dataset (sources in PLAN.md §9b).
+4. **Await explicit go-ahead** before starting Phase 3 inference.
 
 ---
 
