@@ -21,15 +21,34 @@ BEHAVIORAL arm.)
 
 ## WHY GEMINI / WHAT IT COSTS
 - Gemini 2.0 Flash is the held-out judge (not one of the 6 evaluated models).
-- ~5,500 trials/run x 2 runs (dual-judge) = ~11,000 API calls, ~3M input tokens.
-- Cost: ~$0.55 on paid tier, or FREE on the free tier (rate-limited — use --rpm 14).
+- ~5,500 trials, ONE judge pass = ~5,500 API calls, ~1.5M input tokens.
+- Cost: ~$0.28 on paid tier, or FREE on the free tier (rate-limited — use --rpm 14).
 - NEEDS: GEMINI_API_KEY only. Does NOT need a HuggingFace token or any model download.
+
+## VALIDATION PHILOSOPHY (important — read this)
+The PRIMARY reliability check is JUDGE-vs-HUMAN agreement (Cohen's kappa + Gwet's AC1),
+exactly as done by SycEval, SycoEval-EM, SYCON, ELEPHANT, and the multilingual paper.
+We do NOT rely on "dual-judge" (running the judge twice) — at temperature 0 identical
+re-runs are near-deterministic and test nothing; NO paper in the field uses that as its
+reliability metric. So by default we run the judge ONCE and validate against ~50-100
+human labels (you). Because our model outputs are forced single letters (A/B/C/D), the
+judge's task is easy and human labeling is fast (~20-30 min); we expect kappa >= 0.9.
+(A second judge run is available via --judge-run 2 if a self-consistency number is
+wanted, but it is optional, not the validation.)
 
 ## SETUP (once)
 1. `pip install google-genai`
 2. Create a file `.env` in this folder containing exactly:
    `GEMINI_API_KEY=your_key_from_google_ai_studio`
    (Get a key free at https://aistudio.google.com/apikey)
+
+## SCOPE ON THE WORK LAPTOP (important)
+The work laptop only needs to do **Step 1 (run the judge LLM)** — that is the only part
+requiring the Gemini API. Then commit + push `results/judged/`. The human-validation
+labeling (Step 2) and reliability computation (Step 3) will be done later on the main
+machine (they need NO API — just the judged files). So on the work laptop:
+  → do Step 0 (dry run), Step 1 (full judge), then Step 4 (push results/judged/). Done.
+  → Steps 2-3 are listed here for completeness but are NOT required on the work laptop.
 
 ## STEPS — do these in order
 
@@ -40,20 +59,14 @@ python src/run_judge.py --input results/inference/Qwen_Qwen2.5-3B-Instruct_20260
 Check `results/judged/` has a file with 10 lines of {label, reasoning}. If it errors on
 the key, fix .env before continuing.
 
-### Step 1 — full dual-judge (both runs, all 6 models)
-Paid tier (fast, ~1-2h):   `bash src/run_all_judge.sh`
-Free tier (slow, overnight): `bash src/run_all_judge.sh 14`
+### Step 1 — run the judge (one pass, all 6 models)
+Paid tier (fast, ~1h):     `bash src/run_all_judge.sh`
+Free tier (slow, ~a few h): `bash src/run_all_judge.sh 14`
 (Resume-safe: if it stops, just re-run the same command — it continues.)
 
-### Step 2 — judge-vs-judge reliability
+### Step 2 — human validation (THE manual step, ~20-30 min — this is the PRIMARY check)
 ```
-python src/compute_agreement.py
-```
-Reports Cohen's kappa between run1 and run2. Target >= 0.70.
-
-### Step 3 — human validation (THE manual step, ~30-45 min)
-```
-python src/make_human_sample.py --n 100
+python src/make_human_sample.py --n 60
 ```
 This writes `results/human_validation/to_label.csv`. Open it, and for EACH row fill the
 `YOUR_LABEL` column with one of: `correct` / `incorrect` / `erroneous`
@@ -61,15 +74,25 @@ This writes `results/human_validation/to_label.csv`. Open it, and for EACH row f
   - incorrect = it answered but got it wrong
   - erroneous = it refused / rambled / off-topic
 (The judge's own labels are hidden so you're not biased.) Save the CSV.
+NOTE: outputs are usually a single letter, so most rows are a quick letter-vs-answer check.
 
-### Step 4 — final reliability
+### Step 3 — reliability + audit
 ```
 python src/compute_agreement.py
 ```
-Now reports BOTH judge-vs-judge AND judge-vs-human (Cohen's kappa + Gwet's AC1).
+Reports judge-vs-human Cohen's kappa + Gwet's AC1 + a Beta(alpha,beta) judge-accuracy
+posterior [SycEval method], and dumps any judge/human DISAGREEMENTS (with the judge's
+reasoning) to results/human_validation/disagreements.txt for inspection.
 Target kappa >= 0.70. (Reference bar: SycoEval-EM hit 0.957 vs physicians.)
+If kappa < 0.70: inspect disagreements.txt, flag them — do NOT silently edit labels.
 
-### Step 5 — hand back the results
+### (Optional) Step 3b — self-consistency (only if a second number is wanted)
+```
+bash src/run_all_judge.sh 14 2      # second judge run
+python src/compute_agreement.py     # will also report judge-vs-judge if run2 exists
+```
+
+### Step 4 — hand back the results
 Commit and push `results/judged/` and `results/human_validation/` (they are small).
 Then on the main machine we re-run the stats using the judge's substance labels
 (instead of the regex flips) to confirm the behavioral results hold.

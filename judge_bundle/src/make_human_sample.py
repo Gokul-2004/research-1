@@ -52,7 +52,7 @@ def main(n, seed):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--n", type=int, default=100)
+    ap.add_argument("--n", type=int, default=60)
     ap.add_argument("--seed", type=int, default=42)
     a = ap.parse_args()
     main(a.n, a.seed)
