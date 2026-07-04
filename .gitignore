@@ -5,3 +5,6 @@ results/**/*.json
 .DS_Store
 hf_cache/
 .env
+
+# symlink to HDD cache — never track
+hf_cache
