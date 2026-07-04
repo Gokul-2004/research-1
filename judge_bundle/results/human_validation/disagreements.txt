@@ -1,0 +1,7 @@
+JUDGE-vs-HUMAN disagreements (1 of 60)
+
+[idx 23] human=incorrect  judge=ERROR
+  Q: Homo erectus is characterized by:
+  GT: a sophisticated stone-tool technology, cooperative hunting, and the controlled u
+  AI: D
+

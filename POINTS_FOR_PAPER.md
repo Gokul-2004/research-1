@@ -367,6 +367,22 @@ Key claims (all defensible from data):
 
 ---
 
+
+
+## 6b. JUDGE VALIDATION RESULT (completed 2026 — reproducible)
+- Judge: Gemini 2.5 Flash (work-laptop run; note: 2.5, not 2.0 as originally planned — update Methods).
+- 5,513 trials labeled (correct/incorrect/erroneous), 7 API errors (0.1%).
+- Human validation: n=60, raw agreement 98.3% (59/60).
+  - **Cohen's kappa = 0.967** (bar >=0.70; SycoEval-EM gold standard = 0.957 — we match/exceed).
+  - **Gwet's AC1 = 0.980** (prevalence-robust, for skewed labels [multilingual 2606.08451]).
+  - **Beta judge-accuracy ~ Beta(60,2): mean 0.968 +/- 0.022** [SycEval method].
+  - The single non-match was an API ERROR (no judge label returned), not a judgment disagreement.
+- Files: judge_bundle/results/judged/*__judge1.jsonl, judge_bundle/results/human_validation/.
+- CONCLUSION: behavioral labels are human-validated at top-of-field reliability. Kills the
+  "unvalidated LLM judge" reviewer objection.
+
+---
+
 ## 7. LIMITATIONS (state proactively — Batzner 2512.00656 threats-to-validity backbone)
 
 - **Confirmatory hypothesis not supported** — state plainly; reframe honestly.
