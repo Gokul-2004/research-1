@@ -146,10 +146,39 @@ counts — REPORT BOTH honestly; the exact count depends on ladder definition.)
 
 ### 3f. The three-way model taxonomy (a clean way to present heterogeneity)
 - **Saturators** (cave to any challenge, no gradient): Qwen-3B, Qwen-7B, Llama-3B
-- **Graded resisters** (resist + authority matters): Mistral, Phi-3.5
-- **Flat resister** (resist but authority-indifferent-ish): Gemma-9B
-  (Gemma: robust like Mistral but belief trend weaker/mixed — decouples robustness
-   from authority-sensitivity)
+- **Resisters** (resist a lot, but authority level barely matters): Mistral, Gemma-9B
+- **Partial authority-escalation**: Phi-3.5 (only model with a real low→high escalation)
+  — but even Phi's anon rung breaks the clean ladder (see 3g).
+
+### 3g. ⚠️ THE DECISIVE RESULT — the anon ladder FALSIFIES the clean-gradient story
+The anon rung ("Someone thinks X") is the properly format-matched zero-authority baseline,
+built specifically to test the clean ladder anon<low<medium<high. If authority graded
+belief cleanly, belief should erode monotonically down that ladder. IT DOES NOT.
+
+Belief gap [logP(correct)−logP(wrongX)], incorrect arm, full ladder:
+| Model | anon | low | medium | high | monotonic anon→high? |
+|---|---|---|---|---|---|
+| Qwen-3B | −5.22 | −3.47 | −4.41 | −5.24 | NO (anon ≈ high; personas WEAKER than anon) |
+| Qwen-7B | −11.10 | −9.25 | −10.82 | −11.55 | NO (essentially flat) |
+| Llama-3B | −3.22 | −2.92 | −3.13 | −3.55 | NO (flat) |
+| Mistral-7B | −1.50 | +2.24 | +1.63 | +0.77 | NO (ladder runs BACKWARDS — anon more negative than personas) |
+| Phi-3.5 | −4.61 | −3.03 | −6.03 | −9.81 | NO (clean low→high, but anon breaks it) |
+| Gemma-9B | +1.29 | +0.69 | +0.37 | −0.99 | YES — but Gemma barely moves at all |
+
+**Only 1 of 6 (Gemma) is monotonic across the clean ladder, and Gemma barely shifts.**
+
+**HONEST CONCLUSION (the true finding):** There is NO clean authority gradient — not
+behaviorally, not in belief, not even in the matched anon ladder. What actually drives
+capitulation is the **PRESENCE of a counter-claim** (anonymous or authoritative), NOT the
+**AUTHORITY of its source**. The anon rung — a nameless "someone" — produces a shift as
+large as or larger than "a professor" in almost every model. Authority LEVEL mostly does
+not matter; disagreement itself does.
+
+**Earlier "significant Spearman" caveat (important, do not overclaim):** the significant
+trend p-values reported in intermediate analyses (Mistral p=0.002, Phi p<0.001, Gemma
+p=0.006) do NOT indicate a clean authority gradient. A significant ρ only means *some*
+monotonic-ish trend; the anon rung shows the trend is often non-monotonic or backwards.
+Only Phi shows genuine authority escalation among personas, and even its anon breaks it.
 
 ---
 
@@ -226,21 +255,72 @@ Our messy result is NOT an outlier — it sits squarely in the middle of the fie
 | Direction / incorrect-endorsement dominates | SycEval, Sharma |
 | Behavior-vs-belief measurement matters | NOBODY — this is OURS |
 
-The field is genuinely split: Mammen + Ask-Don't-Tell found clean monotonic gradients; Zhang +
-SycoEval-EM found inconsistent, model-dependent susceptibility. Our 6-model dual-measurement
-result explains WHY they disagree — the gradient is real in BELIEF for some models (matching
-Mammen) but MASKED behaviorally by saturation in others (matching Zhang/SycoEval-EM).
+The field is split: Mammen + 746 + Ask-Don't-Tell found clean monotonic gradients (single-turn,
+logit-only, domain-matched personas); Zhang + SycoEval-EM found inconsistent, model-dependent
+susceptibility. **Our result lands on the Zhang/SycoEval-EM side and goes further: under a
+two-turn behavioral protocol with a matched anonymous baseline, the authority gradient does NOT
+appear — not behaviorally, not in belief (see 3g). What drives capitulation is the PRESENCE of a
+counter-claim, not the AUTHORITY of its source.**
 
-**KEY POSITIONING / REFRAME SENTENCE (use in Abstract + Discussion):** "We reconcile a tension in
-the literature — Mammen's clean authority gradient and SycoEval-EM's 'general susceptibility' are
-both correct, for different models and different measurement modalities. The authority gradient is
-present in the internal belief signal but is behaviorally masked by capitulation-saturation in the
-most suggestible models."
+**KEY POSITIONING / REFRAME SENTENCE (use in Abstract + Discussion):** "Under a realistic two-turn
+behavioral protocol with a properly matched anonymous baseline, authority-graded sycophancy —
+the clean monotonic effect reported under single-turn logit measurement — largely FAILS to
+replicate across six open models. The presence of a counter-claim, rather than the authority of
+its source, dominates capitulation. This suggests the graded effect may be fragile, or may
+require the domain-matched institutional personas that prior work used."
 
-This is a STRONGER paper than "we replicated Mammen" would have been — we tested it across enough
-diverse models, with both measurement arms, to see WHY the field disagrees. The comparison to the
-literature rescues the apparent messiness: our result is consistent with the field, and adds the
-one thing nobody else has (behavior-vs-belief). Honest IEEE estimate with this framing: ~60-65%.
+HONEST FRAMING NOTE: Do NOT claim we "reconcile" the field by finding the gradient in belief —
+the anon ladder falsified that (3g). The honest contribution is a NULL/fragility result on the
+authority gradient + the direction-dominance finding + the behavior-vs-belief method. This is a
+harder paper to sell than a clean replication, but it is TRUE. Honest IEEE estimate: ~45-55%,
+depending on framing rigor and whether we run the domain-matched-persona disambiguation (4c).
+
+### 4c. WHY WE DIFFER FROM THE CLEAN-GRADIENT PAPERS (honest diagnosis)
+
+THREE papers got CLEAN monotonic gradients; we got a NULL on the gradient:
+- Mammen 2601.13433: "Clear monotonic hierarchy across all domains and both model types"
+  (e.g. −0.356 at Board-Certified Physician, near-zero at First-Year Student).
+- Mechanistic 746: "graded manner proportional to authority... dampens monotonically."
+- Ask Don't Tell 2602.23971: "sycophancy increases monotonically with epistemic certainty"
+  (certainty ladder, not authority — but same clean-monotonic shape).
+(Feng 2603.16643 showed authority-bias > user-bias, but only 2 levels, not a graded ladder.)
+
+They share THREE methodological choices we changed — verified from the survey:
+
+| Difference | Clean-gradient papers | Us | Likely to suppress our gradient? |
+|---|---|---|---|
+| Turn structure | SINGLE-turn: hint appended to question, model answers once (Mammen "appended after the question"; 746 "Question-then-Hint") | TWO-turn: model commits, THEN authority pushes back | YES — likely main cause. Two-turn = social confrontation; model capitulates to *disagreement*, ~independent of source |
+| Measurement | Pure logits over A–D, NO free-form generation (both Mammen & 746 explicit) | Forced generation + logprobs | YES — logits capture fine-grained preference that shifts smoothly; committed generation is coarser/saturated |
+| Persona ladder | DOMAIN-MATCHED institutional hierarchy (Board-Certified Physician→...; Senior Legal Counsel→...) | GENERIC competence ladder (high-schooler→grad→professor) across all domains | POSSIBLY — 746 explicitly says the effect "emerges ONLY when personas carry socially meaningful institutional hierarchy, domain-matched, third-person" — we may violate this precondition |
+
+Domain-difficulty is NOT a valid excuse for us: Mammen & 746 both found the OBJECTIVE/math
+domain showed the STRONGEST effect (lowest robustness). Our objective domains should, by
+their logic, have shown a strong gradient — they didn't. So difficulty doesn't rescue us.
+
+**Two honest interpretations (state BOTH in the paper):**
+- (A, charitable/defensible): "Authority-graded sycophancy is FRAGILE — it appears under
+  single-turn logit measurement but largely COLLAPSES under a realistic two-turn behavioral
+  confrontation with a matched anonymous baseline. Disagreement presence, not source
+  authority, drives capitulation in most small open models."
+- (B, the concession): "Our generic (non-domain-matched) persona ladder may not carry the
+  institutional-authority signal that 746 says is REQUIRED for the graded effect — so our
+  null may partly reflect persona design, not a genuine absence of the effect."
+
+**The disambiguating experiment (FUTURE WORK / optional):** re-run with DOMAIN-MATCHED
+INSTITUTIONAL personas (per 746's precondition). If the gradient appears → our null was a
+persona-design artifact (report honestly). If it still doesn't → the two-turn protocol
+genuinely kills it (strong finding). Cost: full re-run (~50-60h CPU or a few hours on cloud
+GPU). NOT yet decided — do after judge + human validation lock down current results.
+
+### Are we BETTER or WORSE than the clean-gradient papers? (honest)
+- BETTER on: ecological realism (two-turn commit-then-challenge), behavioral+belief dual
+  measurement, full statistical trend testing (they reported descriptive means), the anon
+  control baseline (which is what EXPOSED the non-monotonicity).
+- WORSE on: we got a NULL where they got clean results; generic personas (vs domain-matched);
+  fewer models (6 vs 11).
+- Net honest framing: we are the "stress-test / fragility" study, not a "we replicated
+  Mammen" study. Whether the persona-design concession is fatal depends on the disambiguating
+  re-run above.
 
 ### Model-count context (pre-empt "too few models")
 - We use 6. Mammen used 11; SYCON 17; SycoEval-EM 19; ELEPHANT 11.
