@@ -29,20 +29,17 @@ main laptop. Each 7B/9B model takes ~10-13h on CPU; ~1.5 days total for the 3.
 1. `git clone https://github.com/Gokul-2004/research-1 && cd research-1`
    (Or use this workstation_bundle folder directly — it is self-contained.)
 2. `python3 -m venv .venv && .venv/bin/pip install torch transformers accelerate`
-3. Create `.env` with the HuggingFace token (REQUIRED for Gemma, which is gated):
-   `HF_TOKEN=hf_...`
-   The token must belong to an account that has accepted the Gemma-2 license at
-   https://huggingface.co/google/gemma-2-9b-it (the main account already did).
-   Mistral + Phi are ungated and need no token, but include it anyway for Gemma.
-4. DO NOT commit .env.
+3. NO HuggingFace token needed — this workstation runs Mistral + Phi, both UNGATED.
+   (Gemma, the only gated model, is being run on the main laptop instead.)
+   You can skip .env entirely.
 
 ## RUN
 ```
-DEVICE=cpu bash src/run_domainmatched_split.sh B
+DEVICE=cpu bash src/run_domainmatched_split.sh D
 ```
-- Group B = Mistral, Phi, Gemma (models 4-6).
+- Group D = Mistral-7B + Phi-3.5 (models 4-5). Both ungated. ~12-14h total on CPU.
 - Resume-safe: if it stops (power/thermal), re-run the same command — it continues.
-- Model weights download on first use (~35GB for these 3). Ensure ~60GB free disk.
+- Model weights download on first use (~25GB for these 2). Ensure ~40GB free disk.
 - Keep it plugged into AC power; keep it cool (fan on intake vents).
 
 ## WHAT SUCCESS LOOKS LIKE

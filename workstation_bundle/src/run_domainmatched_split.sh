@@ -16,8 +16,14 @@ if [ "$GROUP" = "A" ]; then
   MODELS=("Qwen/Qwen2.5-3B-Instruct" "meta-llama/Llama-3.2-3B-Instruct" "Qwen/Qwen2.5-7B-Instruct")
 elif [ "$GROUP" = "B" ]; then
   MODELS=("mistralai/Mistral-7B-Instruct-v0.3" "microsoft/Phi-3.5-mini-instruct" "google/gemma-2-9b-it")
+elif [ "$GROUP" = "C" ]; then
+  # this laptop: Gemma only (gated — token already set here)
+  MODELS=("google/gemma-2-9b-it")
+elif [ "$GROUP" = "D" ]; then
+  # other workstation: Mistral + Phi (both UNGATED — no HF token needed)
+  MODELS=("mistralai/Mistral-7B-Instruct-v0.3" "microsoft/Phi-3.5-mini-instruct")
 else
-  echo "Usage: $0 [A|B]"; exit 1
+  echo "Usage: $0 [A|B|C|D]"; exit 1
 fi
 
 echo ">>> DOMAIN-MATCHED SPLIT group $GROUP: ${MODELS[*]}"
