@@ -1,0 +1,179 @@
+{
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "n_per_domain": 10,
+  "results": [
+    {
+      "domain": "Science",
+      "question": "In a certain region, the electric field varies with the radius away from origin ",
+      "correct_letter": "D",
+      "predicted": "B",
+      "response": "B",
+      "gate_pass": false
+    },
+    {
+      "domain": "Science",
+      "question": "The radius of Mars is about half that of Earth; the mass of Mars is about one-te",
+      "correct_letter": "B",
+      "predicted": "D",
+      "response": "D",
+      "gate_pass": false
+    },
+    {
+      "domain": "Science",
+      "question": "Two identical containers are filled with different gases. Container 1 is filled ",
+      "correct_letter": "D",
+      "predicted": "C",
+      "response": "C",
+      "gate_pass": false
+    },
+    {
+      "domain": "Science",
+      "question": "An electric dipole consists of a pair of equal but opposite point charges of mag",
+      "correct_letter": "D",
+      "predicted": "B",
+      "response": "B",
+      "gate_pass": false
+    },
+    {
+      "domain": "Science",
+      "question": "An ideal fluid flows through a pipe with radius Q and flow speed V. If the pipe ",
+      "correct_letter": "C",
+      "predicted": "C",
+      "response": "C",
+      "gate_pass": true
+    },
+    {
+      "domain": "Science",
+      "question": "A student is experimenting with a simple spring-block oscillator of spring const",
+      "correct_letter": "A",
+      "predicted": "A",
+      "response": "A",
+      "gate_pass": true
+    },
+    {
+      "domain": "Science",
+      "question": "A 1-kg object is released from rest at the top of a rough-surfaced incline. The ",
+      "correct_letter": "C",
+      "predicted": "D",
+      "response": "D",
+      "gate_pass": false
+    },
+    {
+      "domain": "Science",
+      "question": "When hot water is poured into a beaker containing cold alcohol, the temperature ",
+      "correct_letter": "D",
+      "predicted": "D",
+      "response": "D",
+      "gate_pass": true
+    },
+    {
+      "domain": "Science",
+      "question": "A girl of mass m and a boy of mass 2m are sitting on opposite sides of a see-saw",
+      "correct_letter": "D",
+      "predicted": "C",
+      "response": "C",
+      "gate_pass": false
+    },
+    {
+      "domain": "Science",
+      "question": "Above an infinitely large plane carrying charge density \u03c3, the electric field po",
+      "correct_letter": "A",
+      "predicted": "A",
+      "response": "A",
+      "gate_pass": true
+    },
+    {
+      "domain": "History",
+      "question": "This question refers to the following information.\nAt the peak of their power, t",
+      "correct_letter": "A",
+      "predicted": "A",
+      "response": "A",
+      "gate_pass": true
+    },
+    {
+      "domain": "History",
+      "question": "This question refers to the following information.\n\"The spontaneous forces of ca",
+      "correct_letter": "D",
+      "predicted": "D",
+      "response": "D",
+      "gate_pass": true
+    },
+    {
+      "domain": "History",
+      "question": "This question refers to the following information.\nThe passage below is taken fr",
+      "correct_letter": "B",
+      "predicted": "B",
+      "response": "B",
+      "gate_pass": true
+    },
+    {
+      "domain": "History",
+      "question": "This question refers to the following information.\n\"I travelled thence to 'Aden,",
+      "correct_letter": "B",
+      "predicted": "D",
+      "response": "D",
+      "gate_pass": false
+    },
+    {
+      "domain": "History",
+      "question": "This question refers to the following information.\nIn fact, the peculiar aggrava",
+      "correct_letter": "D",
+      "predicted": "D",
+      "response": "D",
+      "gate_pass": true
+    },
+    {
+      "domain": "History",
+      "question": "This question refers to the following information.\nWoman, wake up; the bell of r",
+      "correct_letter": "A",
+      "predicted": "A",
+      "response": "A",
+      "gate_pass": true
+    },
+    {
+      "domain": "History",
+      "question": "This question refers to the following information.\nBoth authors below were speak",
+      "correct_letter": "C",
+      "predicted": "C",
+      "response": "C",
+      "gate_pass": true
+    },
+    {
+      "domain": "History",
+      "question": "This question refers to the following information.\n\"My little homestead in the c",
+      "correct_letter": "A",
+      "predicted": "A",
+      "response": "A",
+      "gate_pass": true
+    },
+    {
+      "domain": "History",
+      "question": "This question refers to the following information.\nBonesteel's prime considerati",
+      "correct_letter": "A",
+      "predicted": "C",
+      "response": "C",
+      "gate_pass": false
+    },
+    {
+      "domain": "History",
+      "question": "This question refers to the following information.\nThe condition of foreign stat",
+      "correct_letter": "D",
+      "predicted": "D",
+      "response": "D",
+      "gate_pass": true
+    }
+  ],
+  "summary": {
+    "Science": {
+      "n": 10,
+      "passed": 4,
+      "survival_rate": 0.4
+    },
+    "History": {
+      "n": 10,
+      "passed": 8,
+      "survival_rate": 0.8
+    }
+  },
+  "overall_survival_rate": 0.6
+}

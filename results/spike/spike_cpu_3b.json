@@ -1,0 +1,14 @@
+{
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "device": "cpu",
+  "dtype": "fp16",
+  "tests": {
+    "load_seconds_cpu": 237.6,
+    "throughput": {
+      "ms_per_scoring": 5930.6,
+      "sec_per_trial_est": 23.72,
+      "total_hours_est": 83.0,
+      "total_days_est": 3.5
+    }
+  }
+}

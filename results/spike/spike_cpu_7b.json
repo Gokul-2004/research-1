@@ -1,0 +1,49 @@
+{
+  "model": "mistralai/Mistral-7B-Instruct-v0.3",
+  "device": "cpu",
+  "dtype": "fp16",
+  "tests": {
+    "load_seconds_cpu": 542.5,
+    "multitoken": {
+      "correct": {
+        "answer": "the Nile",
+        "n_tokens": 3,
+        "token_logprobs": [
+          -11.5676,
+          -0.0131,
+          -0.0001
+        ],
+        "sum_logprob": -11.5808,
+        "mean_logprob": -3.8603
+      },
+      "wrong": {
+        "answer": "the Amazon",
+        "n_tokens": 2,
+        "token_logprobs": [
+          -11.5598,
+          -4.4506
+        ],
+        "sum_logprob": -16.0104,
+        "mean_logprob": -8.0052
+      },
+      "multitoken_ok": true,
+      "correct_preferred": true
+    },
+    "throughput": {
+      "ms_per_scoring": 5799.1,
+      "sec_per_trial_est": 23.2,
+      "total_hours_est": 81.2,
+      "total_days_est": 3.4,
+      "practical": true
+    }
+  },
+  "verdict": {
+    "GO": true,
+    "criteria": {
+      "multitoken_scoring_works": true,
+      "correct_answer_preferred": true,
+      "throughput_under_240h": true
+    },
+    "note": "GO => CPU logprob arm is practical for this machine. Consider moving to CUDA if throughput is marginal."
+  }
+}
