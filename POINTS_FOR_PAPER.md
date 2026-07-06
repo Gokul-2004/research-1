@@ -561,3 +561,33 @@ D: Mistral+Phi). Status at time of writing: 4 models fully done, Mistral+Phi fin
 - Cross-study comparison is directional only (different domains/protocol/model sizes).
 - Qwen-7B and Mistral break the "domain-matched strengthens gradient" pattern → effect is
   model-dependent, not a clean universal fix. Report the heterogeneity honestly.
+
+---
+
+## 14. MECHANISTIC DEPTH — what Mammen/746 has that we DON'T (+ counterpoint)
+
+### POINT (their advantage): mechanistic interpretability we lack
+Mammen (2601.13433) + 746 look INSIDE the network (white-box), not just input→output. Specifically:
+1. **Steering vectors (activation addition):** extract an "authority direction" in activations;
+   SUBTRACTING it RECOVERS accuracy → authority is a manipulable internal signal, steerable.
+2. **Layer localization ("peak layer"):** pinpoint the exact layer where damage happens —
+   L17 (Llama), L28 (Gemma), L29 (Qwen); at that layer the correct-answer representation is
+   ACTIVELY ERASED (probe accuracy drops below chance). "Mechanistic knowledge erasure."
+3. **Probing (linear/MLP):** classifiers on activations show the model stops "knowing" the answer.
+4. **Logit lens / Tuned lens:** decode intermediate layers, watch the answer flip mid-network.
+5. **Per-question vs mean steering:** mean vectors fail (≤7%), per-question reproduce 63-82% of
+   flips → authority is question-specific, not a global "trust" direction.
+→ We have NONE of this. We only observe behavior (flips) + output-layer logprobs. We cannot say
+   WHERE or HOW inside the network authority acts. This is a genuine depth gap.
+
+### COUNTERPOINT (why it's not fatal for us — complementary, not inferior)
+- Mechanistic work needs white-box access + TransformerLens + a separate skillset; their own
+  mechanistic analysis is SINGLE-DOMAIN (medical) and PRELIMINARY (no full ablation/SAE — they
+  say so).
+- Our behavioral + TWO-TURN approach measures what they CANNOT: what the model actually DOES in
+  realistic multi-turn interaction. Mechanistic = WHERE in the net; behavioral = WHAT in deployment.
+- We can name mechanistic analysis of our two-turn setup as explicit FUTURE WORK (probing,
+  DiffMean/CAA on our generation setting; note 746's finding that per-question vectors are needed).
+- HONEST FRAMING: their mechanistic depth and our behavioral realism are complementary lenses on
+  the same phenomenon. Do not pretend we have mechanistic evidence; do cite theirs and position
+  ours as the behavioral/deployment complement.
