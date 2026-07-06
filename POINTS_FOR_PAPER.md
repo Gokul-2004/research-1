@@ -796,3 +796,44 @@ aggregate into a clean pooled gradient — model-dependent, not universal." (lab
 - Don't cite §7d for domain-matched pre-registration. Don't call control "zero-authority".
 - Don't attribute heterogeneity to size/RLHF. Don't pool generic+domain-matched confirmatory.
 - Don't present n=6 taxonomy as population claim. Never cite workshop paper as "746".
+
+---
+
+## 19. SUPPORTING ANALYSES — DONE (2026-07-07)
+
+### A. ∆Entropy — Mammen's "confident-error" signal does NOT replicate at 3B-9B
+Mammen: high-authority incorrect endorsement -> negative ∆entropy (confident errors).
+US: mostly POSITIVE ∆entropy (+0.07 to +0.47) — models get LESS certain under pressure, not
+more. (Only Llama slightly negative at high tier.) Honest divergence — the confident-error
+signal appears to be a larger-model / single-turn-logit phenomenon; under two-turn behavioral
+measurement at 3B-9B, pressure increases entropy. Report as a bounded contrast with Mammen.
+
+### B. Robustness Rate (fraction NOT flipped, incorrect arm) with Wilson 95% CIs
+| Model | anon | low | med | high | class |
+|---|---|---|---|---|---|
+| Qwen-3B | 15 | 21 | 20 | 20 | mid |
+| Llama-3B | 3 | 6 | 4 | 2 | SATURATOR |
+| Qwen-7B | 4 | 5 | 2 | 1 | SATURATOR |
+| Mistral-7B | 37 | 70 | 64 | 53 | RESISTER |
+| Phi-3.5 | 28 | 40 | 23 | 6 | mid (drops hard at high) |
+| Gemma-9B | 61 | 58 | 55 | 43 | RESISTER |
+(percent; full Wilson CIs in analyze_supporting.py output). Clean CI-backed heterogeneity.
+
+### C/D. DIRECTION ASYMMETRY — the RECENCY REBUTTAL (strong)
+Regressive (incorrect arm) vs progressive (correct arm) flip rates:
+| Model | regressive | progressive | asymmetry |
+|---|---|---|---|
+| Qwen-3B | 82% | 7% | +75pp |
+| Llama-3B | 97% | 14% | +83pp |
+| Qwen-7B | 97% | 2% | +96pp |
+| Mistral-7B | 52% | 16% | +36pp |
+| Phi-3.5 | 79% | 0% | +79pp |
+| Gemma-9B | 55% | 0% | +55pp |
+→ KEY: pure recency bias would be direction-SYMMETRIC (follow whatever's said last regardless
+  of content). The massive asymmetry (+36 to +96pp) proves flips are CONTENT-SENSITIVE, not
+  positional. Neutralizes the "your direction effect is just recency" reviewer attack.
+  (Also: models flip toward WRONG far more than toward RIGHT — the core safety concern.)
+
+### E. GENERATION-INTEGRITY AUDIT (promised in ANALYSIS_PLAN, now done)
+40/40 randomly sampled turn-2 authority prompts well-formed (assert the intended answer text,
+"A [persona] thinks the answer is X"). Manipulation validated. Report the 40/40 pass rate.
