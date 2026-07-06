@@ -734,3 +734,65 @@ Qwen-7B drops to p=0.052 (ns), Mistral goes negative (anon out-flips low), Phi/G
 GEE p=0.95; raw pooled accuracy non-monotonic). Endorsement direction dominates. Authority
 grading is significant per-model in 4/6 (Cochran-Armitage, persona-only coding) but does not
 aggregate into a clean pooled gradient — model-dependent, not universal." (label-robust; κ=0.967.)
+
+---
+
+## 18. SESSION LOG / CURRENT STATE SNAPSHOT (2026-07-07)
+
+### Where the project stands
+- ALL inference complete: 6 models × (main 5-rung + condition-B anon + domain-matched low/med/high),
+  both arms. Judge (Gemini 2.5 Flash) done; human validation Cohen's kappa=0.967, Gwet AC1=0.980.
+- Blockers 1 & 2 DONE and VERIFIED (§17). Confirmatory NULL is triple-confirmed.
+- Everything pushed to github.com/Gokul-2004/research-1.
+
+### The VERIFIED findings (safe to write — all checked)
+1. Pre-registered pooled tier×direction interaction NOT supported (freq p=0.78, GEE p=0.95,
+   raw pooled accuracy non-monotonic 26→34→28→21%). Original null was correct.
+2. Direction main effect huge & robust (incorrect endorsement devastates; correct barely helps).
+3. Regex vs judge labels agree 99.9% → results label-robust.
+4. Per-model authority trend (Cochran-Armitage, persona-only): significant in 4/6 (Qwen-7B,
+   Mistral, Phi, Gemma). Does NOT aggregate to a pooled gradient → model-dependent.
+5. Ladder-coding matters: anon-inclusive vs persona-only give different "how many grade" counts →
+   report BOTH; claim only "persona-rank trend in a subset."
+6. Domain-matched personas (EXPLORATORY): strengthen gradient in 3/6, collapse Mistral
+   (saturation ceiling). Gemma clean behavioral win 43→76%.
+7. Anon rung ~ professor rung → presence of counter-claim, not source authority, drives most flips.
+
+### Key LESSONS learned this session (methodological hygiene)
+- DO NOT use variational-Bayes mixed GLMM for significance — it gave a false z=10.4 that nearly
+  reversed the headline. Use frequentist GLM / GEE. Always cross-check a consequential result
+  with a second method BEFORE writing.
+- Domain-matched run is EXPLORATORY (not pre-registered; §7d = model expansion only).
+- Spearman was a deviation from the pre-specified Cochran-Armitage — disclose.
+- Purged falsified framing ("gradient in belief, masked behaviorally" — anon ladder killed it).
+
+### DONE (analyses)
+- Confirmatory GLMM (freq + GEE + VB, verified), judge-label recompute, Cochran-Armitage per model,
+  both ladder codings, regex-vs-judge agreement, domain-matched 6-model, Mammen comparison.
+
+### PENDING (analyses — next, zero inference)
+- ∆Entropy (Shannon over A/B/C/D, pre/post) — test Mammen's confident-error signal at 3B-9B.
+- Robustness Rate (fraction unchanged) per model/tier/arm.
+- Progressive/regressive relabel from logprobs.
+- Correct-arm asymmetry (recency rebuttal: pure recency = direction-symmetric; -3.50 says not).
+- Generation-integrity audit (30-50 turn-2 prompts assert wrong_X/correct_text).
+- Deviations-from-pre-registration TABLE (GEE→GLMM, Spearman-for-CA, judge 2.0→2.5, n=60 not 100,
+  severity re-baseline, post-hoc timestamps for cond-B + domain-matched).
+- Freeze a results manifest (script + hash) before writing any results sentence.
+- Wilson CIs on all reported proportions.
+
+### PENDING (writing/strategy)
+- VENUE DECISION (user's call): TMLR primary vs IEEE Access fallback — roadmap favors TMLR for a
+  pre-registered null + full disclosure. Not yet decided.
+- MUST-VERIFY before draft: "Mammen tables show Mistral grading steepest" and any per-model Mammen
+  number — check against the actual PDF, not agent summary.
+- Then: figures (4), draft (null-first "confirm and bound"), arXiv, AF post, venue submission.
+- Working title: "Presence, Not Prestige: Claim Presence Dominates Source Authority in the
+  Behavioral Sycophancy of Small Open LLMs."
+
+### DO-NOT list (locked)
+- No "fails to replicate Mammen" (say "does not translate to two-turn behavioral measurement").
+- No "we reconcile the field" / "gradient lives in belief" (falsified).
+- Don't cite §7d for domain-matched pre-registration. Don't call control "zero-authority".
+- Don't attribute heterogeneity to size/RLHF. Don't pool generic+domain-matched confirmatory.
+- Don't present n=6 taxonomy as population claim. Never cite workshop paper as "746".
