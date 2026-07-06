@@ -873,3 +873,29 @@ They largely TRACK each other; they do NOT strongly diverge.
 ### Net figure story
 Figs 1-2 carry the paper (null + heterogeneity + presence>authority). Fig 3 is the exploratory
 domain-matched add-on. Fig 4 establishes behavior-belief CONCORDANCE (reframed from divergence).
+
+---
+
+## 21. ADDITIONAL SURVEY-INSPIRED FIGURES (2026-07-07)
+
+Reviewed figure conventions across the survey papers; added 4 that strengthen the paper and
+enable direct visual comparison to Mammen. (Did NOT add: layer/probe/steering plots — no
+mechanistic data, named as future work; Beta judge-accuracy curve — κ=0.967 number suffices.)
+
+- **fig5_delta_acc.png** — Mammen-style ΔAccuracy line-ladder (accuracy_after − unpressured
+  baseline, per tier, all 6 models). Direct visual comparison to Mammen Fig 3. Shows our
+  degradation is NOT the clean monotonic down-slope Mammen reported.
+- **fig6_delta_entropy.png** — ∆Entropy (turn2−turn1) per tier. ALL lines POSITIVE (models get
+  LESS certain), contra Mammen's NEGATIVE confident-error signal. Visual for the bounded-contrast
+  finding (§19A): confident-error is a reasoning/medical/single-turn-logit phenomenon, not ours.
+- **fig7_robustness_split.png** — Robustness Rate at high authority, bar chart, resist(green)/
+  saturate(red) split at 30%. SycoEval-EM bimodal style. Mistral/Gemma resist; Qwen/Llama saturate.
+- **fig8_direction_asymmetry.png** — regressive (incorrect arm) vs progressive (correct arm) bars
+  per model. THE RECENCY REBUTTAL made visual: red towers over green everywhere; pure recency
+  would make them equal. One of the strongest reviewer-defense figures.
+
+### Figure inventory (8 total, results/figures/)
+Core (fig1-4): null-visible, per-model ladders, generic-vs-domain, behavior-vs-belief.
+Extra (fig5-8): ΔAcc (Mammen comparison), ∆Entropy (confident-error non-replication),
+robustness split (bimodal), direction asymmetry (recency rebuttal).
+Scripts: src/make_figures.py + src/make_figures_extra.py.
