@@ -634,3 +634,57 @@ prior single-turn logit work (Mammen) reported."
 - Domain-matched persona run (6 models, low/med/high): done.
 - Judge (Gemini 2.5 Flash) + human validation kappa=0.967: done.
 - REMAINING: formal pooled GLMM, figures, write-up. No more inference needed.
+
+---
+
+## 16. INTEGRITY CORRECTIONS + ROADMAP ADOPTION (2026-07-06)
+
+### ⚠️ CORRECTION — domain-matched run is EXPLORATORY, not pre-registered
+- ANALYSIS_PLAN §7d pre-registered MODEL-SET EXPANSION only (adding Phi + Gemma), NOT the
+  domain-matched persona experiment/analysis.
+- Therefore the domain-matched run is POST-HOC / EXPLORATORY. Label it as such in the paper.
+- Do NOT cite §7d as pre-registering the domain-matched analysis (false + checkable).
+- The domain-matched A/B is still a legitimate exploratory contribution — just honestly framed
+  as exploratory, not confirmatory.
+
+### Framing correction (supersedes earlier §5/§12 vintage language)
+- DO NOT say "gradient lives in belief, masked behaviorally" or "we reconcile the field" —
+  the anon-ladder (§3g) FALSIFIED the clean-belief-gradient story. Purge this language.
+- DO NOT say "fails to replicate Mammen" — we never ran their single-turn logit protocol.
+  SAY: "does not translate to two-turn behavioral measurement."
+- Control rung is NOT "zero-authority" — it out-pushes "professor"; anon is the floor.
+- Do NOT attribute heterogeneity to size or RLHF (Qwen-7B saturates while Gemma-9B resists —
+  no evidence either way).
+
+### The paper (adopted from multi-agent roadmap): "confirm and bound," null-first
+Headline: in a pre-registered two-turn protocol with an assertion-matched anonymous baseline,
+the PRESENCE of a counter-claim — not the AUTHORITY of its source — drives capitulation
+(direction p<0.0001; pre-registered tier×direction p=0.95). Authority grading emerges only
+model-dependently and only under domain-matched personas (3/6, exploratory — first within-
+protocol test of Joswin's boundary condition). Mistral saturates under strong authority.
+Working title: "Presence, Not Prestige: Claim Presence Dominates Source Authority in the
+Behavioral Sycophancy of Small Open LLMs."
+
+### THE TWO BLOCKERS (do first — every results sentence depends on these)
+1. Recompute confirmatory stats on JUDGE substance labels (judge_bundle/results/judged/
+   *__judge1.jsonl), not regex flips. Fit on BOTH regex and judge labels; report if they differ.
+2. Formal pre-registered GLMM: correct_after_pressure ~ tier*direction*domain + (1|model)+(1|question),
+   LRT on tier×direction, GENERIC PERSONAS ONLY (never pool with domain-matched for confirmatory).
+
+### MUST-VERIFY before drafting (agent-derived claims from PDFs — spot-check against real tables)
+- "Mammen's logit tables show Mistral grading steepest" — VERIFY against actual Mammen tables.
+- Any per-model Mammen number quoted — verify against the PDF, not agent summary.
+
+### Venue decision — DEFER TO USER
+Roadmap suggests TMLR primary (claims-audited review suits a pre-registered null + κ=0.967 +
+deviation disclosure), IEEE Access fallback. This AMENDS the locked IEEE target — a real
+strategic call for the user to confirm, not auto-adopt.
+
+### Analysis TODO (from roadmap, all zero-inference)
+- Cochran-Armitage per model (the pre-specified trend test; Spearman was a deviation — disclose)
+- Resolve §3d-vs-§15 ladder-coding discrepancy (anon-inclusive vs persona-only) — report BOTH
+- ∆Entropy, Robustness Rate, progressive/regressive relabel from logged logprobs
+- Correct-arm asymmetry (recency rebuttal: pure recency = direction-symmetric; −3.50 says not)
+- Generation-integrity audit (30-50 turn-2 prompts — promised, still undone)
+- Deviations-from-pre-registration table (GEE→GLMM, Spearman-for-CA, judge 2.0→2.5, n=60, etc.)
+- Freeze a results manifest (script + hash) before writing any results sentence
