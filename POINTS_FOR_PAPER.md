@@ -591,3 +591,46 @@ Mammen (2601.13433) + 746 look INSIDE the network (white-box), not just input→
 - HONEST FRAMING: their mechanistic depth and our behavioral realism are complementary lenses on
   the same phenomenon. Do not pretend we have mechanistic evidence; do cite theirs and position
   ours as the behavioral/deployment complement.
+
+---
+
+## 15. FINAL 6-MODEL DOMAIN-MATCHED RESULT (2026-07-06, ALL COMPLETE)
+
+All 6 models finished. Belief trend (Spearman low<med<high, incorrect arm) + behavioral
+flip% (low->high) + accuracy retained at high tier, GENERIC vs DOMAIN-MATCHED personas:
+
+| Model | Generic (rho, p) | Domain-matched (rho, p) | Flip% gen -> dom (high) | Effect |
+|---|---|---|---|---|
+| Qwen-3B | −0.07, 0.17 (ns) | −0.17, 0.001* | 80% -> 84% | STRONGER (appeared) |
+| Llama-3B | −0.14, 0.018* | −0.24, <0.001* | 98% -> 98% | STRONGER |
+| Qwen-7B | −0.21, <0.001* | −0.11, 0.039* | 99% -> 99% | similar |
+| Gemma-9B | −0.14, 0.006* | −0.25, <0.001* | 57% -> 76% | STRONGER (clean behavioral) |
+| Mistral-7B | −0.16, 0.004* | −0.09, 0.114 (ns) | 47% -> 53% | COLLAPSED (saturation) |
+| Phi-3.5 | −0.33, <0.001* | −0.32, <0.001* | 94% -> 91% | similar (already strong) |
+
+### Final tally: domain-matched -> 3 STRONGER, 2 similar, 1 COLLAPSED
+- STRENGTHENED (Qwen-3B, Llama, Gemma): institutional personas recover/amplify gradient -> confirms 746.
+  Qwen-3B goes ns->SIG; Gemma behavioral flip 43->64->76% (clean dose-response).
+- SIMILAR (Qwen-7B, Phi): already graded; personas didn't shift much. Phi is the STRONGEST/cleanest
+  grader (flip 60->77->94% generic, p<0.001) — behaviorally textbook.
+- COLLAPSED (Mistral): SIG generic -> ns domain-matched. Saturation ceiling: strong authority -> caves
+  more overall (47->53% at high, and 30->47% generic became 46->53% dom) but stops discriminating tiers.
+
+### Two clean headline findings (final data)
+1. Phi-3.5 = strongest/cleanest authority grader (60->77->94% flip, p<0.001, both persona sets).
+2. Gemma = clean domain-matched win (behavioral 43->76%), and it's SHARED with Mammen -> we confirm+strengthen him.
+
+### FINAL honest story (6 models, complete)
+"Authority-graded sycophancy in small open LLMs is real but heterogeneous. Domain-matched institutional
+personas strengthen the graded effect in half the models (Qwen-3B, Llama, Gemma) and leave it strong in
+others (Phi, Qwen-7B) — confirming persona specificity matters (746). But in the most robust model
+(Mistral), strong institutional authority SATURATES susceptibility, collapsing the gradient into
+indiscriminate capitulation. The effect is bounded and model-dependent, not the universal clean gradient
+prior single-turn logit work (Mammen) reported."
+
+### Status: ALL EXPERIMENTS COMPLETE
+- Main run (6 models, 5 rungs, 2 arms): done.
+- Condition B (anon baseline): done.
+- Domain-matched persona run (6 models, low/med/high): done.
+- Judge (Gemini 2.5 Flash) + human validation kappa=0.967: done.
+- REMAINING: formal pooled GLMM, figures, write-up. No more inference needed.
