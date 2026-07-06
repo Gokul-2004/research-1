@@ -1,0 +1,203 @@
+>>> NEW MODELS RUN START 2026-07-03 02:14:43
+
+>>> MAIN: microsoft/Phi-3.5-mini-instruct  02:14:43
+[resume] found 150 already-completed questions in microsoft_Phi-3.5-mini-instruct_20260702T112203Z.jsonl
+
+[config] model=microsoft/Phi-3.5-mini-instruct  questions=150  out=/home/gk-krishnan/Desktop/Genesis/research-1/results/inference/microsoft_Phi-3.5-mini-instruct_20260702T112203Z.jsonl
+
+[load] microsoft/Phi-3.5-mini-instruct on CPU fp16...
+[transformers] This model config has set a `rope_parameters['original_max_position_embeddings']` field, to be used together with `max_position_embeddings` to determine a scaling factor. Please set the `factor` field of `rope_parameters`with this ratio instead -- we recommend the use of this field over `original_max_position_embeddings`, as it is compatible with most model architectures.
+Loading weights:   0%|          | 0/195 [00:00<?, ?it/s]Loading weights:   1%|          | 1/195 [00:08<28:03,  8.68s/it]Loading weights:   6%|▌         | 11/195 [00:10<02:14,  1.37it/s]Loading weights:   7%|▋         | 14/195 [00:10<01:41,  1.78it/s]Loading weights:   8%|▊         | 16/195 [00:10<01:22,  2.18it/s]Loading weights:   9%|▊         | 17/195 [00:13<02:00,  1.48it/s]Loading weights:  10%|█         | 20/195 [00:13<01:19,  2.20it/s]Loading weights:  12%|█▏        | 23/195 [00:15<01:29,  1.92it/s]Loading weights:  13%|█▎        | 26/195 [00:15<01:12,  2.34it/s]Loading weights:  15%|█▍        | 29/195 [00:18<01:34,  1.76it/s]Loading weights:  18%|█▊        | 35/195 [00:20<01:07,  2.37it/s]Loading weights:  19%|█▉        | 38/195 [00:20<00:56,  2.78it/s]Loading weights:  21%|██        | 40/195 [00:20<00:50,  3.09it/s]Loading weights:  21%|██        | 41/195 [00:22<01:14,  2.07it/s]Loading weights:  23%|██▎       | 44/195 [00:22<00:49,  3.03it/s]Loading weights:  24%|██▎       | 46/195 [00:23<00:41,  3.55it/s]Loading weights:  24%|██▍       | 47/195 [00:25<01:25,  1.73it/s]Loading weights:  27%|██▋       | 53/195 [00:28<01:13,  1.94it/s]Loading weights:  30%|███       | 59/195 [00:29<00:56,  2.42it/s]Loading weights:  32%|███▏      | 62/195 [00:30<00:45,  2.95it/s]Loading weights:  33%|███▎      | 65/195 [00:32<01:00,  2.16it/s]Loading weights:  36%|███▋      | 71/195 [00:34<00:50,  2.44it/s]Loading weights:  38%|███▊      | 74/195 [00:34<00:40,  3.02it/s]Loading weights:  39%|███▉      | 77/195 [00:37<00:54,  2.15it/s]Loading weights:  41%|████      | 80/195 [00:37<00:40,  2.84it/s]Loading weights:  43%|████▎     | 83/195 [00:39<00:49,  2.26it/s]Loading weights:  44%|████▍     | 86/195 [00:39<00:37,  2.94it/s]Loading weights:  46%|████▌     | 89/195 [00:41<00:45,  2.32it/s]Loading weights:  47%|████▋     | 92/195 [00:42<00:37,  2.74it/s]Loading weights:  49%|████▊     | 95/195 [00:45<00:53,  1.86it/s]Loading weights:  52%|█████▏    | 101/195 [00:46<00:38,  2.47it/s]Loading weights:  55%|█████▍    | 107/195 [00:48<00:33,  2.63it/s]Loading weights:  56%|█████▋    | 110/195 [00:49<00:29,  2.89it/s]Loading weights:  58%|█████▊    | 113/195 [00:52<00:38,  2.11it/s]Loading weights:  61%|██████    | 119/195 [00:53<00:30,  2.49it/s]Loading weights:  64%|██████▍   | 125/195 [00:56<00:28,  2.50it/s]Loading weights:  66%|██████▌   | 128/195 [00:56<00:23,  2.90it/s]Loading weights:  67%|██████▋   | 131/195 [00:58<00:27,  2.33it/s]Loading weights:  70%|██████▉   | 136/195 [00:58<00:16,  3.51it/s]Loading weights:  71%|███████   | 138/195 [01:01<00:28,  2.02it/s]Loading weights:  73%|███████▎  | 143/195 [01:03<00:22,  2.26it/s]Loading weights:  76%|███████▋  | 149/195 [01:05<00:18,  2.48it/s]Loading weights:  78%|███████▊  | 152/195 [01:06<00:14,  2.95it/s]Loading weights:  79%|███████▉  | 155/195 [01:09<00:20,  1.93it/s]Loading weights:  83%|████████▎ | 161/195 [01:11<00:14,  2.34it/s]Loading weights:  85%|████████▌ | 166/195 [01:11<00:08,  3.38it/s]Loading weights:  86%|████████▌ | 168/195 [01:13<00:11,  2.43it/s]Loading weights:  89%|████████▊ | 173/195 [01:16<00:10,  2.16it/s]Loading weights:  90%|█████████ | 176/195 [01:16<00:07,  2.61it/s]Loading weights:  92%|█████████▏| 179/195 [01:18<00:07,  2.04it/s]Loading weights:  95%|█████████▍| 185/195 [01:20<00:03,  2.55it/s]Loading weights:  96%|█████████▋| 188/195 [01:20<00:02,  3.10it/s]Loading weights:  97%|█████████▋| 190/195 [01:20<00:01,  3.51it/s]Loading weights:  98%|█████████▊| 191/195 [01:21<00:01,  3.02it/s]Loading weights: 100%|██████████| 195/195 [01:21<00:00,  2.39it/s]
+[load] done in 97.6s
+[1/150] sci_001 — already done, skipping
+[2/150] sci_002 — already done, skipping
+[3/150] sci_003 — already done, skipping
+[4/150] sci_004 — already done, skipping
+[5/150] sci_005 — already done, skipping
+[6/150] sci_006 — already done, skipping
+[7/150] sci_007 — already done, skipping
+[8/150] sci_008 — already done, skipping
+[9/150] sci_009 — already done, skipping
+[10/150] sci_010 — already done, skipping
+[11/150] sci_011 — already done, skipping
+[12/150] sci_012 — already done, skipping
+[13/150] sci_013 — already done, skipping
+[14/150] sci_014 — already done, skipping
+[15/150] sci_015 — already done, skipping
+[16/150] sci_016 — already done, skipping
+[17/150] sci_017 — already done, skipping
+[18/150] sci_018 — already done, skipping
+[19/150] sci_019 — already done, skipping
+[20/150] sci_020 — already done, skipping
+[21/150] sci_021 — already done, skipping
+[22/150] sci_022 — already done, skipping
+[23/150] sci_023 — already done, skipping
+[24/150] sci_024 — already done, skipping
+[25/150] sci_025 — already done, skipping
+[26/150] sci_026 — already done, skipping
+[27/150] sci_027 — already done, skipping
+[28/150] sci_028 — already done, skipping
+[29/150] sci_029 — already done, skipping
+[30/150] sci_030 — already done, skipping
+[31/150] sci_031 — already done, skipping
+[32/150] sci_032 — already done, skipping
+[33/150] sci_033 — already done, skipping
+[34/150] sci_034 — already done, skipping
+[35/150] sci_035 — already done, skipping
+[36/150] sci_036 — already done, skipping
+[37/150] sci_037 — already done, skipping
+[38/150] sci_038 — already done, skipping
+[39/150] sci_039 — already done, skipping
+[40/150] sci_040 — already done, skipping
+[41/150] sci_041 — already done, skipping
+[42/150] sci_042 — already done, skipping
+[43/150] sci_043 — already done, skipping
+[44/150] sci_044 — already done, skipping
+[45/150] sci_045 — already done, skipping
+[46/150] sci_046 — already done, skipping
+[47/150] sci_047 — already done, skipping
+[48/150] sci_048 — already done, skipping
+[49/150] sci_049 — already done, skipping
+[50/150] sci_050 — already done, skipping
+[51/150] his_001 — already done, skipping
+[52/150] his_002 — already done, skipping
+[53/150] his_003 — already done, skipping
+[54/150] his_004 — already done, skipping
+[55/150] his_005 — already done, skipping
+[56/150] his_006 — already done, skipping
+[57/150] his_007 — already done, skipping
+[58/150] his_008 — already done, skipping
+[59/150] his_009 — already done, skipping
+[60/150] his_010 — already done, skipping
+[61/150] his_011 — already done, skipping
+[62/150] his_012 — already done, skipping
+[63/150] his_013 — already done, skipping
+[64/150] his_014 — already done, skipping
+[65/150] his_015 — already done, skipping
+[66/150] his_016 — already done, skipping
+[67/150] his_017 — already done, skipping
+[68/150] his_018 — already done, skipping
+[69/150] his_019 — already done, skipping
+[70/150] his_020 — already done, skipping
+[71/150] his_021 — already done, skipping
+[72/150] his_022 — already done, skipping
+[73/150] his_023 — already done, skipping
+[74/150] his_024 — already done, skipping
+[75/150] his_025 — already done, skipping
+[76/150] his_026 — already done, skipping
+[77/150] his_027 — already done, skipping
+[78/150] his_028 — already done, skipping
+[79/150] his_029 — already done, skipping
+[80/150] his_030 — already done, skipping
+[81/150] his_031 — already done, skipping
+[82/150] his_032 — already done, skipping
+[83/150] his_033 — already done, skipping
+[84/150] his_034 — already done, skipping
+[85/150] his_035 — already done, skipping
+[86/150] his_036 — already done, skipping
+[87/150] his_037 — already done, skipping
+[88/150] his_038 — already done, skipping
+[89/150] his_039 — already done, skipping
+[90/150] his_040 — already done, skipping
+[91/150] his_041 — already done, skipping
+[92/150] his_042 — already done, skipping
+[93/150] his_043 — already done, skipping
+[94/150] his_044 — already done, skipping
+[95/150] his_045 — already done, skipping
+[96/150] his_046 — already done, skipping
+[97/150] his_047 — already done, skipping
+[98/150] his_048 — already done, skipping
+[99/150] his_049 — already done, skipping
+[100/150] his_050 — already done, skipping
+[101/150] geo_001 — already done, skipping
+[102/150] geo_002 — already done, skipping
+[103/150] geo_003 — already done, skipping
+[104/150] geo_004 — already done, skipping
+[105/150] geo_005 — already done, skipping
+[106/150] geo_006 — already done, skipping
+[107/150] geo_007 — already done, skipping
+[108/150] geo_008 — already done, skipping
+[109/150] geo_009 — already done, skipping
+[110/150] geo_010 — already done, skipping
+[111/150] geo_011 — already done, skipping
+[112/150] geo_012 — already done, skipping
+[113/150] geo_013 — already done, skipping
+[114/150] geo_014 — already done, skipping
+[115/150] geo_015 — already done, skipping
+[116/150] geo_016 — already done, skipping
+[117/150] geo_017 — already done, skipping
+[118/150] geo_018 — already done, skipping
+[119/150] geo_019 — already done, skipping
+[120/150] geo_020 — already done, skipping
+[121/150] geo_021 — already done, skipping
+[122/150] geo_022 — already done, skipping
+[123/150] geo_023 — already done, skipping
+[124/150] geo_024 — already done, skipping
+[125/150] geo_025 — already done, skipping
+[126/150] geo_026 — already done, skipping
+[127/150] geo_027 — already done, skipping
+[128/150] geo_028 — already done, skipping
+[129/150] geo_029 — already done, skipping
+[130/150] geo_030 — already done, skipping
+[131/150] geo_031 — already done, skipping
+[132/150] geo_032 — already done, skipping
+[133/150] geo_033 — already done, skipping
+[134/150] geo_034 — already done, skipping
+[135/150] geo_035 — already done, skipping
+[136/150] geo_036 — already done, skipping
+[137/150] geo_037 — already done, skipping
+[138/150] geo_038 — already done, skipping
+[139/150] geo_039 — already done, skipping
+[140/150] geo_040 — already done, skipping
+[141/150] geo_041 — already done, skipping
+[142/150] geo_042 — already done, skipping
+[143/150] geo_043 — already done, skipping
+[144/150] geo_044 — already done, skipping
+[145/150] geo_045 — already done, skipping
+[146/150] geo_046 — already done, skipping
+[147/150] geo_047 — already done, skipping
+[148/150] geo_048 — already done, skipping
+[149/150] geo_049 — already done, skipping
+[150/150] geo_050 — already done, skipping
+
+[done] wrote /home/gk-krishnan/Desktop/Genesis/research-1/results/inference/microsoft_Phi-3.5-mini-instruct_20260702T112203Z.jsonl
+>>> microsoft/Phi-3.5-mini-instruct MAIN COMPLETE 02:16:26
+
+>>> MAIN: google/gemma-2-9b-it  02:16:26
+[new run] starting fresh → google_gemma-2-9b-it_20260702T204629Z.jsonl
+
+[config] model=google/gemma-2-9b-it  questions=150  out=/home/gk-krishnan/Desktop/Genesis/research-1/results/inference/google_gemma-2-9b-it_20260702T204629Z.jsonl
+
+[load] google/gemma-2-9b-it on CPU fp16...
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [05:56<17:48, 356.21s/it]Fetching 4 files: 100%|██████████| 4/4 [05:56<00:00, 89.05s/it] 
+Loading weights:   0%|          | 0/464 [00:00<?, ?it/s]Loading weights:   0%|          | 1/464 [01:42<13:09:00, 102.25s/it]Loading weights:  47%|████▋     | 219/464 [01:43<01:21,  3.02it/s]  Loading weights:  52%|█████▏    | 243/464 [01:51<01:13,  2.99it/s]Loading weights:  55%|█████▍    | 253/464 [01:56<01:12,  2.93it/s]Loading weights:  56%|█████▌    | 259/464 [02:00<01:14,  2.76it/s]Loading weights:  58%|█████▊    | 267/464 [02:03<01:12,  2.71it/s]Loading weights:  58%|█████▊    | 270/464 [02:04<01:09,  2.77it/s]Loading weights:  59%|█████▉    | 276/464 [02:05<01:03,  2.96it/s]Loading weights:  60%|█████▉    | 278/464 [02:07<01:12,  2.57it/s]Loading weights:  60%|██████    | 279/464 [02:08<01:13,  2.51it/s]Loading weights:  62%|██████▏   | 289/464 [02:12<01:09,  2.52it/s]Loading weights:  64%|██████▍   | 298/464 [02:13<00:49,  3.32it/s]Loading weights:  65%|██████▍   | 300/464 [02:16<01:12,  2.27it/s]Loading weights:  67%|██████▋   | 309/464 [02:18<00:51,  3.01it/s]Loading weights:  67%|██████▋   | 311/464 [02:26<01:55,  1.33it/s]Loading weights:  67%|██████▋   | 313/464 [02:28<01:52,  1.34it/s]Loading weights:  69%|██████▉   | 320/464 [02:28<01:06,  2.17it/s]Loading weights:  69%|██████▉   | 322/464 [02:38<02:36,  1.10s/it]Loading weights:  70%|██████▉   | 324/464 [02:39<02:21,  1.01s/it]Loading weights:  71%|███████▏  | 331/464 [02:39<01:16,  1.73it/s]Loading weights:  72%|███████▏  | 333/464 [02:42<01:34,  1.39it/s]Loading weights:  72%|███████▏  | 335/464 [02:43<01:27,  1.48it/s]Loading weights:  74%|███████▍  | 344/464 [02:47<01:00,  1.99it/s]Loading weights:  75%|███████▍  | 346/464 [02:48<00:58,  2.02it/s]Loading weights:  77%|███████▋  | 355/464 [02:53<00:58,  1.85it/s]Loading weights:  77%|███████▋  | 357/464 [02:54<00:56,  1.90it/s]Loading weights:  78%|███████▊  | 364/464 [02:54<00:32,  3.09it/s]Loading weights:  79%|███████▉  | 366/464 [02:57<00:51,  1.91it/s]Loading weights:  79%|███████▉  | 368/464 [02:58<00:46,  2.05it/s]Loading weights:  81%|████████▏ | 377/464 [03:01<00:36,  2.35it/s]Loading weights:  82%|████████▏ | 379/464 [03:01<00:32,  2.64it/s]Loading weights:  83%|████████▎ | 385/464 [03:02<00:20,  3.80it/s]Loading weights:  84%|████████▎ | 388/464 [03:05<00:34,  2.17it/s]Loading weights:  84%|████████▍ | 389/464 [03:06<00:32,  2.29it/s]Loading weights:  86%|████████▌ | 399/464 [03:09<00:26,  2.45it/s]Loading weights:  88%|████████▊ | 408/464 [03:11<00:18,  3.02it/s]Loading weights:  88%|████████▊ | 410/464 [03:14<00:23,  2.33it/s]Loading weights:  90%|█████████ | 418/464 [03:15<00:13,  3.41it/s]Loading weights:  90%|█████████ | 419/464 [03:15<00:13,  3.46it/s]Loading weights:  91%|█████████ | 421/464 [03:18<00:20,  2.06it/s]Loading weights:  93%|█████████▎| 430/464 [03:19<00:11,  3.03it/s]Loading weights:  93%|█████████▎| 432/464 [03:22<00:14,  2.24it/s]Loading weights:  95%|█████████▍| 440/464 [03:23<00:07,  3.33it/s]Loading weights:  95%|█████████▌| 441/464 [03:24<00:08,  2.87it/s]Loading weights:  95%|█████████▌| 443/464 [03:26<00:10,  2.09it/s]Loading weights:  96%|█████████▌| 445/464 [03:26<00:07,  2.42it/s]Loading weights:  97%|█████████▋| 451/464 [03:26<00:03,  4.04it/s]Loading weights:  97%|█████████▋| 452/464 [03:27<00:03,  3.52it/s]Loading weights:  98%|█████████▊| 454/464 [03:30<00:05,  1.83it/s]Loading weights: 100%|██████████| 464/464 [03:30<00:00,  2.20it/s]
+[load] done in 573.5s
+
+[1/150] sci_001 (Science)
+Traceback (most recent call last):
+  File "/home/gk-krishnan/Desktop/Genesis/research-1/src/run_inference.py", line 343, in <module>
+    run(MODEL_ID)
+  File "/home/gk-krishnan/Desktop/Genesis/research-1/src/run_inference.py", line 242, in run
+    t1_prompt = build_turn1_prompt(tok, question, choices)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gk-krishnan/Desktop/Genesis/research-1/src/run_inference.py", line 95, in build_turn1_prompt
+    return tok.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gk-krishnan/Desktop/Genesis/research-1/.venv/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 3107, in apply_chat_template
+    rendered_chat, generation_indices = render_jinja_template(
+                                        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gk-krishnan/Desktop/Genesis/research-1/.venv/lib/python3.12/site-packages/transformers/utils/chat_template_utils.py", line 581, in render_jinja_template
+    rendered_chat = compiled_template.render(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gk-krishnan/Desktop/Genesis/research-1/.venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/gk-krishnan/Desktop/Genesis/research-1/.venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 1, in top-level template code
+  File "/home/gk-krishnan/Desktop/Genesis/research-1/.venv/lib/python3.12/site-packages/jinja2/sandbox.py", line 401, in call
+    return __context.call(__obj, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gk-krishnan/Desktop/Genesis/research-1/.venv/lib/python3.12/site-packages/transformers/utils/chat_template_utils.py", line 479, in raise_exception
+    raise jinja2.exceptions.TemplateError(message)
+jinja2.exceptions.TemplateError: System role not supported
+>>> google/gemma-2-9b-it main failed (1) — re-run to resume.

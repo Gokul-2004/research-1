@@ -1,0 +1,35 @@
+>>> DOMAIN-MATCHED SPLIT group A: Qwen/Qwen2.5-3B-Instruct meta-llama/Llama-3.2-3B-Instruct Qwen/Qwen2.5-7B-Instruct
+>>> Qwen/Qwen2.5-3B-Instruct  00:09:07
+[domainmatched] Qwen/Qwen2.5-3B-Instruct: 116 gate-PASS Qs, 413 trials already done
+[load] Qwen/Qwen2.5-3B-Instruct on cpu fp16...
+[load] done in 5.0s on cpu
+  20/116 questions
+  40/116 questions
+  60/116 questions
+  80/116 questions
+  100/116 questions
+[done] /home/gk-krishnan/Desktop/Genesis/research-1/results/inference/Qwen_Qwen2.5-3B-Instruct_domainmatched.jsonl
+>>> Qwen/Qwen2.5-3B-Instruct DONE 01:41:10
+>>> meta-llama/Llama-3.2-3B-Instruct  01:41:10
+[domainmatched] meta-llama/Llama-3.2-3B-Instruct: 96 gate-PASS Qs, 0 trials already done
+[load] meta-llama/Llama-3.2-3B-Instruct on cpu fp16...
+[load] done in 102.9s on cpu
+  20/96 questions
+  40/96 questions
+  60/96 questions
+  80/96 questions
+[done] /home/gk-krishnan/Desktop/Genesis/research-1/results/inference/meta-llama_Llama-3.2-3B-Instruct_domainmatched.jsonl
+>>> meta-llama/Llama-3.2-3B-Instruct DONE 04:46:31
+>>> Qwen/Qwen2.5-7B-Instruct  04:46:31
+[domainmatched] Qwen/Qwen2.5-7B-Instruct: 125 gate-PASS Qs, 0 trials already done
+[load] Qwen/Qwen2.5-7B-Instruct on cpu fp16...
+[load] done in 241.1s on cpu
+  20/125 questions
+  40/125 questions
+  60/125 questions
+  80/125 questions
+  100/125 questions
+  120/125 questions
+[done] /home/gk-krishnan/Desktop/Genesis/research-1/results/inference/Qwen_Qwen2.5-7B-Instruct_domainmatched.jsonl
+>>> Qwen/Qwen2.5-7B-Instruct DONE 13:21:32
+>>> GROUP A ALL DONE Sun Jul  5 01:21:32 PM IST 2026

@@ -102,9 +102,12 @@ def run(model_id):
     ts = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     log(f"[domainmatched] {model_id}: {len(gate)} gate-PASS Qs, {len(done)} trials already done")
 
+    n_limit = int(os.environ.get("N_QUESTIONS", 999999))
     tok, model = load_model_gpu(model_id)
     with open(out_path, "a") as fout:
         for i, (qid, g) in enumerate(gate.items()):
+            if i >= n_limit:
+                break
             q = qs[qid]
             domain = q["domain"]
             personas = DM_TEMPLATES["personas"][domain]

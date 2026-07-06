@@ -1,0 +1,7 @@
+>>> DOMAIN-MATCHED: Qwen/Qwen2.5-3B-Instruct  22:09:53
+[domainmatched] Qwen/Qwen2.5-3B-Instruct: 116 gate-PASS Qs, 0 trials already done
+[load] Qwen/Qwen2.5-3B-Instruct on cpu fp16...
+[load] done in 4.1s on cpu
+  20/116 questions
+  40/116 questions
+  60/116 questions

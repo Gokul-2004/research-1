@@ -1,0 +1,9 @@
+>>> DOMAIN-MATCHED SPLIT group C: google/gemma-2-9b-it
+>>> google/gemma-2-9b-it  14:51:27
+[domainmatched] google/gemma-2-9b-it: 129 gate-PASS Qs, 50 trials already done
+[load] google/gemma-2-9b-it on cpu fp16...
+[load] done in 387.8s on cpu
+  20/129 questions
+  40/129 questions
+  60/129 questions
+  80/129 questions

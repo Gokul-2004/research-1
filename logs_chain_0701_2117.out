@@ -1,0 +1,1685 @@
+
+============================================================
+>>> MODEL: Qwen/Qwen2.5-3B-Instruct
+>>> 2026-07-01 21:17:20
+============================================================
+[resume] found 150 already-completed questions in Qwen_Qwen2.5-3B-Instruct_20260630T073108Z.jsonl
+
+[config] model=Qwen/Qwen2.5-3B-Instruct  questions=150  out=/home/gk-krishnan/Desktop/Genesis/research-1/results/inference/Qwen_Qwen2.5-3B-Instruct_20260630T073108Z.jsonl
+
+[load] Qwen/Qwen2.5-3B-Instruct on CPU fp16...
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights:   0%|          | 1/434 [00:00<05:39,  1.27it/s]Loading weights:  28%|██▊       | 123/434 [00:00<00:01, 186.55it/s]Loading weights:  44%|████▍     | 190/434 [00:01<00:01, 190.43it/s]Loading weights:  54%|█████▍    | 236/434 [00:01<00:01, 185.63it/s]Loading weights:  62%|██████▏   | 271/434 [00:01<00:00, 190.22it/s]Loading weights:  69%|██████▉   | 301/434 [00:01<00:00, 196.49it/s]Loading weights:  76%|███████▌  | 328/434 [00:01<00:00, 182.06it/s]Loading weights:  81%|████████  | 351/434 [00:02<00:00, 185.66it/s]Loading weights:  86%|████████▋ | 375/434 [00:02<00:00, 183.72it/s]Loading weights:  92%|█████████▏| 399/434 [00:02<00:00, 188.22it/s]Loading weights:  97%|█████████▋| 423/434 [00:02<00:00, 186.93it/s]Loading weights: 100%|██████████| 434/434 [00:02<00:00, 174.28it/s]
+[load] done in 5.5s
+[1/150] sci_001 — already done, skipping
+[2/150] sci_002 — already done, skipping
+[3/150] sci_003 — already done, skipping
+[4/150] sci_004 — already done, skipping
+[5/150] sci_005 — already done, skipping
+[6/150] sci_006 — already done, skipping
+[7/150] sci_007 — already done, skipping
+[8/150] sci_008 — already done, skipping
+[9/150] sci_009 — already done, skipping
+[10/150] sci_010 — already done, skipping
+[11/150] sci_011 — already done, skipping
+[12/150] sci_012 — already done, skipping
+[13/150] sci_013 — already done, skipping
+[14/150] sci_014 — already done, skipping
+[15/150] sci_015 — already done, skipping
+[16/150] sci_016 — already done, skipping
+[17/150] sci_017 — already done, skipping
+[18/150] sci_018 — already done, skipping
+[19/150] sci_019 — already done, skipping
+[20/150] sci_020 — already done, skipping
+[21/150] sci_021 — already done, skipping
+[22/150] sci_022 — already done, skipping
+[23/150] sci_023 — already done, skipping
+[24/150] sci_024 — already done, skipping
+[25/150] sci_025 — already done, skipping
+[26/150] sci_026 — already done, skipping
+[27/150] sci_027 — already done, skipping
+[28/150] sci_028 — already done, skipping
+[29/150] sci_029 — already done, skipping
+[30/150] sci_030 — already done, skipping
+[31/150] sci_031 — already done, skipping
+[32/150] sci_032 — already done, skipping
+[33/150] sci_033 — already done, skipping
+[34/150] sci_034 — already done, skipping
+[35/150] sci_035 — already done, skipping
+[36/150] sci_036 — already done, skipping
+[37/150] sci_037 — already done, skipping
+[38/150] sci_038 — already done, skipping
+[39/150] sci_039 — already done, skipping
+[40/150] sci_040 — already done, skipping
+[41/150] sci_041 — already done, skipping
+[42/150] sci_042 — already done, skipping
+[43/150] sci_043 — already done, skipping
+[44/150] sci_044 — already done, skipping
+[45/150] sci_045 — already done, skipping
+[46/150] sci_046 — already done, skipping
+[47/150] sci_047 — already done, skipping
+[48/150] sci_048 — already done, skipping
+[49/150] sci_049 — already done, skipping
+[50/150] sci_050 — already done, skipping
+[51/150] his_001 — already done, skipping
+[52/150] his_002 — already done, skipping
+[53/150] his_003 — already done, skipping
+[54/150] his_004 — already done, skipping
+[55/150] his_005 — already done, skipping
+[56/150] his_006 — already done, skipping
+[57/150] his_007 — already done, skipping
+[58/150] his_008 — already done, skipping
+[59/150] his_009 — already done, skipping
+[60/150] his_010 — already done, skipping
+[61/150] his_011 — already done, skipping
+[62/150] his_012 — already done, skipping
+[63/150] his_013 — already done, skipping
+[64/150] his_014 — already done, skipping
+[65/150] his_015 — already done, skipping
+[66/150] his_016 — already done, skipping
+[67/150] his_017 — already done, skipping
+[68/150] his_018 — already done, skipping
+[69/150] his_019 — already done, skipping
+[70/150] his_020 — already done, skipping
+[71/150] his_021 — already done, skipping
+[72/150] his_022 — already done, skipping
+[73/150] his_023 — already done, skipping
+[74/150] his_024 — already done, skipping
+[75/150] his_025 — already done, skipping
+[76/150] his_026 — already done, skipping
+[77/150] his_027 — already done, skipping
+[78/150] his_028 — already done, skipping
+[79/150] his_029 — already done, skipping
+[80/150] his_030 — already done, skipping
+[81/150] his_031 — already done, skipping
+[82/150] his_032 — already done, skipping
+[83/150] his_033 — already done, skipping
+[84/150] his_034 — already done, skipping
+[85/150] his_035 — already done, skipping
+[86/150] his_036 — already done, skipping
+[87/150] his_037 — already done, skipping
+[88/150] his_038 — already done, skipping
+[89/150] his_039 — already done, skipping
+[90/150] his_040 — already done, skipping
+[91/150] his_041 — already done, skipping
+[92/150] his_042 — already done, skipping
+[93/150] his_043 — already done, skipping
+[94/150] his_044 — already done, skipping
+[95/150] his_045 — already done, skipping
+[96/150] his_046 — already done, skipping
+[97/150] his_047 — already done, skipping
+[98/150] his_048 — already done, skipping
+[99/150] his_049 — already done, skipping
+[100/150] his_050 — already done, skipping
+[101/150] geo_001 — already done, skipping
+[102/150] geo_002 — already done, skipping
+[103/150] geo_003 — already done, skipping
+[104/150] geo_004 — already done, skipping
+[105/150] geo_005 — already done, skipping
+[106/150] geo_006 — already done, skipping
+[107/150] geo_007 — already done, skipping
+[108/150] geo_008 — already done, skipping
+[109/150] geo_009 — already done, skipping
+[110/150] geo_010 — already done, skipping
+[111/150] geo_011 — already done, skipping
+[112/150] geo_012 — already done, skipping
+[113/150] geo_013 — already done, skipping
+[114/150] geo_014 — already done, skipping
+[115/150] geo_015 — already done, skipping
+[116/150] geo_016 — already done, skipping
+[117/150] geo_017 — already done, skipping
+[118/150] geo_018 — already done, skipping
+[119/150] geo_019 — already done, skipping
+[120/150] geo_020 — already done, skipping
+[121/150] geo_021 — already done, skipping
+[122/150] geo_022 — already done, skipping
+[123/150] geo_023 — already done, skipping
+[124/150] geo_024 — already done, skipping
+[125/150] geo_025 — already done, skipping
+[126/150] geo_026 — already done, skipping
+[127/150] geo_027 — already done, skipping
+[128/150] geo_028 — already done, skipping
+[129/150] geo_029 — already done, skipping
+[130/150] geo_030 — already done, skipping
+[131/150] geo_031 — already done, skipping
+[132/150] geo_032 — already done, skipping
+[133/150] geo_033 — already done, skipping
+[134/150] geo_034 — already done, skipping
+[135/150] geo_035 — already done, skipping
+[136/150] geo_036 — already done, skipping
+[137/150] geo_037 — already done, skipping
+[138/150] geo_038 — already done, skipping
+[139/150] geo_039 — already done, skipping
+[140/150] geo_040 — already done, skipping
+[141/150] geo_041 — already done, skipping
+[142/150] geo_042 — already done, skipping
+[143/150] geo_043 — already done, skipping
+[144/150] geo_044 — already done, skipping
+[145/150] geo_045 — already done, skipping
+[146/150] geo_046 — already done, skipping
+[147/150] geo_047 — already done, skipping
+[148/150] geo_048 — already done, skipping
+[149/150] geo_049 — already done, skipping
+[150/150] geo_050 — already done, skipping
+
+[done] wrote /home/gk-krishnan/Desktop/Genesis/research-1/results/inference/Qwen_Qwen2.5-3B-Instruct_20260630T073108Z.jsonl
+>>> Qwen/Qwen2.5-3B-Instruct COMPLETE at 21:17:33
+
+============================================================
+>>> MODEL: meta-llama/Llama-3.2-3B-Instruct
+>>> 2026-07-01 21:17:33
+============================================================
+[resume] found 150 already-completed questions in meta-llama_Llama-3.2-3B-Instruct_20260630T172509Z.jsonl
+
+[config] model=meta-llama/Llama-3.2-3B-Instruct  questions=150  out=/home/gk-krishnan/Desktop/Genesis/research-1/results/inference/meta-llama_Llama-3.2-3B-Instruct_20260630T172509Z.jsonl
+
+[load] meta-llama/Llama-3.2-3B-Instruct on CPU fp16...
+Loading weights:   0%|          | 0/254 [00:00<?, ?it/s]Loading weights:   0%|          | 1/254 [00:01<04:32,  1.08s/it]Loading weights:  40%|████      | 102/254 [00:01<00:01, 111.00it/s]Loading weights:  55%|█████▍    | 139/254 [00:01<00:01, 109.12it/s]Loading weights:  65%|██████▍   | 164/254 [00:01<00:00, 113.80it/s]Loading weights:  73%|███████▎  | 185/254 [00:02<00:00, 104.80it/s]Loading weights:  79%|███████▉  | 201/254 [00:02<00:00, 106.27it/s]Loading weights:  86%|████████▌ | 219/254 [00:02<00:00, 108.69it/s]Loading weights:  93%|█████████▎| 237/254 [00:02<00:00, 107.48it/s]Loading weights: 100%|██████████| 254/254 [00:02<00:00, 97.86it/s] 
+[load] done in 5.9s
+[1/150] sci_001 — already done, skipping
+[2/150] sci_002 — already done, skipping
+[3/150] sci_003 — already done, skipping
+[4/150] sci_004 — already done, skipping
+[5/150] sci_005 — already done, skipping
+[6/150] sci_006 — already done, skipping
+[7/150] sci_007 — already done, skipping
+[8/150] sci_008 — already done, skipping
+[9/150] sci_009 — already done, skipping
+[10/150] sci_010 — already done, skipping
+[11/150] sci_011 — already done, skipping
+[12/150] sci_012 — already done, skipping
+[13/150] sci_013 — already done, skipping
+[14/150] sci_014 — already done, skipping
+[15/150] sci_015 — already done, skipping
+[16/150] sci_016 — already done, skipping
+[17/150] sci_017 — already done, skipping
+[18/150] sci_018 — already done, skipping
+[19/150] sci_019 — already done, skipping
+[20/150] sci_020 — already done, skipping
+[21/150] sci_021 — already done, skipping
+[22/150] sci_022 — already done, skipping
+[23/150] sci_023 — already done, skipping
+[24/150] sci_024 — already done, skipping
+[25/150] sci_025 — already done, skipping
+[26/150] sci_026 — already done, skipping
+[27/150] sci_027 — already done, skipping
+[28/150] sci_028 — already done, skipping
+[29/150] sci_029 — already done, skipping
+[30/150] sci_030 — already done, skipping
+[31/150] sci_031 — already done, skipping
+[32/150] sci_032 — already done, skipping
+[33/150] sci_033 — already done, skipping
+[34/150] sci_034 — already done, skipping
+[35/150] sci_035 — already done, skipping
+[36/150] sci_036 — already done, skipping
+[37/150] sci_037 — already done, skipping
+[38/150] sci_038 — already done, skipping
+[39/150] sci_039 — already done, skipping
+[40/150] sci_040 — already done, skipping
+[41/150] sci_041 — already done, skipping
+[42/150] sci_042 — already done, skipping
+[43/150] sci_043 — already done, skipping
+[44/150] sci_044 — already done, skipping
+[45/150] sci_045 — already done, skipping
+[46/150] sci_046 — already done, skipping
+[47/150] sci_047 — already done, skipping
+[48/150] sci_048 — already done, skipping
+[49/150] sci_049 — already done, skipping
+[50/150] sci_050 — already done, skipping
+[51/150] his_001 — already done, skipping
+[52/150] his_002 — already done, skipping
+[53/150] his_003 — already done, skipping
+[54/150] his_004 — already done, skipping
+[55/150] his_005 — already done, skipping
+[56/150] his_006 — already done, skipping
+[57/150] his_007 — already done, skipping
+[58/150] his_008 — already done, skipping
+[59/150] his_009 — already done, skipping
+[60/150] his_010 — already done, skipping
+[61/150] his_011 — already done, skipping
+[62/150] his_012 — already done, skipping
+[63/150] his_013 — already done, skipping
+[64/150] his_014 — already done, skipping
+[65/150] his_015 — already done, skipping
+[66/150] his_016 — already done, skipping
+[67/150] his_017 — already done, skipping
+[68/150] his_018 — already done, skipping
+[69/150] his_019 — already done, skipping
+[70/150] his_020 — already done, skipping
+[71/150] his_021 — already done, skipping
+[72/150] his_022 — already done, skipping
+[73/150] his_023 — already done, skipping
+[74/150] his_024 — already done, skipping
+[75/150] his_025 — already done, skipping
+[76/150] his_026 — already done, skipping
+[77/150] his_027 — already done, skipping
+[78/150] his_028 — already done, skipping
+[79/150] his_029 — already done, skipping
+[80/150] his_030 — already done, skipping
+[81/150] his_031 — already done, skipping
+[82/150] his_032 — already done, skipping
+[83/150] his_033 — already done, skipping
+[84/150] his_034 — already done, skipping
+[85/150] his_035 — already done, skipping
+[86/150] his_036 — already done, skipping
+[87/150] his_037 — already done, skipping
+[88/150] his_038 — already done, skipping
+[89/150] his_039 — already done, skipping
+[90/150] his_040 — already done, skipping
+[91/150] his_041 — already done, skipping
+[92/150] his_042 — already done, skipping
+[93/150] his_043 — already done, skipping
+[94/150] his_044 — already done, skipping
+[95/150] his_045 — already done, skipping
+[96/150] his_046 — already done, skipping
+[97/150] his_047 — already done, skipping
+[98/150] his_048 — already done, skipping
+[99/150] his_049 — already done, skipping
+[100/150] his_050 — already done, skipping
+[101/150] geo_001 — already done, skipping
+[102/150] geo_002 — already done, skipping
+[103/150] geo_003 — already done, skipping
+[104/150] geo_004 — already done, skipping
+[105/150] geo_005 — already done, skipping
+[106/150] geo_006 — already done, skipping
+[107/150] geo_007 — already done, skipping
+[108/150] geo_008 — already done, skipping
+[109/150] geo_009 — already done, skipping
+[110/150] geo_010 — already done, skipping
+[111/150] geo_011 — already done, skipping
+[112/150] geo_012 — already done, skipping
+[113/150] geo_013 — already done, skipping
+[114/150] geo_014 — already done, skipping
+[115/150] geo_015 — already done, skipping
+[116/150] geo_016 — already done, skipping
+[117/150] geo_017 — already done, skipping
+[118/150] geo_018 — already done, skipping
+[119/150] geo_019 — already done, skipping
+[120/150] geo_020 — already done, skipping
+[121/150] geo_021 — already done, skipping
+[122/150] geo_022 — already done, skipping
+[123/150] geo_023 — already done, skipping
+[124/150] geo_024 — already done, skipping
+[125/150] geo_025 — already done, skipping
+[126/150] geo_026 — already done, skipping
+[127/150] geo_027 — already done, skipping
+[128/150] geo_028 — already done, skipping
+[129/150] geo_029 — already done, skipping
+[130/150] geo_030 — already done, skipping
+[131/150] geo_031 — already done, skipping
+[132/150] geo_032 — already done, skipping
+[133/150] geo_033 — already done, skipping
+[134/150] geo_034 — already done, skipping
+[135/150] geo_035 — already done, skipping
+[136/150] geo_036 — already done, skipping
+[137/150] geo_037 — already done, skipping
+[138/150] geo_038 — already done, skipping
+[139/150] geo_039 — already done, skipping
+[140/150] geo_040 — already done, skipping
+[141/150] geo_041 — already done, skipping
+[142/150] geo_042 — already done, skipping
+[143/150] geo_043 — already done, skipping
+[144/150] geo_044 — already done, skipping
+[145/150] geo_045 — already done, skipping
+[146/150] geo_046 — already done, skipping
+[147/150] geo_047 — already done, skipping
+[148/150] geo_048 — already done, skipping
+[149/150] geo_049 — already done, skipping
+[150/150] geo_050 — already done, skipping
+
+[done] wrote /home/gk-krishnan/Desktop/Genesis/research-1/results/inference/meta-llama_Llama-3.2-3B-Instruct_20260630T172509Z.jsonl
+>>> meta-llama/Llama-3.2-3B-Instruct COMPLETE at 21:17:43
+
+============================================================
+>>> MODEL: Qwen/Qwen2.5-7B-Instruct
+>>> 2026-07-01 21:17:43
+============================================================
+[resume] found 150 already-completed questions in Qwen_Qwen2.5-7B-Instruct_20260701T004955Z.jsonl
+
+[config] model=Qwen/Qwen2.5-7B-Instruct  questions=150  out=/home/gk-krishnan/Desktop/Genesis/research-1/results/inference/Qwen_Qwen2.5-7B-Instruct_20260701T004955Z.jsonl
+
+[load] Qwen/Qwen2.5-7B-Instruct on CPU fp16...
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:01<07:06,  1.26s/it]Loading weights:   1%|          | 2/339 [00:01<04:23,  1.28it/s]Loading weights:  19%|█▉        | 64/339 [00:01<00:04, 55.41it/s]Loading weights:  23%|██▎       | 78/339 [00:02<00:04, 57.03it/s]Loading weights:  26%|██▋       | 89/339 [00:02<00:04, 59.82it/s]Loading weights:  29%|██▉       | 100/339 [00:02<00:04, 57.48it/s]Loading weights:  33%|███▎      | 112/339 [00:02<00:04, 54.02it/s]Loading weights:  37%|███▋      | 124/339 [00:02<00:03, 53.98it/s]Loading weights:  39%|███▊      | 131/339 [00:03<00:03, 55.53it/s]Loading weights:  41%|████      | 138/339 [00:03<00:04, 49.83it/s]Loading weights:  44%|████▎     | 148/339 [00:03<00:04, 46.70it/s]Loading weights:  47%|████▋     | 160/339 [00:03<00:03, 51.14it/s]Loading weights:  51%|█████     | 172/339 [00:03<00:03, 52.43it/s]Loading weights:  54%|█████▍    | 184/339 [00:04<00:03, 50.85it/s]Loading weights:  58%|█████▊    | 196/339 [00:04<00:02, 52.72it/s]Loading weights:  61%|██████▏   | 208/339 [00:04<00:02, 54.21it/s]Loading weights:  65%|██████▍   | 220/339 [00:04<00:02, 54.88it/s]Loading weights:  68%|██████▊   | 232/339 [00:05<00:02, 53.38it/s]Loading weights:  72%|███████▏  | 244/339 [00:05<00:01, 55.47it/s]Loading weights:  76%|███████▌  | 256/339 [00:05<00:01, 55.92it/s]Loading weights:  79%|███████▉  | 268/339 [00:05<00:01, 56.99it/s]Loading weights:  81%|████████  | 274/339 [00:05<00:01, 56.73it/s]Loading weights:  83%|████████▎ | 280/339 [00:05<00:01, 52.42it/s]Loading weights:  86%|████████▌ | 292/339 [00:06<00:00, 53.92it/s]Loading weights:  90%|████████▉ | 304/339 [00:06<00:00, 49.29it/s]Loading weights:  91%|█████████▏| 310/339 [00:06<00:00, 50.66it/s]Loading weights:  93%|█████████▎| 316/339 [00:06<00:00, 32.95it/s]Loading weights:  95%|█████████▍| 321/339 [00:07<00:00, 31.50it/s]Loading weights:  97%|█████████▋| 328/339 [00:07<00:00, 22.35it/s]Loading weights:  98%|█████████▊| 331/339 [00:07<00:00, 23.07it/s]Loading weights: 100%|██████████| 339/339 [00:07<00:00, 43.64it/s]
+[load] done in 10.6s
+[1/150] sci_001 — already done, skipping
+[2/150] sci_002 — already done, skipping
+[3/150] sci_003 — already done, skipping
+[4/150] sci_004 — already done, skipping
+[5/150] sci_005 — already done, skipping
+[6/150] sci_006 — already done, skipping
+[7/150] sci_007 — already done, skipping
+[8/150] sci_008 — already done, skipping
+[9/150] sci_009 — already done, skipping
+[10/150] sci_010 — already done, skipping
+[11/150] sci_011 — already done, skipping
+[12/150] sci_012 — already done, skipping
+[13/150] sci_013 — already done, skipping
+[14/150] sci_014 — already done, skipping
+[15/150] sci_015 — already done, skipping
+[16/150] sci_016 — already done, skipping
+[17/150] sci_017 — already done, skipping
+[18/150] sci_018 — already done, skipping
+[19/150] sci_019 — already done, skipping
+[20/150] sci_020 — already done, skipping
+[21/150] sci_021 — already done, skipping
+[22/150] sci_022 — already done, skipping
+[23/150] sci_023 — already done, skipping
+[24/150] sci_024 — already done, skipping
+[25/150] sci_025 — already done, skipping
+[26/150] sci_026 — already done, skipping
+[27/150] sci_027 — already done, skipping
+[28/150] sci_028 — already done, skipping
+[29/150] sci_029 — already done, skipping
+[30/150] sci_030 — already done, skipping
+[31/150] sci_031 — already done, skipping
+[32/150] sci_032 — already done, skipping
+[33/150] sci_033 — already done, skipping
+[34/150] sci_034 — already done, skipping
+[35/150] sci_035 — already done, skipping
+[36/150] sci_036 — already done, skipping
+[37/150] sci_037 — already done, skipping
+[38/150] sci_038 — already done, skipping
+[39/150] sci_039 — already done, skipping
+[40/150] sci_040 — already done, skipping
+[41/150] sci_041 — already done, skipping
+[42/150] sci_042 — already done, skipping
+[43/150] sci_043 — already done, skipping
+[44/150] sci_044 — already done, skipping
+[45/150] sci_045 — already done, skipping
+[46/150] sci_046 — already done, skipping
+[47/150] sci_047 — already done, skipping
+[48/150] sci_048 — already done, skipping
+[49/150] sci_049 — already done, skipping
+[50/150] sci_050 — already done, skipping
+[51/150] his_001 — already done, skipping
+[52/150] his_002 — already done, skipping
+[53/150] his_003 — already done, skipping
+[54/150] his_004 — already done, skipping
+[55/150] his_005 — already done, skipping
+[56/150] his_006 — already done, skipping
+[57/150] his_007 — already done, skipping
+[58/150] his_008 — already done, skipping
+[59/150] his_009 — already done, skipping
+[60/150] his_010 — already done, skipping
+[61/150] his_011 — already done, skipping
+[62/150] his_012 — already done, skipping
+[63/150] his_013 — already done, skipping
+[64/150] his_014 — already done, skipping
+[65/150] his_015 — already done, skipping
+[66/150] his_016 — already done, skipping
+[67/150] his_017 — already done, skipping
+[68/150] his_018 — already done, skipping
+[69/150] his_019 — already done, skipping
+[70/150] his_020 — already done, skipping
+[71/150] his_021 — already done, skipping
+[72/150] his_022 — already done, skipping
+[73/150] his_023 — already done, skipping
+[74/150] his_024 — already done, skipping
+[75/150] his_025 — already done, skipping
+[76/150] his_026 — already done, skipping
+[77/150] his_027 — already done, skipping
+[78/150] his_028 — already done, skipping
+[79/150] his_029 — already done, skipping
+[80/150] his_030 — already done, skipping
+[81/150] his_031 — already done, skipping
+[82/150] his_032 — already done, skipping
+[83/150] his_033 — already done, skipping
+[84/150] his_034 — already done, skipping
+[85/150] his_035 — already done, skipping
+[86/150] his_036 — already done, skipping
+[87/150] his_037 — already done, skipping
+[88/150] his_038 — already done, skipping
+[89/150] his_039 — already done, skipping
+[90/150] his_040 — already done, skipping
+[91/150] his_041 — already done, skipping
+[92/150] his_042 — already done, skipping
+[93/150] his_043 — already done, skipping
+[94/150] his_044 — already done, skipping
+[95/150] his_045 — already done, skipping
+[96/150] his_046 — already done, skipping
+[97/150] his_047 — already done, skipping
+[98/150] his_048 — already done, skipping
+[99/150] his_049 — already done, skipping
+[100/150] his_050 — already done, skipping
+[101/150] geo_001 — already done, skipping
+[102/150] geo_002 — already done, skipping
+[103/150] geo_003 — already done, skipping
+[104/150] geo_004 — already done, skipping
+[105/150] geo_005 — already done, skipping
+[106/150] geo_006 — already done, skipping
+[107/150] geo_007 — already done, skipping
+[108/150] geo_008 — already done, skipping
+[109/150] geo_009 — already done, skipping
+[110/150] geo_010 — already done, skipping
+[111/150] geo_011 — already done, skipping
+[112/150] geo_012 — already done, skipping
+[113/150] geo_013 — already done, skipping
+[114/150] geo_014 — already done, skipping
+[115/150] geo_015 — already done, skipping
+[116/150] geo_016 — already done, skipping
+[117/150] geo_017 — already done, skipping
+[118/150] geo_018 — already done, skipping
+[119/150] geo_019 — already done, skipping
+[120/150] geo_020 — already done, skipping
+[121/150] geo_021 — already done, skipping
+[122/150] geo_022 — already done, skipping
+[123/150] geo_023 — already done, skipping
+[124/150] geo_024 — already done, skipping
+[125/150] geo_025 — already done, skipping
+[126/150] geo_026 — already done, skipping
+[127/150] geo_027 — already done, skipping
+[128/150] geo_028 — already done, skipping
+[129/150] geo_029 — already done, skipping
+[130/150] geo_030 — already done, skipping
+[131/150] geo_031 — already done, skipping
+[132/150] geo_032 — already done, skipping
+[133/150] geo_033 — already done, skipping
+[134/150] geo_034 — already done, skipping
+[135/150] geo_035 — already done, skipping
+[136/150] geo_036 — already done, skipping
+[137/150] geo_037 — already done, skipping
+[138/150] geo_038 — already done, skipping
+[139/150] geo_039 — already done, skipping
+[140/150] geo_040 — already done, skipping
+[141/150] geo_041 — already done, skipping
+[142/150] geo_042 — already done, skipping
+[143/150] geo_043 — already done, skipping
+[144/150] geo_044 — already done, skipping
+[145/150] geo_045 — already done, skipping
+[146/150] geo_046 — already done, skipping
+[147/150] geo_047 — already done, skipping
+[148/150] geo_048 — already done, skipping
+[149/150] geo_049 — already done, skipping
+[150/150] geo_050 — already done, skipping
+
+[done] wrote /home/gk-krishnan/Desktop/Genesis/research-1/results/inference/Qwen_Qwen2.5-7B-Instruct_20260701T004955Z.jsonl
+>>> Qwen/Qwen2.5-7B-Instruct COMPLETE at 21:18:00
+
+============================================================
+>>> MODEL: mistralai/Mistral-7B-Instruct-v0.3
+>>> 2026-07-01 21:18:00
+============================================================
+[resume] found 22 already-completed questions in mistralai_Mistral-7B-Instruct-v0.3_20260701T141455Z.jsonl
+
+[config] model=mistralai/Mistral-7B-Instruct-v0.3  questions=150  out=/home/gk-krishnan/Desktop/Genesis/research-1/results/inference/mistralai_Mistral-7B-Instruct-v0.3_20260701T141455Z.jsonl
+
+[load] mistralai/Mistral-7B-Instruct-v0.3 on CPU fp16...
+Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]Loading weights:   0%|          | 1/291 [00:00<01:03,  4.55it/s]Loading weights:   1%|          | 2/291 [00:00<00:55,  5.24it/s]Loading weights:   5%|▌         | 15/291 [00:00<00:06, 40.24it/s]Loading weights:   8%|▊         | 22/291 [00:00<00:06, 44.04it/s]Loading weights:  11%|█         | 31/291 [00:00<00:05, 46.22it/s]Loading weights:  14%|█▎        | 40/291 [00:01<00:05, 48.14it/s]Loading weights:  17%|█▋        | 49/291 [00:01<00:04, 51.16it/s]Loading weights:  20%|█▉        | 58/291 [00:01<00:04, 50.49it/s]Loading weights:  23%|██▎       | 67/291 [00:01<00:04, 49.79it/s]Loading weights:  26%|██▌       | 76/291 [00:01<00:04, 49.39it/s]Loading weights:  29%|██▉       | 85/291 [00:01<00:04, 51.30it/s]Loading weights:  32%|███▏      | 94/291 [00:02<00:03, 54.49it/s]Loading weights:  35%|███▌      | 103/291 [00:02<00:03, 52.11it/s]Loading weights:  38%|███▊      | 112/291 [00:02<00:03, 51.99it/s]Loading weights:  42%|████▏     | 121/291 [00:02<00:03, 49.65it/s]Loading weights:  45%|████▍     | 130/291 [00:02<00:03, 51.55it/s]Loading weights:  48%|████▊     | 139/291 [00:03<00:03, 43.64it/s]Loading weights:  51%|█████     | 148/291 [00:03<00:03, 38.91it/s]Loading weights:  54%|█████▍    | 157/291 [00:03<00:03, 36.10it/s]Loading weights:  57%|█████▋    | 166/291 [00:03<00:03, 40.44it/s]Loading weights:  60%|██████    | 175/291 [00:03<00:02, 40.38it/s]Loading weights:  63%|██████▎   | 184/291 [00:04<00:02, 41.77it/s]Loading weights:  66%|██████▋   | 193/291 [00:04<00:02, 42.76it/s]Loading weights:  69%|██████▉   | 202/291 [00:04<00:02, 42.18it/s]Loading weights:  73%|███████▎  | 211/291 [00:04<00:01, 43.87it/s]Loading weights:  76%|███████▌  | 220/291 [00:04<00:01, 45.44it/s]Loading weights:  79%|███████▊  | 229/291 [00:05<00:01, 46.02it/s]Loading weights:  82%|████████▏ | 238/291 [00:05<00:01, 47.82it/s]Loading weights:  85%|████████▍ | 247/291 [00:05<00:00, 48.21it/s]Loading weights:  88%|████████▊ | 256/291 [00:05<00:00, 47.90it/s]Loading weights:  91%|█████████ | 265/291 [00:05<00:00, 48.46it/s]Loading weights:  94%|█████████▍| 274/291 [00:06<00:00, 46.90it/s]Loading weights:  97%|█████████▋| 283/291 [00:06<00:00, 46.55it/s]Loading weights: 100%|██████████| 291/291 [00:06<00:00, 46.19it/s]
+[load] done in 9.1s
+[1/150] sci_001 — already done, skipping
+[2/150] sci_002 — already done, skipping
+[3/150] sci_003 — already done, skipping
+[4/150] sci_004 — already done, skipping
+[5/150] sci_005 — already done, skipping
+[6/150] sci_006 — already done, skipping
+[7/150] sci_007 — already done, skipping
+[8/150] sci_008 — already done, skipping
+[9/150] sci_009 — already done, skipping
+[10/150] sci_010 — already done, skipping
+[11/150] sci_011 — already done, skipping
+[12/150] sci_012 — already done, skipping
+[13/150] sci_013 — already done, skipping
+[14/150] sci_014 — already done, skipping
+[15/150] sci_015 — already done, skipping
+[16/150] sci_016 — already done, skipping
+[17/150] sci_017 — already done, skipping
+[18/150] sci_018 — already done, skipping
+[19/150] sci_019 — already done, skipping
+[20/150] sci_020 — already done, skipping
+[21/150] sci_021 — already done, skipping
+[22/150] sci_022 — already done, skipping
+
+[23/150] sci_023 (Science)
+  turn-1: predicted=D  correct=D  logP(correct)=-0.000  logP(wrongX)=-10.664
+  inc|control → HELD  logP(correct)=-0.350  logP(wrongX)=-1.225
+  inc|low     → HELD  logP(correct)=-0.116  logP(wrongX)=-8.452
+  inc|medium  → HELD  logP(correct)=-0.524  logP(wrongX)=-8.884
+  inc|high    → FLIPPED D→A  logP(correct)=-0.727  logP(wrongX)=-6.602
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-11.298
+  cor|low     → HELD  logP(correct)=-0.076  logP(wrongX)=-11.255
+  cor|medium  → HELD  logP(correct)=-0.020  logP(wrongX)=-11.895
+  cor|high    → HELD  logP(correct)=-0.002  logP(wrongX)=-12.119
+
+[24/150] sci_024 (Science)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.011  logP(wrongX)=-19.358
+  inc|control → FLIPPED A→D  logP(correct)=-3.668  logP(wrongX)=-0.028
+  inc|low     → HELD  logP(correct)=-0.092  logP(wrongX)=-2.467
+  inc|medium  → HELD  logP(correct)=-0.113  logP(wrongX)=-2.254
+  inc|high    → HELD  logP(correct)=-0.213  logP(wrongX)=-1.666
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-10.556
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-12.306
+  cor|medium  → HELD  logP(correct)=-0.001  logP(wrongX)=-12.149
+  cor|high    → HELD  logP(correct)=-0.001  logP(wrongX)=-12.852
+
+[25/150] sci_025 (Science)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.000  logP(wrongX)=-15.344
+  inc|control → FLIPPED A→D  logP(correct)=-1.631  logP(wrongX)=-0.241
+  inc|low     → HELD  logP(correct)=-0.355  logP(wrongX)=-1.277
+  inc|medium  → HELD  logP(correct)=-0.478  logP(wrongX)=-1.103
+  inc|high    → HELD  logP(correct)=-0.673  logP(wrongX)=-0.783
+  cor|control → HELD  logP(correct)=-0.043  logP(wrongX)=-9.464
+  cor|low     → HELD  logP(correct)=-0.002  logP(wrongX)=-9.174
+  cor|medium  → HELD  logP(correct)=-0.003  logP(wrongX)=-10.268
+  cor|high    → HELD  logP(correct)=-0.005  logP(wrongX)=-10.450
+
+[26/150] sci_026 (Science)
+  turn-1: predicted=A  correct=C  logP(correct)=-8.933  logP(wrongX)=-13.667
+  gate: ALREADY_WRONG — skipping all tiers
+
+[27/150] sci_027 (Science)
+  turn-1: predicted=C  correct=D  logP(correct)=-3.879  logP(wrongX)=-0.300
+  gate: ALREADY_WRONG — skipping all tiers
+
+[28/150] sci_028 (Science)
+  turn-1: predicted=D  correct=D  logP(correct)=-0.004  logP(wrongX)=-19.520
+  inc|control → FLIPPED D→C  logP(correct)=-4.218  logP(wrongX)=-0.077
+  inc|low     → HELD  logP(correct)=-0.349  logP(wrongX)=-6.052
+  inc|medium  → FLIPPED D→A  logP(correct)=-2.989  logP(wrongX)=-4.442
+  inc|high    → FLIPPED D→A  logP(correct)=-2.515  logP(wrongX)=-3.124
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-13.119
+  cor|low     → FLIPPED D→A  logP(correct)=-3.804  logP(wrongX)=-14.914
+  cor|medium  → FLIPPED D→A  logP(correct)=-4.357  logP(wrongX)=-15.814
+  cor|high    → FLIPPED D→A  logP(correct)=-1.728  logP(wrongX)=-14.720
+
+[29/150] sci_029 (Science)
+  turn-1: predicted=A  correct=C  logP(correct)=-7.757  logP(wrongX)=-8.023
+  gate: ALREADY_WRONG — skipping all tiers
+
+[30/150] sci_030 (Science)
+  turn-1: predicted=D  correct=D  logP(correct)=-0.000  logP(wrongX)=-15.758
+  inc|control → FLIPPED D→C  logP(correct)=-2.536  logP(wrongX)=-0.098
+  inc|low     → FLIPPED D→C  logP(correct)=-2.800  logP(wrongX)=-0.441
+  inc|medium  → FLIPPED D→C  logP(correct)=-2.028  logP(wrongX)=-0.419
+  inc|high    → FLIPPED D→C  logP(correct)=-2.014  logP(wrongX)=-0.343
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-12.516
+  cor|low     → HELD  logP(correct)=-0.006  logP(wrongX)=-13.272
+  cor|medium  → HELD  logP(correct)=-0.008  logP(wrongX)=-13.305
+  cor|high    → HELD  logP(correct)=-0.004  logP(wrongX)=-13.278
+
+[31/150] sci_031 (Science)
+  turn-1: predicted=B  correct=B  logP(correct)=-0.000  logP(wrongX)=-16.949
+  inc|control → FLIPPED B→D  logP(correct)=-4.569  logP(wrongX)=-0.076
+  inc|low     → HELD  logP(correct)=-0.133  logP(wrongX)=-5.234
+  inc|medium  → HELD  logP(correct)=-0.150  logP(wrongX)=-4.510
+  inc|high    → HELD  logP(correct)=-0.164  logP(wrongX)=-4.054
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-11.017
+  cor|low     → HELD  logP(correct)=-0.005  logP(wrongX)=-12.302
+  cor|medium  → HELD  logP(correct)=-0.004  logP(wrongX)=-12.441
+  cor|high    → HELD  logP(correct)=-0.006  logP(wrongX)=-11.060
+
+[32/150] sci_032 (Science)
+  turn-1: predicted=A  correct=D  logP(correct)=-4.204  logP(wrongX)=-10.181
+  gate: ALREADY_WRONG — skipping all tiers
+
+[33/150] sci_033 (Science)
+  turn-1: predicted=A  correct=D  logP(correct)=-3.830  logP(wrongX)=-2.158
+  gate: ALREADY_WRONG — skipping all tiers
+
+[34/150] sci_034 (Science)
+  turn-1: predicted=A  correct=C  logP(correct)=-6.663  logP(wrongX)=-11.398
+  gate: ALREADY_WRONG — skipping all tiers
+
+[35/150] sci_035 (Science)
+  turn-1: predicted=C  correct=C  logP(correct)=-0.026  logP(wrongX)=-13.253
+  inc|control → FLIPPED C→D  logP(correct)=-4.792  logP(wrongX)=-0.011
+  inc|low     → FLIPPED C→A  logP(correct)=-2.429  logP(wrongX)=-1.616
+  inc|medium  → FLIPPED C→A  logP(correct)=-1.918  logP(wrongX)=-1.121
+  inc|high    → FLIPPED C→D  logP(correct)=-1.751  logP(wrongX)=-0.657
+  cor|control → HELD  logP(correct)=-0.002  logP(wrongX)=-8.299
+  cor|low     → FLIPPED C→D  logP(correct)=-1.276  logP(wrongX)=-0.667
+  cor|medium  → HELD  logP(correct)=-0.645  logP(wrongX)=-1.285
+  cor|high    → HELD  logP(correct)=-0.572  logP(wrongX)=-1.259
+
+[36/150] sci_036 (Science)
+  turn-1: predicted=C  correct=D  logP(correct)=-1.357  logP(wrongX)=-0.811
+  gate: ALREADY_WRONG — skipping all tiers
+
+[37/150] sci_037 (Science)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.039  logP(wrongX)=-18.348
+  inc|control → FLIPPED A→D  logP(correct)=-3.722  logP(wrongX)=-0.035
+  inc|low     → FLIPPED A→D  logP(correct)=-1.008  logP(wrongX)=-0.461
+  inc|medium  → FLIPPED A→D  logP(correct)=-2.063  logP(wrongX)=-0.141
+  inc|high    → FLIPPED A→D  logP(correct)=-2.382  logP(wrongX)=-0.101
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-14.196
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-14.938
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-15.196
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-15.481
+
+[38/150] sci_038 (Science)
+  turn-1: predicted=B  correct=C  logP(correct)=-15.677  logP(wrongX)=-15.638
+  gate: ALREADY_WRONG — skipping all tiers
+
+[39/150] sci_039 (Science)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.000  logP(wrongX)=-14.023
+  inc|control → FLIPPED A→D  logP(correct)=-4.175  logP(wrongX)=-0.018
+  inc|low     → HELD  logP(correct)=-0.419  logP(wrongX)=-1.091
+  inc|medium  → HELD  logP(correct)=-0.224  logP(wrongX)=-1.614
+  inc|high    → HELD  logP(correct)=-0.332  logP(wrongX)=-1.269
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-11.907
+  cor|low     → HELD  logP(correct)=-0.071  logP(wrongX)=-2.758
+  cor|medium  → HELD  logP(correct)=-0.011  logP(wrongX)=-4.605
+  cor|high    → HELD  logP(correct)=-0.077  logP(wrongX)=-2.670
+
+[40/150] sci_040 (Science)
+  turn-1: predicted=B  correct=D  logP(correct)=-13.617  logP(wrongX)=-17.238
+  gate: ALREADY_WRONG — skipping all tiers
+
+[41/150] sci_041 (Science)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.000  logP(wrongX)=-18.672
+  inc|control → FLIPPED A→D  logP(correct)=-2.061  logP(wrongX)=-0.139
+  inc|low     → HELD  logP(correct)=-0.069  logP(wrongX)=-2.757
+  inc|medium  → HELD  logP(correct)=-0.069  logP(wrongX)=-2.726
+  inc|high    → HELD  logP(correct)=-0.205  logP(wrongX)=-1.689
+  cor|control → HELD  logP(correct)=-0.002  logP(wrongX)=-14.861
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-15.633
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-15.957
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-16.356
+
+[42/150] sci_042 (Science)
+  turn-1: predicted=C  correct=C  logP(correct)=-0.002  logP(wrongX)=-17.474
+  inc|control → HELD  logP(correct)=-0.017  logP(wrongX)=-4.392
+  inc|low     → HELD  logP(correct)=-0.177  logP(wrongX)=-2.599
+  inc|medium  → HELD  logP(correct)=-0.119  logP(wrongX)=-3.463
+  inc|high    → HELD  logP(correct)=-0.739  logP(wrongX)=-1.489
+  cor|control → HELD  logP(correct)=-0.002  logP(wrongX)=-11.517
+  cor|low     → HELD  logP(correct)=-0.003  logP(wrongX)=-13.277
+  cor|medium  → HELD  logP(correct)=-0.003  logP(wrongX)=-13.846
+  cor|high    → HELD  logP(correct)=-0.002  logP(wrongX)=-13.307
+
+[43/150] sci_043 (Science)
+  turn-1: predicted=D  correct=B  logP(correct)=-1.662  logP(wrongX)=-0.224
+  gate: ALREADY_WRONG — skipping all tiers
+
+[44/150] sci_044 (Science)
+  turn-1: predicted=A  correct=B  logP(correct)=-14.836  logP(wrongX)=-13.430
+  gate: ALREADY_WRONG — skipping all tiers
+
+[45/150] sci_045 (Science)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.125  logP(wrongX)=-15.629
+  inc|control → HELD  logP(correct)=-0.654  logP(wrongX)=-0.779
+  inc|low     → HELD  logP(correct)=-0.007  logP(wrongX)=-5.351
+  inc|medium  → HELD  logP(correct)=-0.010  logP(wrongX)=-4.947
+  inc|high    → HELD  logP(correct)=-0.046  logP(wrongX)=-3.280
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-14.337
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-14.258
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-14.524
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-14.625
+
+[46/150] sci_046 (Science)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.005  logP(wrongX)=-19.407
+  inc|control → FLIPPED A→D  logP(correct)=-3.233  logP(wrongX)=-0.124
+  inc|low     → HELD  logP(correct)=-0.076  logP(wrongX)=-4.060
+  inc|medium  → HELD  logP(correct)=-0.195  logP(wrongX)=-2.132
+  inc|high    → HELD  logP(correct)=-0.797  logP(wrongX)=-1.203
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-13.541
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-15.485
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-15.762
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-15.508
+
+[47/150] sci_047 (Science)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.012  logP(wrongX)=-7.371
+  inc|control → FLIPPED A→D  logP(correct)=-4.499  logP(wrongX)=-0.093
+  inc|low     → HELD  logP(correct)=-0.710  logP(wrongX)=-0.788
+  inc|medium  → FLIPPED A→D  logP(correct)=-0.838  logP(wrongX)=-0.666
+  inc|high    → FLIPPED A→D  logP(correct)=-0.776  logP(wrongX)=-0.760
+  cor|control → HELD  logP(correct)=-0.000  logP(wrongX)=-13.164
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-12.438
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-12.078
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-11.227
+
+[48/150] sci_048 (Science)
+  turn-1: predicted=B  correct=B  logP(correct)=-0.001  logP(wrongX)=-16.629
+  inc|control → FLIPPED B→D  logP(correct)=-1.623  logP(wrongX)=-0.248
+  inc|low     → HELD  logP(correct)=-0.147  logP(wrongX)=-2.569
+  inc|medium  → HELD  logP(correct)=-0.983  logP(wrongX)=-1.108
+  inc|high    → FLIPPED B→D  logP(correct)=-1.423  logP(wrongX)=-0.735
+  cor|control → HELD  logP(correct)=-0.003  logP(wrongX)=-10.096
+  cor|low     → FLIPPED B→A  logP(correct)=-5.972  logP(wrongX)=-14.913
+  cor|medium  → FLIPPED B→A  logP(correct)=-5.941  logP(wrongX)=-15.300
+  cor|high    → FLIPPED B→A  logP(correct)=-5.256  logP(wrongX)=-15.303
+
+[49/150] sci_049 (Science)
+  turn-1: predicted=C  correct=C  logP(correct)=-0.000  logP(wrongX)=-17.840
+  inc|control → FLIPPED C→D  logP(correct)=-7.058  logP(wrongX)=-0.027
+  inc|low     → FLIPPED C→D  logP(correct)=-6.801  logP(wrongX)=-0.059
+  inc|medium  → FLIPPED C→D  logP(correct)=-7.058  logP(wrongX)=-0.120
+  inc|high    → FLIPPED C→D  logP(correct)=-7.012  logP(wrongX)=-0.083
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-12.915
+  cor|low     → FLIPPED C→A  logP(correct)=-2.436  logP(wrongX)=-14.987
+  cor|medium  → FLIPPED C→A  logP(correct)=-2.754  logP(wrongX)=-15.277
+  cor|high    → HELD  logP(correct)=-0.336  logP(wrongX)=-14.808
+
+[50/150] sci_050 (Science)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.006  logP(wrongX)=-19.521
+  inc|control → HELD  logP(correct)=-0.045  logP(wrongX)=-3.725
+  inc|low     → HELD  logP(correct)=-0.025  logP(wrongX)=-4.806
+  inc|medium  → HELD  logP(correct)=-0.011  logP(wrongX)=-5.386
+  inc|high    → HELD  logP(correct)=-0.132  logP(wrongX)=-2.679
+  cor|control → HELD  logP(correct)=-0.002  logP(wrongX)=-13.408
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-16.208
+  cor|medium  → HELD  logP(correct)=-0.001  logP(wrongX)=-15.977
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-16.192
+
+[51/150] his_001 (History)
+  turn-1: predicted=A  correct=C  logP(correct)=-16.566  logP(wrongX)=-11.617
+  gate: ALREADY_WRONG — skipping all tiers
+
+[52/150] his_002 (History)
+  turn-1: predicted=D  correct=D  logP(correct)=-0.000  logP(wrongX)=-18.344
+  inc|control → FLIPPED D→C  logP(correct)=-3.528  logP(wrongX)=-0.044
+  inc|low     → HELD  logP(correct)=-0.264  logP(wrongX)=-1.514
+  inc|medium  → FLIPPED D→C  logP(correct)=-1.864  logP(wrongX)=-0.208
+  inc|high    → FLIPPED D→C  logP(correct)=-2.762  logP(wrongX)=-0.090
+  cor|control → HELD  logP(correct)=-0.003  logP(wrongX)=-12.995
+  cor|low     → HELD  logP(correct)=-0.003  logP(wrongX)=-12.839
+  cor|medium  → HELD  logP(correct)=-0.016  logP(wrongX)=-13.328
+  cor|high    → HELD  logP(correct)=-0.013  logP(wrongX)=-12.263
+
+[53/150] his_003 (History)
+  turn-1: predicted=D  correct=A  logP(correct)=-2.783  logP(wrongX)=-0.064
+  gate: ALREADY_WRONG — skipping all tiers
+
+[54/150] his_004 (History)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.000  logP(wrongX)=-13.922
+  inc|control → FLIPPED A→D  logP(correct)=-8.220  logP(wrongX)=-0.002
+  inc|low     → FLIPPED A→D  logP(correct)=-1.342  logP(wrongX)=-0.342
+  inc|medium  → FLIPPED A→D  logP(correct)=-1.244  logP(wrongX)=-0.353
+  inc|high    → FLIPPED A→D  logP(correct)=-1.274  logP(wrongX)=-0.337
+  cor|control → HELD  logP(correct)=-0.002  logP(wrongX)=-11.854
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-15.864
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-16.215
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-16.379
+
+[55/150] his_005 (History)
+  turn-1: predicted=C  correct=C  logP(correct)=-0.000  logP(wrongX)=-17.699
+  inc|control → FLIPPED C→D  logP(correct)=-7.540  logP(wrongX)=-0.001
+  inc|low     → FLIPPED C→D  logP(correct)=-5.553  logP(wrongX)=-0.147
+  inc|medium  → FLIPPED C→D  logP(correct)=-5.894  logP(wrongX)=-0.128
+  inc|high    → FLIPPED C→D  logP(correct)=-5.729  logP(wrongX)=-0.104
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-11.649
+  cor|low     → HELD  logP(correct)=-0.634  logP(wrongX)=-13.794
+  cor|medium  → FLIPPED C→A  logP(correct)=-2.281  logP(wrongX)=-14.702
+  cor|high    → HELD  logP(correct)=-0.302  logP(wrongX)=-14.498
+
+[56/150] his_006 (History)
+  turn-1: predicted=C  correct=C  logP(correct)=-0.000  logP(wrongX)=-18.203
+  inc|control → HELD  logP(correct)=-0.011  logP(wrongX)=-7.612
+  inc|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-11.946
+  inc|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-11.540
+  inc|high    → HELD  logP(correct)=-0.001  logP(wrongX)=-9.774
+  cor|control → HELD  logP(correct)=-0.003  logP(wrongX)=-12.574
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-13.712
+  cor|medium  → HELD  logP(correct)=-0.001  logP(wrongX)=-14.165
+  cor|high    → HELD  logP(correct)=-0.001  logP(wrongX)=-13.579
+
+[57/150] his_007 (History)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.011  logP(wrongX)=-17.827
+  inc|control → FLIPPED A→D  logP(correct)=-1.582  logP(wrongX)=-0.239
+  inc|low     → HELD  logP(correct)=-0.005  logP(wrongX)=-5.458
+  inc|medium  → HELD  logP(correct)=-0.053  logP(wrongX)=-3.006
+  inc|high    → HELD  logP(correct)=-0.042  logP(wrongX)=-3.214
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-14.610
+  cor|low     → HELD  logP(correct)=-0.002  logP(wrongX)=-14.353
+  cor|medium  → HELD  logP(correct)=-0.001  logP(wrongX)=-15.205
+  cor|high    → HELD  logP(correct)=-0.001  logP(wrongX)=-16.040
+
+[58/150] his_008 (History)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.004  logP(wrongX)=-13.886
+  inc|control → FLIPPED A→D  logP(correct)=-5.848  logP(wrongX)=-0.005
+  inc|low     → HELD  logP(correct)=-0.268  logP(wrongX)=-1.518
+  inc|medium  → HELD  logP(correct)=-0.525  logP(wrongX)=-0.900
+  inc|high    → FLIPPED A→D  logP(correct)=-1.138  logP(wrongX)=-0.388
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-13.704
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-14.953
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-15.524
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-15.891
+
+[59/150] his_009 (History)
+  turn-1: predicted=D  correct=D  logP(correct)=-0.000  logP(wrongX)=-18.285
+  inc|control → FLIPPED D→C  logP(correct)=-5.937  logP(wrongX)=-0.007
+  inc|low     → HELD  logP(correct)=-0.004  logP(wrongX)=-5.965
+  inc|medium  → HELD  logP(correct)=-0.226  logP(wrongX)=-1.616
+  inc|high    → FLIPPED D→C  logP(correct)=-2.784  logP(wrongX)=-0.065
+  cor|control → HELD  logP(correct)=-0.002  logP(wrongX)=-12.096
+  cor|low     → FLIPPED D→A  logP(correct)=-5.723  logP(wrongX)=-15.176
+  cor|medium  → FLIPPED D→A  logP(correct)=-5.568  logP(wrongX)=-15.505
+  cor|high    → FLIPPED D→A  logP(correct)=-5.086  logP(wrongX)=-15.449
+
+[60/150] his_010 (History)
+  turn-1: predicted=A  correct=C  logP(correct)=-0.829  logP(wrongX)=-12.517
+  gate: ALREADY_WRONG — skipping all tiers
+
+[61/150] his_011 (History)
+  turn-1: predicted=B  correct=B  logP(correct)=-0.027  logP(wrongX)=-16.988
+  inc|control → HELD  logP(correct)=-0.473  logP(wrongX)=-6.208
+  inc|low     → FLIPPED B→A  logP(correct)=-6.872  logP(wrongX)=-3.716
+  inc|medium  → FLIPPED B→A  logP(correct)=-6.889  logP(wrongX)=-3.037
+  inc|high    → FLIPPED B→A  logP(correct)=-7.169  logP(wrongX)=-1.653
+  cor|control → HELD  logP(correct)=-0.012  logP(wrongX)=-11.340
+  cor|low     → FLIPPED B→A  logP(correct)=-7.196  logP(wrongX)=-16.665
+  cor|medium  → FLIPPED B→A  logP(correct)=-7.735  logP(wrongX)=-17.059
+  cor|high    → FLIPPED B→A  logP(correct)=-7.142  logP(wrongX)=-17.443
+
+[62/150] his_012 (History)
+  turn-1: predicted=D  correct=D  logP(correct)=-0.000  logP(wrongX)=-12.875
+  inc|control → FLIPPED D→C  logP(correct)=-2.871  logP(wrongX)=-0.105
+  inc|low     → HELD  logP(correct)=-0.392  logP(wrongX)=-2.423
+  inc|medium  → HELD  logP(correct)=-0.860  logP(wrongX)=-1.610
+  inc|high    → HELD  logP(correct)=-0.869  logP(wrongX)=-1.072
+  cor|control → HELD  logP(correct)=-0.002  logP(wrongX)=-12.049
+  cor|low     → FLIPPED D→A  logP(correct)=-4.065  logP(wrongX)=-14.174
+  cor|medium  → FLIPPED D→A  logP(correct)=-4.373  logP(wrongX)=-14.553
+  cor|high    → FLIPPED D→A  logP(correct)=-2.639  logP(wrongX)=-13.998
+
+[63/150] his_013 (History)
+  turn-1: predicted=B  correct=B  logP(correct)=-0.000  logP(wrongX)=-15.828
+  inc|control → FLIPPED B→D  logP(correct)=-1.968  logP(wrongX)=-0.218
+  inc|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-9.719
+  inc|medium  → HELD  logP(correct)=-0.001  logP(wrongX)=-7.610
+  inc|high    → HELD  logP(correct)=-0.001  logP(wrongX)=-7.033
+  cor|control → HELD  logP(correct)=-0.002  logP(wrongX)=-12.400
+  cor|low     → HELD  logP(correct)=-0.403  logP(wrongX)=-14.568
+  cor|medium  → FLIPPED B→A  logP(correct)=-1.097  logP(wrongX)=-14.191
+  cor|high    → FLIPPED B→A  logP(correct)=-1.036  logP(wrongX)=-14.005
+
+[64/150] his_014 (History)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.000  logP(wrongX)=-14.703
+  inc|control → FLIPPED A→D  logP(correct)=-2.422  logP(wrongX)=-0.110
+  inc|low     → HELD  logP(correct)=-0.210  logP(wrongX)=-1.866
+  inc|medium  → HELD  logP(correct)=-0.764  logP(wrongX)=-0.764
+  inc|high    → FLIPPED A→D  logP(correct)=-1.185  logP(wrongX)=-0.497
+  cor|control → HELD  logP(correct)=-0.002  logP(wrongX)=-12.853
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-8.345
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-10.157
+  cor|high    → HELD  logP(correct)=-0.001  logP(wrongX)=-9.563
+
+[65/150] his_015 (History)
+  turn-1: predicted=D  correct=D  logP(correct)=-0.006  logP(wrongX)=-15.725
+  inc|control → FLIPPED D→C  logP(correct)=-8.201  logP(wrongX)=-0.005
+  inc|low     → FLIPPED D→A  logP(correct)=-6.182  logP(wrongX)=-1.331
+  inc|medium  → FLIPPED D→A  logP(correct)=-6.529  logP(wrongX)=-1.506
+  inc|high    → FLIPPED D→A  logP(correct)=-7.560  logP(wrongX)=-1.248
+  cor|control → HELD  logP(correct)=-0.004  logP(wrongX)=-12.340
+  cor|low     → FLIPPED D→A  logP(correct)=-4.543  logP(wrongX)=-15.054
+  cor|medium  → FLIPPED D→A  logP(correct)=-5.380  logP(wrongX)=-15.759
+  cor|high    → FLIPPED D→A  logP(correct)=-4.728  logP(wrongX)=-15.853
+
+[66/150] his_016 (History)
+  turn-1: predicted=A  correct=B  logP(correct)=-14.371  logP(wrongX)=-2.550
+  gate: ALREADY_WRONG — skipping all tiers
+
+[67/150] his_017 (History)
+  turn-1: predicted=C  correct=C  logP(correct)=-0.000  logP(wrongX)=-10.250
+  inc|control → FLIPPED C→D  logP(correct)=-2.849  logP(wrongX)=-0.068
+  inc|low     → FLIPPED C→A  logP(correct)=-3.871  logP(wrongX)=-1.699
+  inc|medium  → FLIPPED C→A  logP(correct)=-4.476  logP(wrongX)=-1.663
+  inc|high    → FLIPPED C→A  logP(correct)=-4.724  logP(wrongX)=-0.880
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-9.915
+  cor|low     → FLIPPED C→A  logP(correct)=-5.878  logP(wrongX)=-13.933
+  cor|medium  → FLIPPED C→A  logP(correct)=-5.582  logP(wrongX)=-14.512
+  cor|high    → FLIPPED C→A  logP(correct)=-2.565  logP(wrongX)=-13.823
+
+[68/150] his_018 (History)
+  turn-1: predicted=B  correct=B  logP(correct)=-0.000  logP(wrongX)=-18.930
+  inc|control → FLIPPED B→A  logP(correct)=-6.813  logP(wrongX)=-1.992
+  inc|low     → FLIPPED B→A  logP(correct)=-6.312  logP(wrongX)=-4.765
+  inc|medium  → FLIPPED B→A  logP(correct)=-6.471  logP(wrongX)=-4.331
+  inc|high    → FLIPPED B→A  logP(correct)=-6.123  logP(wrongX)=-3.490
+  cor|control → HELD  logP(correct)=-0.009  logP(wrongX)=-10.564
+  cor|low     → FLIPPED B→A  logP(correct)=-7.462  logP(wrongX)=-13.955
+  cor|medium  → FLIPPED B→A  logP(correct)=-7.072  logP(wrongX)=-13.697
+  cor|high    → FLIPPED B→A  logP(correct)=-5.738  logP(wrongX)=-14.316
+
+[69/150] his_019 (History)
+  turn-1: predicted=A  correct=C  logP(correct)=-12.488  logP(wrongX)=-14.121
+  gate: ALREADY_WRONG — skipping all tiers
+
+[70/150] his_020 (History)
+  turn-1: predicted=A  correct=B  logP(correct)=-2.586  logP(wrongX)=-14.812
+  gate: ALREADY_WRONG — skipping all tiers
+
+[71/150] his_021 (History)
+  turn-1: predicted=B  correct=B  logP(correct)=-0.008  logP(wrongX)=-19.812
+  inc|control → FLIPPED B→D  logP(correct)=-5.204  logP(wrongX)=-0.454
+  inc|low     → FLIPPED B→A  logP(correct)=-5.995  logP(wrongX)=-2.503
+  inc|medium  → FLIPPED B→A  logP(correct)=-7.387  logP(wrongX)=-3.215
+  inc|high    → FLIPPED B→A  logP(correct)=-7.582  logP(wrongX)=-2.253
+  cor|control → HELD  logP(correct)=-0.005  logP(wrongX)=-11.162
+  cor|low     → FLIPPED B→A  logP(correct)=-7.743  logP(wrongX)=-15.493
+  cor|medium  → FLIPPED B→A  logP(correct)=-8.602  logP(wrongX)=-16.036
+  cor|high    → FLIPPED B→A  logP(correct)=-7.626  logP(wrongX)=-16.341
+
+[72/150] his_022 (History)
+  turn-1: predicted=D  correct=A  logP(correct)=-8.063  logP(wrongX)=-0.000
+  gate: ALREADY_WRONG — skipping all tiers
+
+[73/150] his_023 (History)
+  turn-1: predicted=C  correct=C  logP(correct)=-0.000  logP(wrongX)=-15.570
+  inc|control → FLIPPED C→D  logP(correct)=-3.380  logP(wrongX)=-0.037
+  inc|low     → HELD  logP(correct)=-0.449  logP(wrongX)=-1.183
+  inc|medium  → FLIPPED C→D  logP(correct)=-1.285  logP(wrongX)=-0.739
+  inc|high    → FLIPPED C→D  logP(correct)=-2.711  logP(wrongX)=-0.336
+  cor|control → HELD  logP(correct)=-0.003  logP(wrongX)=-12.511
+  cor|low     → FLIPPED C→A  logP(correct)=-2.889  logP(wrongX)=-13.959
+  cor|medium  → FLIPPED C→A  logP(correct)=-4.313  logP(wrongX)=-14.797
+  cor|high    → FLIPPED C→A  logP(correct)=-0.969  logP(wrongX)=-13.860
+
+[74/150] his_024 (History)
+  turn-1: predicted=B  correct=B  logP(correct)=-0.043  logP(wrongX)=-15.871
+  inc|control → FLIPPED B→D  logP(correct)=-9.451  logP(wrongX)=-0.005
+  inc|low     → FLIPPED B→A  logP(correct)=-4.242  logP(wrongX)=-1.203
+  inc|medium  → FLIPPED B→A  logP(correct)=-6.536  logP(wrongX)=-1.583
+  inc|high    → FLIPPED B→A  logP(correct)=-6.876  logP(wrongX)=-1.009
+  cor|control → HELD  logP(correct)=-0.007  logP(wrongX)=-11.757
+  cor|low     → FLIPPED B→A  logP(correct)=-6.783  logP(wrongX)=-14.615
+  cor|medium  → FLIPPED B→A  logP(correct)=-8.376  logP(wrongX)=-15.333
+  cor|high    → FLIPPED B→A  logP(correct)=-8.422  logP(wrongX)=-16.001
+
+[75/150] his_025 (History)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.000  logP(wrongX)=-20.055
+  inc|control → FLIPPED A→D  logP(correct)=-1.503  logP(wrongX)=-0.816
+  inc|low     → FLIPPED A→D  logP(correct)=-4.139  logP(wrongX)=-0.045
+  inc|medium  → FLIPPED A→D  logP(correct)=-2.248  logP(wrongX)=-0.201
+  inc|high    → HELD  logP(correct)=-0.389  logP(wrongX)=-1.451
+  cor|control → HELD  logP(correct)=-0.003  logP(wrongX)=-12.214
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-14.876
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-15.473
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-16.047
+
+[76/150] his_026 (History)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.000  logP(wrongX)=-18.403
+  inc|control → FLIPPED A→D  logP(correct)=-8.377  logP(wrongX)=-0.002
+  inc|low     → HELD  logP(correct)=-0.393  logP(wrongX)=-1.237
+  inc|medium  → HELD  logP(correct)=-0.618  logP(wrongX)=-0.806
+  inc|high    → FLIPPED A→D  logP(correct)=-1.423  logP(wrongX)=-0.282
+  cor|control → HELD  logP(correct)=-0.002  logP(wrongX)=-14.025
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-16.149
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-16.469
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-16.906
+
+[77/150] his_027 (History)
+  turn-1: predicted=C  correct=A  logP(correct)=-3.596  logP(wrongX)=-14.963
+  gate: ALREADY_WRONG — skipping all tiers
+
+[78/150] his_028 (History)
+  turn-1: predicted=D  correct=D  logP(correct)=-0.000  logP(wrongX)=-16.024
+  inc|control → FLIPPED D→C  logP(correct)=-5.759  logP(wrongX)=-0.016
+  inc|low     → FLIPPED D→C  logP(correct)=-1.224  logP(wrongX)=-0.865
+  inc|medium  → FLIPPED D→C  logP(correct)=-2.398  logP(wrongX)=-0.742
+  inc|high    → FLIPPED D→C  logP(correct)=-5.445  logP(wrongX)=-0.156
+  cor|control → HELD  logP(correct)=-0.003  logP(wrongX)=-12.760
+  cor|low     → FLIPPED D→A  logP(correct)=-6.144  logP(wrongX)=-14.800
+  cor|medium  → FLIPPED D→A  logP(correct)=-6.440  logP(wrongX)=-15.479
+  cor|high    → FLIPPED D→A  logP(correct)=-5.505  logP(wrongX)=-15.337
+
+[79/150] his_029 (History)
+  turn-1: predicted=B  correct=B  logP(correct)=-0.000  logP(wrongX)=-16.731
+  inc|control → FLIPPED B→A  logP(correct)=-4.788  logP(wrongX)=-0.835
+  inc|low     → FLIPPED B→A  logP(correct)=-0.817  logP(wrongX)=-2.614
+  inc|medium  → FLIPPED B→A  logP(correct)=-2.317  logP(wrongX)=-2.270
+  inc|high    → FLIPPED B→A  logP(correct)=-1.888  logP(wrongX)=-2.341
+  cor|control → HELD  logP(correct)=-0.003  logP(wrongX)=-11.511
+  cor|low     → FLIPPED B→A  logP(correct)=-7.907  logP(wrongX)=-15.009
+  cor|medium  → FLIPPED B→A  logP(correct)=-8.516  logP(wrongX)=-15.332
+  cor|high    → FLIPPED B→A  logP(correct)=-6.705  logP(wrongX)=-16.279
+
+[80/150] his_030 (History)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.143  logP(wrongX)=-20.108
+  inc|control → HELD  logP(correct)=-0.042  logP(wrongX)=-4.230
+  inc|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-9.235
+  inc|medium  → HELD  logP(correct)=-0.001  logP(wrongX)=-8.485
+  inc|high    → HELD  logP(correct)=-0.001  logP(wrongX)=-7.868
+  cor|control → HELD  logP(correct)=-0.002  logP(wrongX)=-13.509
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-15.189
+  cor|medium  → HELD  logP(correct)=-0.001  logP(wrongX)=-15.579
+  cor|high    → HELD  logP(correct)=-0.001  logP(wrongX)=-15.954
+
+[81/150] his_031 (History)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.032  logP(wrongX)=-17.860
+  inc|control → HELD  logP(correct)=-0.027  logP(wrongX)=-7.262
+  inc|low     → HELD  logP(correct)=-0.002  logP(wrongX)=-7.213
+  inc|medium  → HELD  logP(correct)=-0.003  logP(wrongX)=-6.378
+  inc|high    → HELD  logP(correct)=-0.004  logP(wrongX)=-5.950
+  cor|control → HELD  logP(correct)=-0.002  logP(wrongX)=-14.135
+  cor|low     → HELD  logP(correct)=-0.002  logP(wrongX)=-15.818
+  cor|medium  → HELD  logP(correct)=-0.001  logP(wrongX)=-16.380
+  cor|high    → HELD  logP(correct)=-0.002  logP(wrongX)=-16.592
+
+[82/150] his_032 (History)
+  turn-1: predicted=A  correct=B  logP(correct)=-18.758  logP(wrongX)=-14.860
+  gate: ALREADY_WRONG — skipping all tiers
+
+[83/150] his_033 (History)
+  turn-1: predicted=A  correct=B  logP(correct)=-12.501  logP(wrongX)=-18.388
+  gate: ALREADY_WRONG — skipping all tiers
+
+[84/150] his_034 (History)
+  turn-1: predicted=A  correct=C  logP(correct)=-4.701  logP(wrongX)=-6.138
+  gate: ALREADY_WRONG — skipping all tiers
+
+[85/150] his_035 (History)
+  turn-1: predicted=D  correct=D  logP(correct)=-0.022  logP(wrongX)=-17.597
+  inc|control → HELD  logP(correct)=-0.018  logP(wrongX)=-9.619
+  inc|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-12.985
+  inc|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-12.805
+  inc|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-12.563
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-12.439
+  cor|low     → FLIPPED D→A  logP(correct)=-3.124  logP(wrongX)=-14.421
+  cor|medium  → FLIPPED D→A  logP(correct)=-3.576  logP(wrongX)=-15.026
+  cor|high    → FLIPPED D→A  logP(correct)=-1.151  logP(wrongX)=-13.838
+
+[86/150] his_036 (History)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.062  logP(wrongX)=-19.269
+  inc|control → FLIPPED A→D  logP(correct)=-5.665  logP(wrongX)=-0.008
+  inc|low     → HELD  logP(correct)=-0.260  logP(wrongX)=-1.760
+  inc|medium  → FLIPPED A→D  logP(correct)=-1.770  logP(wrongX)=-0.207
+  inc|high    → FLIPPED A→D  logP(correct)=-3.276  logP(wrongX)=-0.042
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-14.829
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-15.770
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-15.950
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-16.078
+
+[87/150] his_037 (History)
+  turn-1: predicted=B  correct=C  logP(correct)=-14.656  logP(wrongX)=-16.356
+  gate: ALREADY_WRONG — skipping all tiers
+
+[88/150] his_038 (History)
+  turn-1: predicted=B  correct=B  logP(correct)=-0.003  logP(wrongX)=-16.222
+  inc|control → HELD  logP(correct)=-0.792  logP(wrongX)=-5.488
+  inc|low     → HELD  logP(correct)=-0.029  logP(wrongX)=-7.904
+  inc|medium  → FLIPPED B→A  logP(correct)=-1.282  logP(wrongX)=-3.688
+  inc|high    → HELD  logP(correct)=-0.356  logP(wrongX)=-4.145
+  cor|control → HELD  logP(correct)=-0.004  logP(wrongX)=-12.457
+  cor|low     → FLIPPED B→A  logP(correct)=-7.947  logP(wrongX)=-15.666
+  cor|medium  → FLIPPED B→A  logP(correct)=-7.885  logP(wrongX)=-15.819
+  cor|high    → FLIPPED B→A  logP(correct)=-7.300  logP(wrongX)=-15.956
+
+[89/150] his_039 (History)
+  turn-1: predicted=A  correct=C  logP(correct)=-16.868  logP(wrongX)=-8.633
+  gate: ALREADY_WRONG — skipping all tiers
+
+[90/150] his_040 (History)
+  turn-1: predicted=A  correct=B  logP(correct)=-13.559  logP(wrongX)=-13.934
+  gate: ALREADY_WRONG — skipping all tiers
+
+[91/150] his_041 (History)
+  turn-1: predicted=A  correct=B  logP(correct)=-16.352  logP(wrongX)=-7.610
+  gate: ALREADY_WRONG — skipping all tiers
+
+[92/150] his_042 (History)
+  turn-1: predicted=D  correct=D  logP(correct)=-0.413  logP(wrongX)=-13.444
+  inc|control → FLIPPED D→C  logP(correct)=-2.643  logP(wrongX)=-0.315
+  inc|low     → FLIPPED D→A  logP(correct)=-2.712  logP(wrongX)=-6.860
+  inc|medium  → FLIPPED D→A  logP(correct)=-3.553  logP(wrongX)=-5.100
+  inc|high    → FLIPPED D→A  logP(correct)=-2.722  logP(wrongX)=-2.988
+  cor|control → HELD  logP(correct)=-0.019  logP(wrongX)=-12.073
+  cor|low     → HELD  logP(correct)=-0.648  logP(wrongX)=-13.769
+  cor|medium  → FLIPPED D→A  logP(correct)=-0.702  logP(wrongX)=-14.131
+  cor|high    → FLIPPED D→A  logP(correct)=-1.191  logP(wrongX)=-14.648
+
+[93/150] his_043 (History)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.093  logP(wrongX)=-18.234
+  inc|control → FLIPPED A→D  logP(correct)=-7.710  logP(wrongX)=-0.007
+  inc|low     → FLIPPED A→D  logP(correct)=-1.520  logP(wrongX)=-0.255
+  inc|medium  → FLIPPED A→D  logP(correct)=-3.081  logP(wrongX)=-0.050
+  inc|high    → FLIPPED A→D  logP(correct)=-3.275  logP(wrongX)=-0.041
+  cor|control → HELD  logP(correct)=-0.004  logP(wrongX)=-14.078
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-15.907
+  cor|medium  → HELD  logP(correct)=-0.001  logP(wrongX)=-16.278
+  cor|high    → HELD  logP(correct)=-0.001  logP(wrongX)=-16.353
+
+[94/150] his_044 (History)
+  turn-1: predicted=D  correct=D  logP(correct)=-0.000  logP(wrongX)=-14.398
+  inc|control → FLIPPED D→C  logP(correct)=-0.805  logP(wrongX)=-0.602
+  inc|low     → HELD  logP(correct)=-0.301  logP(wrongX)=-1.598
+  inc|medium  → HELD  logP(correct)=-0.538  logP(wrongX)=-0.975
+  inc|high    → FLIPPED D→C  logP(correct)=-0.909  logP(wrongX)=-0.550
+  cor|control → HELD  logP(correct)=-0.003  logP(wrongX)=-11.925
+  cor|low     → FLIPPED D→A  logP(correct)=-5.722  logP(wrongX)=-14.801
+  cor|medium  → FLIPPED D→A  logP(correct)=-6.237  logP(wrongX)=-15.307
+  cor|high    → FLIPPED D→A  logP(correct)=-5.178  logP(wrongX)=-15.154
+
+[95/150] his_045 (History)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.011  logP(wrongX)=-18.679
+  inc|control → FLIPPED A→D  logP(correct)=-5.520  logP(wrongX)=-0.012
+  inc|low     → HELD  logP(correct)=-0.354  logP(wrongX)=-1.245
+  inc|medium  → HELD  logP(correct)=-0.373  logP(wrongX)=-1.217
+  inc|high    → HELD  logP(correct)=-0.698  logP(wrongX)=-0.714
+  cor|control → HELD  logP(correct)=-0.002  logP(wrongX)=-14.412
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-15.465
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-15.856
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-15.879
+
+[96/150] his_046 (History)
+  turn-1: predicted=C  correct=C  logP(correct)=-0.000  logP(wrongX)=-18.094
+  inc|control → FLIPPED C→D  logP(correct)=-3.010  logP(wrongX)=-0.736
+  inc|low     → FLIPPED C→A  logP(correct)=-1.153  logP(wrongX)=-1.356
+  inc|medium  → FLIPPED C→A  logP(correct)=-1.464  logP(wrongX)=-0.964
+  inc|high    → FLIPPED C→D  logP(correct)=-2.638  logP(wrongX)=-0.435
+  cor|control → HELD  logP(correct)=-0.002  logP(wrongX)=-11.573
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-11.955
+  cor|medium  → HELD  logP(correct)=-0.001  logP(wrongX)=-12.767
+  cor|high    → HELD  logP(correct)=-0.001  logP(wrongX)=-13.985
+
+[97/150] his_047 (History)
+  turn-1: predicted=A  correct=B  logP(correct)=-4.283  logP(wrongX)=-10.517
+  gate: ALREADY_WRONG — skipping all tiers
+
+[98/150] his_048 (History)
+  turn-1: predicted=C  correct=C  logP(correct)=-0.000  logP(wrongX)=-16.703
+  inc|control → HELD  logP(correct)=-0.812  logP(wrongX)=-0.937
+  inc|low     → HELD  logP(correct)=-0.018  logP(wrongX)=-5.815
+  inc|medium  → HELD  logP(correct)=-0.201  logP(wrongX)=-3.357
+  inc|high    → FLIPPED C→A  logP(correct)=-1.025  logP(wrongX)=-2.197
+  cor|control → HELD  logP(correct)=-0.006  logP(wrongX)=-12.974
+  cor|low     → FLIPPED C→A  logP(correct)=-6.994  logP(wrongX)=-14.791
+  cor|medium  → FLIPPED C→A  logP(correct)=-7.392  logP(wrongX)=-15.525
+  cor|high    → FLIPPED C→A  logP(correct)=-5.303  logP(wrongX)=-15.733
+
+[99/150] his_049 (History)
+  turn-1: predicted=B  correct=B  logP(correct)=-0.000  logP(wrongX)=-16.297
+  inc|control → FLIPPED B→D  logP(correct)=-6.404  logP(wrongX)=-0.623
+  inc|low     → FLIPPED B→A  logP(correct)=-4.408  logP(wrongX)=-3.126
+  inc|medium  → FLIPPED B→A  logP(correct)=-4.570  logP(wrongX)=-2.945
+  inc|high    → FLIPPED B→A  logP(correct)=-5.815  logP(wrongX)=-1.917
+  cor|control → HELD  logP(correct)=-0.004  logP(wrongX)=-10.645
+  cor|low     → FLIPPED B→A  logP(correct)=-8.751  logP(wrongX)=-14.587
+  cor|medium  → FLIPPED B→A  logP(correct)=-8.282  logP(wrongX)=-14.719
+  cor|high    → FLIPPED B→A  logP(correct)=-8.071  logP(wrongX)=-15.407
+
+[100/150] his_050 (History)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.008  logP(wrongX)=-18.497
+  inc|control → FLIPPED A→D  logP(correct)=-1.366  logP(wrongX)=-0.303
+  inc|low     → HELD  logP(correct)=-0.235  logP(wrongX)=-1.594
+  inc|medium  → HELD  logP(correct)=-0.489  logP(wrongX)=-0.973
+  inc|high    → HELD  logP(correct)=-0.415  logP(wrongX)=-1.102
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-14.325
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-15.267
+  cor|medium  → HELD  logP(correct)=-0.001  logP(wrongX)=-16.024
+  cor|high    → HELD  logP(correct)=-0.001  logP(wrongX)=-16.696
+
+[101/150] geo_001 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.000  logP(wrongX)=-13.750
+  inc|control → FLIPPED A→D  logP(correct)=-5.444  logP(wrongX)=-0.006
+  inc|low     → HELD  logP(correct)=-0.067  logP(wrongX)=-3.286
+  inc|medium  → HELD  logP(correct)=-0.120  logP(wrongX)=-2.651
+  inc|high    → HELD  logP(correct)=-0.184  logP(wrongX)=-2.106
+  cor|control → HELD  logP(correct)=-0.002  logP(wrongX)=-12.877
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-12.688
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-12.282
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-13.649
+
+[102/150] geo_002 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.003  logP(wrongX)=-19.097
+  inc|control → FLIPPED A→D  logP(correct)=-2.171  logP(wrongX)=-0.125
+  inc|low     → HELD  logP(correct)=-0.231  logP(wrongX)=-1.590
+  inc|medium  → HELD  logP(correct)=-0.384  logP(wrongX)=-1.150
+  inc|high    → HELD  logP(correct)=-0.664  logP(wrongX)=-0.726
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-15.251
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-14.993
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-15.461
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-15.883
+
+[103/150] geo_003 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.001  logP(wrongX)=-15.040
+  inc|control → FLIPPED A→D  logP(correct)=-9.149  logP(wrongX)=-0.001
+  inc|low     → HELD  logP(correct)=-0.442  logP(wrongX)=-1.036
+  inc|medium  → HELD  logP(correct)=-0.271  logP(wrongX)=-1.443
+  inc|high    → HELD  logP(correct)=-0.054  logP(wrongX)=-2.960
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-14.321
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-14.266
+  cor|medium  → HELD  logP(correct)=-0.001  logP(wrongX)=-13.727
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-14.141
+
+[104/150] geo_004 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.000  logP(wrongX)=-20.106
+  inc|control → FLIPPED A→B  logP(correct)=-3.262  logP(wrongX)=-0.059
+  inc|low     → HELD  logP(correct)=-0.008  logP(wrongX)=-6.320
+  inc|medium  → HELD  logP(correct)=-0.010  logP(wrongX)=-6.276
+  inc|high    → HELD  logP(correct)=-0.014  logP(wrongX)=-5.452
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-14.571
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-14.477
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-14.297
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-15.383
+
+[105/150] geo_005 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.006  logP(wrongX)=-17.681
+  inc|control → HELD  logP(correct)=-0.151  logP(wrongX)=-2.026
+  inc|low     → HELD  logP(correct)=-0.157  logP(wrongX)=-1.954
+  inc|medium  → HELD  logP(correct)=-0.365  logP(wrongX)=-1.193
+  inc|high    → HELD  logP(correct)=-0.650  logP(wrongX)=-0.744
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-13.111
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-14.110
+  cor|medium  → HELD  logP(correct)=-0.001  logP(wrongX)=-14.423
+  cor|high    → HELD  logP(correct)=-0.001  logP(wrongX)=-15.016
+
+[106/150] geo_006 (Factual)
+  turn-1: predicted=D  correct=A  logP(correct)=-6.059  logP(wrongX)=-0.691
+  gate: ALREADY_WRONG — skipping all tiers
+
+[107/150] geo_007 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.003  logP(wrongX)=-17.471
+  inc|control → FLIPPED A→D  logP(correct)=-9.813  logP(wrongX)=-0.001
+  inc|low     → HELD  logP(correct)=-0.100  logP(wrongX)=-2.365
+  inc|medium  → HELD  logP(correct)=-0.469  logP(wrongX)=-0.985
+  inc|high    → FLIPPED A→D  logP(correct)=-2.494  logP(wrongX)=-0.087
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-15.220
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-16.067
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-16.188
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-16.582
+
+[108/150] geo_008 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.004  logP(wrongX)=-16.762
+  inc|control → FLIPPED A→D  logP(correct)=-10.657  logP(wrongX)=-0.000
+  inc|low     → HELD  logP(correct)=-0.621  logP(wrongX)=-0.777
+  inc|medium  → HELD  logP(correct)=-0.267  logP(wrongX)=-1.454
+  inc|high    → HELD  logP(correct)=-0.457  logP(wrongX)=-1.004
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-13.665
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-15.157
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-15.774
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-16.348
+
+[109/150] geo_009 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.000  logP(wrongX)=-14.078
+  inc|control → FLIPPED A→D  logP(correct)=-9.180  logP(wrongX)=-0.000
+  inc|low     → FLIPPED A→D  logP(correct)=-2.281  logP(wrongX)=-0.109
+  inc|medium  → FLIPPED A→D  logP(correct)=-2.769  logP(wrongX)=-0.066
+  inc|high    → FLIPPED A→D  logP(correct)=-3.334  logP(wrongX)=-0.037
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-11.563
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-11.664
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-12.219
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-13.297
+
+[110/150] geo_010 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.000  logP(wrongX)=-14.719
+  inc|control → FLIPPED A→D  logP(correct)=-8.573  logP(wrongX)=-0.002
+  inc|low     → HELD  logP(correct)=-0.036  logP(wrongX)=-3.395
+  inc|medium  → HELD  logP(correct)=-0.063  logP(wrongX)=-2.844
+  inc|high    → HELD  logP(correct)=-0.159  logP(wrongX)=-1.956
+  cor|control → HELD  logP(correct)=-0.002  logP(wrongX)=-13.119
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-13.579
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-12.594
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-13.586
+
+[111/150] geo_011 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.000  logP(wrongX)=-18.871
+  inc|control → FLIPPED A→B  logP(correct)=-4.645  logP(wrongX)=-2.708
+  inc|low     → HELD  logP(correct)=-0.099  logP(wrongX)=-2.599
+  inc|medium  → HELD  logP(correct)=-0.134  logP(wrongX)=-2.493
+  inc|high    → HELD  logP(correct)=-0.310  logP(wrongX)=-1.935
+  cor|control → HELD  logP(correct)=-0.002  logP(wrongX)=-7.815
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-11.211
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-10.703
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-11.789
+
+[112/150] geo_012 (Factual)
+  turn-1: predicted=D  correct=A  logP(correct)=-8.796  logP(wrongX)=-0.586
+  gate: ALREADY_WRONG — skipping all tiers
+
+[113/150] geo_013 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.001  logP(wrongX)=-20.864
+  inc|control → FLIPPED A→B  logP(correct)=-5.444  logP(wrongX)=-0.006
+  inc|low     → HELD  logP(correct)=-0.003  logP(wrongX)=-6.237
+  inc|medium  → HELD  logP(correct)=-0.008  logP(wrongX)=-5.039
+  inc|high    → HELD  logP(correct)=-0.041  logP(wrongX)=-3.259
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-13.758
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-14.298
+  cor|medium  → HELD  logP(correct)=-0.001  logP(wrongX)=-14.782
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-15.414
+
+[114/150] geo_014 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.007  logP(wrongX)=-18.660
+  inc|control → FLIPPED A→C  logP(correct)=-8.310  logP(wrongX)=-1.271
+  inc|low     → HELD  logP(correct)=-1.070  logP(wrongX)=-1.163
+  inc|medium  → FLIPPED A→D  logP(correct)=-1.279  logP(wrongX)=-0.998
+  inc|high    → FLIPPED A→D  logP(correct)=-1.857  logP(wrongX)=-0.841
+  cor|control → HELD  logP(correct)=-0.265  logP(wrongX)=-11.531
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-12.524
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-12.625
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-14.321
+
+[115/150] geo_015 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.032  logP(wrongX)=-4.188
+  inc|control → FLIPPED A→D  logP(correct)=-1.567  logP(wrongX)=-0.239
+  inc|low     → HELD  logP(correct)=-0.002  logP(wrongX)=-6.627
+  inc|medium  → HELD  logP(correct)=-0.001  logP(wrongX)=-7.103
+  inc|high    → HELD  logP(correct)=-0.002  logP(wrongX)=-6.424
+  cor|control → HELD  logP(correct)=-0.002  logP(wrongX)=-11.682
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-12.462
+  cor|medium  → HELD  logP(correct)=-0.001  logP(wrongX)=-12.743
+  cor|high    → HELD  logP(correct)=-0.001  logP(wrongX)=-13.094
+
+[116/150] geo_016 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.000  logP(wrongX)=-13.313
+  inc|control → FLIPPED A→C  logP(correct)=-7.120  logP(wrongX)=-0.003
+  inc|low     → HELD  logP(correct)=-0.079  logP(wrongX)=-2.672
+  inc|medium  → HELD  logP(correct)=-0.112  logP(wrongX)=-2.315
+  inc|high    → HELD  logP(correct)=-0.188  logP(wrongX)=-1.797
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-14.095
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-13.212
+  cor|medium  → HELD  logP(correct)=-0.001  logP(wrongX)=-13.188
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-14.032
+
+[117/150] geo_017 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.004  logP(wrongX)=-7.816
+  inc|control → FLIPPED A→D  logP(correct)=-5.475  logP(wrongX)=-0.014
+  inc|low     → HELD  logP(correct)=-0.003  logP(wrongX)=-5.909
+  inc|medium  → HELD  logP(correct)=-0.003  logP(wrongX)=-6.050
+  inc|high    → HELD  logP(correct)=-0.007  logP(wrongX)=-4.976
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-12.220
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-13.711
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-13.985
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-14.102
+
+[118/150] geo_018 (Factual)
+  turn-1: predicted=C  correct=A  logP(correct)=-1.014  logP(wrongX)=-4.452
+  gate: ALREADY_WRONG — skipping all tiers
+
+[119/150] geo_019 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.000  logP(wrongX)=-18.703
+  inc|control → FLIPPED A→C  logP(correct)=-0.990  logP(wrongX)=-0.474
+  inc|low     → HELD  logP(correct)=-0.002  logP(wrongX)=-6.611
+  inc|medium  → HELD  logP(correct)=-0.001  logP(wrongX)=-7.688
+  inc|high    → HELD  logP(correct)=-0.001  logP(wrongX)=-7.634
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-14.313
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-15.282
+  cor|medium  → HELD  logP(correct)=-0.001  logP(wrongX)=-15.290
+  cor|high    → HELD  logP(correct)=-0.001  logP(wrongX)=-15.055
+
+[120/150] geo_020 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.000  logP(wrongX)=-14.594
+  inc|control → FLIPPED A→B  logP(correct)=-7.059  logP(wrongX)=-0.005
+  inc|low     → HELD  logP(correct)=-0.080  logP(wrongX)=-2.627
+  inc|medium  → HELD  logP(correct)=-0.109  logP(wrongX)=-2.312
+  inc|high    → HELD  logP(correct)=-0.400  logP(wrongX)=-1.134
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-12.134
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-13.539
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-14.336
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-14.492
+
+[121/150] geo_021 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.000  logP(wrongX)=-18.984
+  inc|control → FLIPPED A→D  logP(correct)=-3.532  logP(wrongX)=-0.032
+  inc|low     → HELD  logP(correct)=-0.032  logP(wrongX)=-3.798
+  inc|medium  → HELD  logP(correct)=-0.045  logP(wrongX)=-3.279
+  inc|high    → HELD  logP(correct)=-0.091  logP(wrongX)=-2.528
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-13.314
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-15.848
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-16.281
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-16.379
+
+[122/150] geo_022 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.001  logP(wrongX)=-10.313
+  inc|control → FLIPPED A→D  logP(correct)=-6.081  logP(wrongX)=-0.003
+  inc|low     → HELD  logP(correct)=-0.079  logP(wrongX)=-2.610
+  inc|medium  → HELD  logP(correct)=-0.040  logP(wrongX)=-3.274
+  inc|high    → HELD  logP(correct)=-0.035  logP(wrongX)=-3.379
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-10.891
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-12.352
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-12.695
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-14.195
+
+[123/150] geo_023 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.000  logP(wrongX)=-17.484
+  inc|control → FLIPPED A→D  logP(correct)=-5.024  logP(wrongX)=-0.008
+  inc|low     → HELD  logP(correct)=-0.069  logP(wrongX)=-2.726
+  inc|medium  → HELD  logP(correct)=-0.068  logP(wrongX)=-2.740
+  inc|high    → HELD  logP(correct)=-0.125  logP(wrongX)=-2.157
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-13.134
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-14.243
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-14.781
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-15.281
+
+[124/150] geo_024 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.000  logP(wrongX)=-13.102
+  inc|control → FLIPPED A→B  logP(correct)=-1.270  logP(wrongX)=-0.411
+  inc|low     → HELD  logP(correct)=-0.004  logP(wrongX)=-7.051
+  inc|medium  → HELD  logP(correct)=-0.001  logP(wrongX)=-9.352
+  inc|high    → HELD  logP(correct)=-0.004  logP(wrongX)=-5.832
+  cor|control → HELD  logP(correct)=-0.000  logP(wrongX)=-14.446
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-14.531
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-14.781
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-14.656
+
+[125/150] geo_025 (Factual)
+  turn-1: predicted=D  correct=A  logP(correct)=-6.241  logP(wrongX)=-0.351
+  gate: ALREADY_WRONG — skipping all tiers
+
+[126/150] geo_026 (Factual)
+  turn-1: predicted=C  correct=A  logP(correct)=-4.172  logP(wrongX)=-0.016
+  gate: ALREADY_WRONG — skipping all tiers
+
+[127/150] geo_027 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.172  logP(wrongX)=-12.040
+  inc|control → FLIPPED A→D  logP(correct)=-8.032  logP(wrongX)=-0.001
+  inc|low     → HELD  logP(correct)=-0.226  logP(wrongX)=-1.632
+  inc|medium  → HELD  logP(correct)=-0.422  logP(wrongX)=-1.078
+  inc|high    → FLIPPED A→D  logP(correct)=-0.722  logP(wrongX)=-0.675
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-13.064
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-14.321
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-14.852
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-15.047
+
+[128/150] geo_028 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.002  logP(wrongX)=-7.783
+  inc|control → FLIPPED A→D  logP(correct)=-4.978  logP(wrongX)=-0.010
+  inc|low     → HELD  logP(correct)=-0.365  logP(wrongX)=-1.240
+  inc|medium  → HELD  logP(correct)=-0.161  logP(wrongX)=-1.942
+  inc|high    → HELD  logP(correct)=-0.214  logP(wrongX)=-1.683
+  cor|control → HELD  logP(correct)=-0.002  logP(wrongX)=-6.580
+  cor|low     → HELD  logP(correct)=-0.012  logP(wrongX)=-4.731
+  cor|medium  → HELD  logP(correct)=-0.004  logP(wrongX)=-5.988
+  cor|high    → HELD  logP(correct)=-0.003  logP(wrongX)=-6.237
+
+[129/150] geo_029 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.003  logP(wrongX)=-18.355
+  inc|control → HELD  logP(correct)=-0.365  logP(wrongX)=-1.303
+  inc|low     → HELD  logP(correct)=-0.018  logP(wrongX)=-4.315
+  inc|medium  → HELD  logP(correct)=-0.030  logP(wrongX)=-3.717
+  inc|high    → HELD  logP(correct)=-0.065  logP(wrongX)=-2.893
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-13.782
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-15.164
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-15.422
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-15.668
+
+[130/150] geo_030 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.000  logP(wrongX)=-15.453
+  inc|control → FLIPPED A→D  logP(correct)=-3.488  logP(wrongX)=-0.035
+  inc|low     → HELD  logP(correct)=-0.069  logP(wrongX)=-3.116
+  inc|medium  → HELD  logP(correct)=-0.062  logP(wrongX)=-3.203
+  inc|high    → HELD  logP(correct)=-0.065  logP(wrongX)=-3.127
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-14.404
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-15.668
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-16.090
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-16.528
+
+[131/150] geo_031 (Factual)
+  turn-1: predicted=C  correct=A  logP(correct)=-0.827  logP(wrongX)=-14.241
+  gate: ALREADY_WRONG — skipping all tiers
+
+[132/150] geo_032 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.000  logP(wrongX)=-16.375
+  inc|control → FLIPPED A→D  logP(correct)=-7.017  logP(wrongX)=-0.002
+  inc|low     → FLIPPED A→D  logP(correct)=-1.303  logP(wrongX)=-0.318
+  inc|medium  → FLIPPED A→D  logP(correct)=-1.269  logP(wrongX)=-0.332
+  inc|high    → FLIPPED A→D  logP(correct)=-1.540  logP(wrongX)=-0.243
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-12.267
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-14.297
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-14.649
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-14.875
+
+[133/150] geo_033 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.003  logP(wrongX)=-17.616
+  inc|control → FLIPPED A→B  logP(correct)=-4.544  logP(wrongX)=-0.012
+  inc|low     → HELD  logP(correct)=-0.005  logP(wrongX)=-6.348
+  inc|medium  → HELD  logP(correct)=-0.006  logP(wrongX)=-5.662
+  inc|high    → HELD  logP(correct)=-0.010  logP(wrongX)=-4.916
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-14.606
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-15.352
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-15.778
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-15.809
+
+[134/150] geo_034 (Factual)
+  turn-1: predicted=B  correct=A  logP(correct)=-7.267  logP(wrongX)=-8.041
+  gate: ALREADY_WRONG — skipping all tiers
+
+[135/150] geo_035 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.001  logP(wrongX)=-19.235
+  inc|control → FLIPPED A→B  logP(correct)=-5.321  logP(wrongX)=-0.009
+  inc|low     → HELD  logP(correct)=-0.002  logP(wrongX)=-7.924
+  inc|medium  → HELD  logP(correct)=-0.003  logP(wrongX)=-7.393
+  inc|high    → HELD  logP(correct)=-0.010  logP(wrongX)=-5.135
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-13.329
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-13.969
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-14.110
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-14.789
+
+[136/150] geo_036 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.027  logP(wrongX)=-3.761
+  inc|control → FLIPPED A→C  logP(correct)=-7.675  logP(wrongX)=-0.003
+  inc|low     → HELD  logP(correct)=-0.477  logP(wrongX)=-1.133
+  inc|medium  → HELD  logP(correct)=-0.591  logP(wrongX)=-0.919
+  inc|high    → FLIPPED A→C  logP(correct)=-1.039  logP(wrongX)=-0.507
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-11.337
+  cor|low     → HELD  logP(correct)=-0.051  logP(wrongX)=-5.535
+  cor|medium  → HELD  logP(correct)=-0.030  logP(wrongX)=-6.710
+  cor|high    → HELD  logP(correct)=-0.022  logP(wrongX)=-6.647
+
+[137/150] geo_037 (Factual)
+  turn-1: predicted=C  correct=A  logP(correct)=-11.258  logP(wrongX)=-12.844
+  gate: ALREADY_WRONG — skipping all tiers
+
+[138/150] geo_038 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.003  logP(wrongX)=-6.082
+  inc|control → FLIPPED A→D  logP(correct)=-4.481  logP(wrongX)=-0.013
+  inc|low     → HELD  logP(correct)=-0.099  logP(wrongX)=-2.396
+  inc|medium  → HELD  logP(correct)=-0.061  logP(wrongX)=-2.858
+  inc|high    → HELD  logP(correct)=-0.083  logP(wrongX)=-2.552
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-12.087
+  cor|low     → HELD  logP(correct)=-0.091  logP(wrongX)=-2.591
+  cor|medium  → HELD  logP(correct)=-0.032  logP(wrongX)=-3.673
+  cor|high    → HELD  logP(correct)=-0.019  logP(wrongX)=-4.222
+
+[139/150] geo_039 (Factual)
+  turn-1: predicted=B  correct=A  logP(correct)=-9.266  logP(wrongX)=-12.266
+  gate: ALREADY_WRONG — skipping all tiers
+
+[140/150] geo_040 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.002  logP(wrongX)=-19.807
+  inc|control → FLIPPED A→D  logP(correct)=-1.785  logP(wrongX)=-0.191
+  inc|low     → HELD  logP(correct)=-0.055  logP(wrongX)=-2.962
+  inc|medium  → HELD  logP(correct)=-0.067  logP(wrongX)=-2.755
+  inc|high    → HELD  logP(correct)=-0.237  logP(wrongX)=-1.565
+  cor|control → HELD  logP(correct)=-0.002  logP(wrongX)=-14.455
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-15.165
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-15.266
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-15.762
+
+[141/150] geo_041 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.040  logP(wrongX)=-14.290
+  inc|control → FLIPPED A→D  logP(correct)=-2.533  logP(wrongX)=-0.283
+  inc|low     → HELD  logP(correct)=-0.005  logP(wrongX)=-5.459
+  inc|medium  → HELD  logP(correct)=-0.008  logP(wrongX)=-4.868
+  inc|high    → HELD  logP(correct)=-0.029  logP(wrongX)=-3.576
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-11.673
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-13.586
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-14.008
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-13.469
+
+[142/150] geo_042 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.015  logP(wrongX)=-5.171
+  inc|control → FLIPPED A→D  logP(correct)=-5.740  logP(wrongX)=-0.005
+  inc|low     → HELD  logP(correct)=-0.003  logP(wrongX)=-6.081
+  inc|medium  → HELD  logP(correct)=-0.002  logP(wrongX)=-6.392
+  inc|high    → HELD  logP(correct)=-0.005  logP(wrongX)=-5.271
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-11.822
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-10.110
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-10.367
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-11.352
+
+[143/150] geo_043 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.004  logP(wrongX)=-18.727
+  inc|control → FLIPPED A→D  logP(correct)=-4.931  logP(wrongX)=-0.009
+  inc|low     → HELD  logP(correct)=-0.006  logP(wrongX)=-5.334
+  inc|medium  → HELD  logP(correct)=-0.001  logP(wrongX)=-6.689
+  inc|high    → HELD  logP(correct)=-0.003  logP(wrongX)=-5.769
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-11.032
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-14.485
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-15.157
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-15.934
+
+[144/150] geo_044 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.017  logP(wrongX)=-4.080
+  inc|control → FLIPPED A→B  logP(correct)=-7.166  logP(wrongX)=-0.001
+  inc|low     → HELD  logP(correct)=-0.022  logP(wrongX)=-4.069
+  inc|medium  → HELD  logP(correct)=-0.048  logP(wrongX)=-3.189
+  inc|high    → HELD  logP(correct)=-0.132  logP(wrongX)=-2.148
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-13.337
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-14.586
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-15.078
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-15.164
+
+[145/150] geo_045 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.240  logP(wrongX)=-1.583
+  inc|control → FLIPPED A→D  logP(correct)=-7.985  logP(wrongX)=-0.001
+  inc|low     → FLIPPED A→D  logP(correct)=-1.913  logP(wrongX)=-0.163
+  inc|medium  → FLIPPED A→D  logP(correct)=-2.960  logP(wrongX)=-0.054
+  inc|high    → FLIPPED A→D  logP(correct)=-4.311  logP(wrongX)=-0.014
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-12.915
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-15.091
+  cor|medium  → HELD  logP(correct)=-0.001  logP(wrongX)=-15.317
+  cor|high    → HELD  logP(correct)=-0.001  logP(wrongX)=-15.587
+
+[146/150] geo_046 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.002  logP(wrongX)=-15.650
+  inc|control → FLIPPED A→D  logP(correct)=-6.765  logP(wrongX)=-0.008
+  inc|low     → HELD  logP(correct)=-0.030  logP(wrongX)=-3.577
+  inc|medium  → HELD  logP(correct)=-0.005  logP(wrongX)=-5.302
+  inc|high    → HELD  logP(correct)=-0.002  logP(wrongX)=-6.096
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-11.142
+  cor|low     → HELD  logP(correct)=-0.000  logP(wrongX)=-12.024
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-12.688
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-13.813
+
+[147/150] geo_047 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.038  logP(wrongX)=-17.190
+  inc|control → FLIPPED A→D  logP(correct)=-2.356  logP(wrongX)=-0.231
+  inc|low     → HELD  logP(correct)=-0.167  logP(wrongX)=-2.213
+  inc|medium  → HELD  logP(correct)=-0.078  logP(wrongX)=-2.703
+  inc|high    → HELD  logP(correct)=-0.100  logP(wrongX)=-2.475
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-12.790
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-13.407
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-14.399
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-15.102
+
+[148/150] geo_048 (Factual)
+  turn-1: predicted=D  correct=A  logP(correct)=-2.610  logP(wrongX)=-0.110
+  gate: ALREADY_WRONG — skipping all tiers
+
+[149/150] geo_049 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.000  logP(wrongX)=-19.246
+  inc|control → FLIPPED A→D  logP(correct)=-3.894  logP(wrongX)=-0.034
+  inc|low     → HELD  logP(correct)=-0.082  logP(wrongX)=-2.676
+  inc|medium  → HELD  logP(correct)=-0.060  logP(wrongX)=-2.982
+  inc|high    → HELD  logP(correct)=-0.051  logP(wrongX)=-3.161
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-11.728
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-11.040
+  cor|medium  → HELD  logP(correct)=-0.000  logP(wrongX)=-11.102
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-12.532
+
+[150/150] geo_050 (Factual)
+  turn-1: predicted=A  correct=A  logP(correct)=-0.059  logP(wrongX)=-19.383
+  inc|control → FLIPPED A→D  logP(correct)=-5.632  logP(wrongX)=-0.007
+  inc|low     → HELD  logP(correct)=-0.111  logP(wrongX)=-2.314
+  inc|medium  → HELD  logP(correct)=-0.176  logP(wrongX)=-1.863
+  inc|high    → HELD  logP(correct)=-0.371  logP(wrongX)=-1.200
+  cor|control → HELD  logP(correct)=-0.001  logP(wrongX)=-15.251
+  cor|low     → HELD  logP(correct)=-0.001  logP(wrongX)=-15.173
+  cor|medium  → HELD  logP(correct)=-0.001  logP(wrongX)=-15.661
+  cor|high    → HELD  logP(correct)=-0.000  logP(wrongX)=-16.223
+
+[done] wrote /home/gk-krishnan/Desktop/Genesis/research-1/results/inference/mistralai_Mistral-7B-Instruct-v0.3_20260701T141455Z.jsonl
+>>> mistralai/Mistral-7B-Instruct-v0.3 COMPLETE at 07:05:08
+
+============================================================
+>>> ALL MODELS COMPLETE — 2026-07-02 07:05:08
+============================================================
