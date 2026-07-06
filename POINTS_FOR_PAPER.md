@@ -688,3 +688,49 @@ strategic call for the user to confirm, not auto-adopt.
 - Generation-integrity audit (30-50 turn-2 prompts — promised, still undone)
 - Deviations-from-pre-registration table (GEE→GLMM, Spearman-for-CA, judge 2.0→2.5, n=60, etc.)
 - Freeze a results manifest (script + hash) before writing any results sentence
+
+---
+
+## 17. BLOCKER ANALYSIS — VERIFIED confirmatory result (2026-07-06) [CRITICAL]
+
+### Regex vs judge labels: 99.9% agreement (4,129 trials) — confirmatory result is label-robust.
+
+### ⚠️ METHOD WARNING — do NOT use variational-Bayes GLMM here
+Three methods on the SAME pre-registered interaction (tier×direction, generic personas,
+control excluded, both arms, n=5,510):
+- Variational-Bayes BinomialBayesMixedGLM: z=+10.4 "hugely significant"  ← ARTIFACT
+- Frequentist logit (model as fixed effect): coef=+0.022, p=0.78  ← NOT significant
+- GEE (cluster=model): p=0.95  ← NOT significant
+VB underestimates uncertainty (overconfident SEs) → its z is a fitting artifact, NOT a real
+effect. 2 of 3 rigorous methods say NOT significant, and the RAW DATA confirms it (below).
+LESSON: nearly rewrote the headline on a VB artifact; a second-method check caught it (per
+the roadmap's "spot-check before drafting"). Use frequentist GLM / GEE, never VB, for this.
+
+### RAW DATA confirms the null (accuracy-retained by tier, pooled)
+INCORRECT arm: tier anon→high = 26% → 34% → 28% → 21%  → NON-MONOTONIC (up then down)
+CORRECT arm:   96% → 90% → 91% → 94%  → flat
+→ No clean pooled tier×direction interaction. The pre-registered confirmatory test FAILED.
+  Our original conclusion was CORRECT. (Direction main effect remains huge & real.)
+
+### VERIFIED per-model trend — Cochran-Armitage (the ACTUALLY pre-specified test; Spearman was a deviation)
+PERSONA-ONLY coding (low<med<high), incorrect arm, flip = not-correct-after-pressure:
+| Model | flips low→high | CA z | p | sig |
+|---|---|---|---|---|
+| Qwen-3B | 79 80 80 | +0.16 | 0.87 | no |
+| Llama-3B | 94 96 98 | +1.44 | 0.15 | no |
+| Qwen-7B | 95 98 99 | +2.07 | 0.039 | * |
+| Mistral-7B | 30 36 47 | +2.54 | 0.011 | * |
+| Phi-3.5 | 60 77 94 | +6.09 | <0.001 | * |
+| Gemma-9B | 42 45 57 | +2.37 | 0.018 | * |
+→ 4/6 significant per-model. But does NOT aggregate to a pooled interaction (heterogeneity).
+
+ANON-INCLUSIVE coding (anon<low<med<high): resolves §3d-vs-§15 discrepancy — REPORT BOTH.
+Qwen-7B drops to p=0.052 (ns), Mistral goes negative (anon out-flips low), Phi/Gemma stay sig.
+→ The exact "how many models grade" count DEPENDS on ladder coding. Report both; claim only
+  "persona-rank trend in a subset," never a fixed universal count.
+
+### STABLE, VERIFIED headline (safe to write)
+"The pre-registered pooled tier×direction interaction was not supported (frequentist p=0.78;
+GEE p=0.95; raw pooled accuracy non-monotonic). Endorsement direction dominates. Authority
+grading is significant per-model in 4/6 (Cochran-Armitage, persona-only coding) but does not
+aggregate into a clean pooled gradient — model-dependent, not universal." (label-robust; κ=0.967.)
