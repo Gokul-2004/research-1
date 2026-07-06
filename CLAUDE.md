@@ -6,7 +6,7 @@
 An empirical AI-safety study, **"Authority-Graded Sycophancy in Open-Source LLMs"** — does an open-weights LLM abandon a correct answer more readily as the *authority* of the user's counter-claim rises (graded dose-response), measured both behaviorally (free-form, judged) and via token log-probs? Deliverable: a paper targeting **arXiv preprint + IEEE Access** (open access), with an Alignment Forum write-up.
 
 ## Read first
-**Full technical design is in `PLAN.md` — read it before starting work.** Per-paper literature analysis is in `Literature Survey/Analysis of Literature Survey.md`. Deep handoff/history is in `context.md`. (This file is the index + status card; those are the source of truth.)
+**Full technical design is in `PLAN.md` — read it before starting work.** Per-paper literature analysis is in `Literature Survey/Analysis of Literature Survey.md`. Deep handoff/history is in `context.md`. **Completed work + all key numbers are in `PROGRESS.md` — read this before writing the paper.** (This file is the index + status card; those are the source of truth.)
 
 ## Locked decisions (don't re-litigate)
 - **Contribution = methodological, NOT discovery.** Authority-graded sycophancy already exists in prior work (arXiv 2601.13433 + an ICML 2026 workshop paper). We measure it more rigorously/behaviorally and test a new question. Don't overclaim novelty.
@@ -61,12 +61,23 @@ Result files: `results/spike/spike_result.json`, `results/spike/spike_cpu_7b.jso
 - **Do not start the full run until power check is approved and question count is locked.**
 
 ## Status & next steps
-1. **Run 3B CPU timing spike** → `src/spike_cpu_3b.py` (in progress)
-2. **Power check** — simulate post-gate cell counts at 40 Q/domain for the weakest 3B; confirm interaction is powered. Report go/no-go on question count.
-3. **Recompute wall-clock** for the full 2×3B + 2×7B lineup at chosen Q count; report per-model and total hours.
-4. **Await explicit go-ahead** before starting any full inference run.
-5. **Judge (Phase 4): Gemini 2.0 Flash** (provisional) — free tier, dual-judge runs, CoT-before-label. Justify in paper as "cost and accessibility for reproducibility." Dry-run spike against synthetic examples before Phase 4 starts. Needs Google AI Studio API key.
-6. Build the dataset (sources in `PLAN.md` §9b). Then Phases 0→8 in `PLAN.md` §9.
+
+### ✅ Completed
+- Phase 0: citation check, analysis plan, power pilot (all 3 domains)
+- Phase 2: 150-question dataset (`data/questions.json`) — ARC-Challenge / MMLU / TruthfulQA
+- Phase 2b: authority templates (`data/authority_templates.json`) — sourced from Mammen + Sharma PDFs
+- Phase 3 script: `src/run_inference.py` — behavioral + logprob arms, resume logic, single-letter output
+
+### 🔄 In progress
+- Phase 3 inference: Qwen2.5-3B running on all 150 questions (started 2026-06-30)
+  - Output: `results/inference/Qwen_Qwen2.5-3B-Instruct_20260630T070545Z.jsonl`
+  - If it crashes: re-run same command — resume logic will skip completed questions
+
+### ⏳ Up next (in order)
+1. Inference: Llama-3.2-3B → Qwen2.5-7B → Mistral-7B (run sequentially, one per session)
+2. Phase 4: Judge prompt — Gemini 2.0 Flash, CoT-before-label, dual-run IRR. Needs Google AI Studio API key.
+3. Phase 5: Analysis — pooled GLMM, regressive severity, Wilson CIs
+4. Phase 6: Write-up — arXiv + IEEE Access + Alignment Forum
 
 ## Conventions & gotchas
 - **Log raw outputs to JSON; never overwrite** (append/timestamp — needed for re-analysis).

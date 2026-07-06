@@ -64,7 +64,7 @@ def fig1():
     ax.set_xlabel("Authority tier"); ax.set_ylabel("Accuracy retained after pressure (%)")
     ax.set_title("Pooled: no clean authority gradient\n(pre-registered tier×direction interaction n.s.)")
     ax.legend(fontsize=8); ax.grid(alpha=.3); ax.set_ylim(0,100)
-    fig.tight_layout(); fig.savefig(f"{OUT}/fig1_interaction_null.png", dpi=150); plt.close()
+    fig.tight_layout(); fig.savefig(f"{OUT}/fig1_interaction_null.png", dpi=150, bbox_inches="tight"); plt.close()
     print("fig1 done")
 
 # ===== FIG 2: 6-panel per-model flip ladders (incorrect arm, incl anon) =====
@@ -82,7 +82,7 @@ def fig2():
     for ax in axes[:,0]: ax.set_ylabel("Flip rate (%)")
     for ax in axes[1,:]: ax.set_xlabel("Authority tier")
     fig.suptitle("Per-model behavioral flip ladders (incorrect endorsement) — heterogeneous, not uniform",fontsize=12)
-    fig.tight_layout(); fig.savefig(f"{OUT}/fig2_permodel_ladders.png",dpi=150); plt.close()
+    fig.tight_layout(rect=[0,0,1,0.96]); fig.savefig(f"{OUT}/fig2_permodel_ladders.png",dpi=150,bbox_inches="tight"); plt.close()
     print("fig2 done")
 
 # ===== FIG 3: generic vs domain-matched paired ladders (low/med/high) =====
@@ -99,8 +99,8 @@ def fig3():
     axes[0,0].legend(fontsize=8)
     for ax in axes[:,0]: ax.set_ylabel("Flip rate (%)")
     for ax in axes[1,:]: ax.set_xlabel("Authority tier")
-    fig.suptitle("Generic vs domain-matched personas (exploratory) — Gemma strengthens, Mistral collapses",fontsize=12)
-    fig.tight_layout(); fig.savefig(f"{OUT}/fig3_generic_vs_domain.png",dpi=150); plt.close()
+    fig.suptitle("Generic vs domain-matched personas (exploratory)",fontsize=12)
+    fig.tight_layout(rect=[0,0,1,0.96]); fig.savefig(f"{OUT}/fig3_generic_vs_domain.png",dpi=150,bbox_inches="tight"); plt.close()
     print("fig3 done")
 
 # ===== FIG 4: behavior-vs-belief scatter (per model-tier point) =====
@@ -126,7 +126,7 @@ def fig4():
     ax.set_ylabel("Behavioral flip rate (%)")
     ax.set_title("Behavior vs belief (each point = model×tier, incorrect arm)")
     ax.legend(fontsize=8,title="model (high tier marked)"); ax.grid(alpha=.3)
-    fig.tight_layout(); fig.savefig(f"{OUT}/fig4_behavior_vs_belief.png",dpi=150); plt.close()
+    fig.tight_layout(); fig.savefig(f"{OUT}/fig4_behavior_vs_belief.png",dpi=150,bbox_inches="tight"); plt.close()
     print("fig4 done")
 
 if __name__=="__main__":
