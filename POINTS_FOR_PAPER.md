@@ -491,3 +491,73 @@ under-detects authority sycophancy; the log-probability signal recovers it. Our 
 reconcile a standing disagreement in the literature between "clean graded sycophancy"
 and "general susceptibility," and argue that measurement modality is decisive for
 evaluating sycophancy in the small open models most people actually run.
+
+---
+
+## 13. DOMAIN-MATCHED PERSONA EXPERIMENT + MAMMEN COMPARISON (2026-07-06)
+
+### Why we ran it
+Original null (generic personas: high-schooler→grad→professor) may be a persona-design
+artifact. Joswin 746 claims the graded effect emerges ONLY with domain-matched
+institutional personas. Wang found generic framing does ~nothing. We ran the direct A/B
+test: same 6 models, same everything, swap generic ladder → domain-matched institutional
+ladder (undergrad→PhD→Nobel laureate / world-leading authority). Pre-committed in
+ANALYSIS_PLAN §7d. Split across machines (group A: Qwen-3B/Llama-3B/Qwen-7B; C: Gemma;
+D: Mistral+Phi). Status at time of writing: 4 models fully done, Mistral+Phi finishing.
+
+### Belief-gradient result — GENERIC vs DOMAIN-MATCHED (incorrect arm, Spearman on low<med<high)
+| Model | Generic | Domain-matched | Effect of domain-matching |
+|---|---|---|---|
+| Qwen-3B | ρ=−0.07 p=0.17 (ns) | ρ=−0.17 p=0.001* | gradient APPEARED |
+| Llama-3B | ρ=−0.14 p=0.018* | ρ=−0.24 p<0.001* | STRONGER |
+| Qwen-7B | ρ=−0.21 p<0.001* | ρ=−0.11 p=0.039* | weaker (exception) |
+| Gemma-9B | ρ=−0.14 p=0.006* | ρ=−0.25 p<0.001* | STRONGER |
+| Mistral-7B | ρ=−0.16 p=0.004* | ρ=−0.03 p=0.70 (ns) | COLLAPSED (saturates) |
+→ domain-matched STRENGTHENS gradient in 3/5 (Qwen-3B, Llama, Gemma), weakens Qwen-7B,
+  COLLAPSES Mistral. Effect of persona-specificity is itself MODEL-DEPENDENT.
+
+### Mistral-7B — the key nuance (SAME model as Mammen)
+- GENERIC personas: monotonic gradient (flip 30%→36%→47%) — REPLICATES Mammen.
+- DOMAIN-MATCHED (stronger) personas: gradient COLLAPSES — flat ~60-66% flip, model caves
+  near-uniformly regardless of tier. Accuracy floor ~34-40%.
+- INTERPRETATION: the authority gradient is BOUNDED — it holds at moderate authority but
+  SATURATES into indiscriminate capitulation once authority is strong enough. Mammen's
+  single-persona-strength design could not detect this ceiling. This is a NOVEL extension,
+  NOT a contradiction. (Correction to an earlier read that called it a same-model contradiction.)
+
+### Accuracy retained under STRONG INSTITUTIONAL AUTHORITY (high tier, domain-matched, incorrect arm)
+| Model | Mammen top-tier (Board-Certified Physician) | Ours (Nobel/world-authority) |
+|---|---|---|
+| Gemma-9B | 34% | 24% (caves harder) |
+| Llama | 15% | 2% (caves harder) |
+| Qwen | 29% | 1% (caves harder) |
+| Mistral-7B | ~low (monotonic) | 34% (RESISTS — exception) |
+→ 3/4 models cave AS HARD OR HARDER than Mammen under strong authority (confirms his core
+  danger, behaviorally + two-turn). Mistral is the resister. NOT apples-to-apples (his:
+  MedQA/single-turn/logit; ours: ARC-MMLU-TruthfulQA/two-turn/behavioral; our Llama/Qwen
+  are smaller) — so compare DIRECTION not exact %.
+
+### HONEST POSITIONING vs MAMMEN (do NOT overclaim)
+- We are NOT uniformly opposing Mammen. On Gemma + Llama we REPLICATE (and strengthen with
+  domain-matched personas). Qwen difference is confounded by size (ours smaller → saturates).
+- We CONFIRM his core finding: strong institutional authority devastates accuracy (our 1-24%
+  ≈ or worse than his 15-34%), and we show it holds BEHAVIORALLY under a two-turn protocol.
+- We EXTEND him: (a) behavior-vs-belief measurement; (b) persona-strength variation revealing
+  a SATURATION CEILING (Mistral); (c) model-dependence — the effect is real but NOT universal.
+- FRAMING: "we confirm and extend Mammen, identifying the conditions (persona strength, model)
+  under which the graded effect holds vs saturates" — NOT "we oppose/beat Mammen."
+
+### Which design is "better" — Mammen's or ours? (honest)
+- NOT competing; complementary. MAMMEN STRONGER on: 11 models (larger + reasoning), mechanistic
+  depth (steering vectors, layer localization), cleaner single-turn logit isolation, better
+  resourced — it's the flagship. OURS STRONGER on: two measurement arms (behavior+belief),
+  two-turn realistic protocol, persona-strength variation (finds saturation), rigorous stats +
+  human-validated judge (κ=0.967) + pre-registration.
+- Our paper = narrower but methodologically complementary EXTENSION. Position as extending/
+  refining, never as superior.
+
+### Caveats (state honestly)
+- Mistral + Phi domain-matched not yet complete at time of writing — confirm final numbers.
+- Cross-study comparison is directional only (different domains/protocol/model sizes).
+- Qwen-7B and Mistral break the "domain-matched strengthens gradient" pattern → effect is
+  model-dependent, not a clean universal fix. Report the heterogeneity honestly.
