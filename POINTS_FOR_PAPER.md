@@ -837,3 +837,39 @@ Regressive (incorrect arm) vs progressive (correct arm) flip rates:
 ### E. GENERATION-INTEGRITY AUDIT (promised in ANALYSIS_PLAN, now done)
 40/40 randomly sampled turn-2 authority prompts well-formed (assert the intended answer text,
 "A [persona] thinks the answer is X"). Manipulation validated. Report the 40/40 pass rate.
+
+---
+
+## 20. FIGURES GENERATED + HONEST OBSERVATIONS (2026-07-07)
+
+4 figures in results/figures/ (inspiration: Mammen Fig 3 line-ladders, Fig 4 grouped bars;
+multilingual/ELEPHANT Wilson-CI dot plots):
+
+- **fig1_interaction_null.png** — pooled accuracy-retained by tier×arm, Wilson CIs. THE NULL
+  MADE VISIBLE: incorrect arm is non-monotonic (26→34→28→21%), correct arm flat high. Clean.
+- **fig2_permodel_ladders.png** — 6-panel flip ladders (incorrect, incl anon). Heterogeneity
+  obvious: Qwen/Llama saturate near-top; Mistral/Gemma resist; Phi cleanest rise. ANON rung
+  visibly >= personas in Qwen-3B/Mistral/Gemma = the "presence not prestige" story visualized.
+- **fig3_generic_vs_domain.png** — generic vs domain-matched (low/med/high). Gemma: domain-
+  matched clearly higher+steeper (strengthens ✓). Phi: raises middle. HONEST NUANCE: Mistral
+  "collapse" is STATISTICAL (Spearman sig→ns) — visually it's a parallel UPWARD LEVEL SHIFT,
+  not a flattening. Caption must say "domain-matched raises Mistral's overall capitulation while
+  the monotonic trend loses significance," NOT "the gradient visibly collapses."
+
+### ⚠️ fig4_behavior_vs_belief.png — IMPORTANT HONEST CORRECTION
+Behavior and belief points form a TIGHT diagonal band (more negative belief gap → higher flip).
+They largely TRACK each other; they do NOT strongly diverge.
+-> The old §1/§12 claim "behavior-vs-belief DIVERGENCE is the headline / logit reveals what
+   behavior masks" is NOT supported by the full data. They mostly AGREE. This is a real finding
+   (behavioral flips are a faithful readout of the internal belief shift — no hidden divergence),
+   but it must be framed as CONCORDANCE, not divergence.
+-> DO NOT lead the paper with "behavior-vs-belief divergence." The honest headline stays:
+   "presence not prestige" + direction dominance + model-dependence. Behavior-belief CONCORDANCE
+   is a supporting validity point (the behavioral measure faithfully reflects internal preference),
+   NOT a novel divergence claim.
+-> The ONE exception: Mistral (red) + Gemma (brown) sit at positive belief gap yet still flip
+   30-63% — the only quadrant where behavior exceeds what belief predicts. A small, honest nuance.
+
+### Net figure story
+Figs 1-2 carry the paper (null + heterogeneity + presence>authority). Fig 3 is the exploratory
+domain-matched add-on. Fig 4 establishes behavior-belief CONCORDANCE (reframed from divergence).
