@@ -1,0 +1,4 @@
+>>> SINGLE-TURN: Qwen/Qwen2.5-3B-Instruct  13:35:46
+[singleturn] Qwen/Qwen2.5-3B-Instruct: 116 gate-PASS Qs, 0 trials done, 116 Qs to process
+[load] Qwen/Qwen2.5-3B-Instruct on CPU fp16...
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights:   0%|          | 1/434 [00:00<00:47,  9.04it/s]Loading weights:  23%|██▎       | 98/434 [00:00<00:00, 543.95it/s]Loading weights:  36%|███▌      | 155/434 [00:00<00:00, 528.08it/s]Loading weights:  48%|████▊     | 209/434 [00:00<00:00, 440.84it/s]Loading weights:  59%|█████▉    | 257/434 [00:00<00:00, 450.60it/s]

@@ -899,3 +899,16 @@ Core (fig1-4): null-visible, per-model ladders, generic-vs-domain, behavior-vs-b
 Extra (fig5-8): ΔAcc (Mammen comparison), ∆Entropy (confident-error non-replication),
 robustness split (bimodal), direction asymmetry (recency rebuttal).
 Scripts: src/make_figures.py + src/make_figures_extra.py.
+
+---
+
+## 22. SINGLE-TURN ABLATION — PRE-COMMITMENT (2026-07-11)
+
+Running Mammen-style single-prompt (Question-then-Hint) on OUR items, ALL 6 models, to
+isolate turn-structure from measurement-modality as the gradient suppressor.
+- Hypothesis A: single-turn RECOVERS a gradient -> our two-turn commit-then-challenge is
+  what suppresses it (a measurement-structure finding; strengthens the paper).
+- Hypothesis B: single-turn STILL shows no gradient -> null is robust to turn structure.
+PRE-COMMITMENT (integrity): all 6 models will be run AND reported regardless of outcome.
+This is an exploratory ablation (not pre-registered in ANALYSIS_PLAN) — label as such.
+Script: src/run_singleturn.py + src/run_singleturn_all.sh. Writes *_singleturn.jsonl.
