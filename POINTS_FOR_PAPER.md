@@ -912,3 +912,61 @@ isolate turn-structure from measurement-modality as the gradient suppressor.
 PRE-COMMITMENT (integrity): all 6 models will be run AND reported regardless of outcome.
 This is an exploratory ablation (not pre-registered in ANALYSIS_PLAN) — label as such.
 Script: src/run_singleturn.py + src/run_singleturn_all.sh. Writes *_singleturn.jsonl.
+
+---
+
+## 23. SINGLE-TURN FINAL RESULTS + ADVERSARIAL SELF-REVIEW (2026-07-14) [CRITICAL — supersedes §22-era shorthand]
+
+All 6 models complete (Gemma finished Tue 10:15; total single-turn wall-clock ~44.5h).
+An independent adversarial re-analysis (full report: **fab_inference.md**) recomputed everything
+from raw JSONL and ran 4 never-before-run checks. Results below are the verified finals.
+
+### 23a. THE HEADLINE RESULT — commitment penalty, now with inferential backing (6/6)
+Paired McNemar per model (two-turn flip vs single-turn caved, identical (question,tier) pairs,
+incorrect arm, anon/low/med/high):
+| Model | 2-turn | 1-turn | amplif | discordant b10:b01 | McNemar p |
+|---|---|---|---|---|---|
+| Qwen-3B | 81% | 27% | 3.0x | 260:7 | <1e-15 |
+| Llama-3B | 96% | 44% | 2.2x | 200:1 | <1e-15 |
+| Qwen-7B | 97% | 10% | 9.3x | 434:0 | <1e-15 |
+| Mistral-7B (resister) | 44% | 10% | 4.2x | 155:13 | <1e-15 |
+| Phi-3.5 | 76% | 40% | 1.9x | 178:11 | <1e-15 |
+| Gemma-9B (resister) | 46% | 20% | 2.2x | 147:17 | <1e-15 |
+→ 1.9–9.3x (median 3.0x), ALL models, saturators AND both resisters. The paper's spine.
+Scope hedge (state in paper): isolates TURN STRUCTURE, not pure "social commitment" — two-turn
+also differs in having the model's own answer in context. Say "commit-then-challenge structure."
+
+### 23b. ⚠️ CORRECTION — do NOT write "gradient stays flat in single-turn" (pooled trend exists)
+Per-model 1T trends: all 6 ns (Spearman/CA — verified). BUT pooled (n=2,752, never run before):
+GEE cluster=model coef +0.085 p=0.0001 (over-optimistic, 6 clusters); logit+model-FE coef +0.094
+**p=0.024**; raw pooled 24→21→27→27% (non-monotonic, small).
+→ SAFE WORDING: "the pre-registered interaction fails in both structures and no individual model
+shows a reliable single-turn gradient; pooled single-turn shows a small positive trend
+(~+0.09 log-odds/rung, p≈0.02 FE) with a non-monotonic raw pattern." Disclose it FIRST.
+
+### 23c. ⚠️ CORRECTION — "anon ≈ professor" is 3/6, NOT universal (and the refinement is our best novelty)
+Paired McNemar anon-vs-high (two-turn): ns in the 3 SATURATORS only (ceiling artifact).
+In every model with headroom: **Mistral anon 63% > high 46% (p=0.0013, BACKWARDS);
+Phi high 94% > anon 72% (p<1e-4); Gemma high 57% > anon 39% (p=1e-4).**
+→ CORRECT CLAIM: "presence gets you most of the way; prestige adds a model-dependent,
+INCONSISTENT-SIGN modulation (±17-22pp)." This REFINES Wang 2508.02087 (they: expertise within
+4.4%; us: ±17-22pp behavioral in non-saturated models) — our sharpest differentiation from the
+scooping paper. We were overclaiming "anon≈professor" AND underclaiming this refinement.
+
+### 23d. ⚠️ SCOPE GAPS to disclose (from the adversarial review)
+- **κ=0.967 covers the MAIN run only** — no singleturn file was ever judged (regex-only labels).
+  Mitigations verified: 0.0% extraction failures both structures; 1T correct-arm accuracy
+  93.6-100%; main-run regex-vs-judge 99.9%. FIX (cheap): judge pass over *_singleturn.jsonl.
+- **Single-turn CONTROL tier is incoherent** ("I don't think that's right" with no prior answer
+  to refer to — verified in raw prompts). Excluded from analyses; exclude-with-reason in paper.
+- **Two-turn anon-inclusive CA is not flat either**: Mistral z=−2.10 p=0.036 (NEGATIVE), Phi
+  +4.69***, Gemma +2.89**, Qwen-7B p=0.052. Only clean "flat" claim = the pooled interaction null.
+- **Adopted-X strict metric**: 1T errors adopting X specifically: Llama 33%, Phi 32%, Qwen-3B 20%,
+  Gemma 19%, Qwen-7B 8%, Mistral 6% — resisters' 1T errors are mostly generic, not X-adoption.
+  Report adopted-X alongside the loose caving metric.
+
+### 23e. Verdict recorded (fab_inference.md)
+Title: "Presence, Not Prestige: Commitment Structure Dominates Source Authority in the
+Sycophancy of Small Open LLMs." Venue: IEEE Access (not workshop). Estimate ~65-70% as-is,
+~75% after folding 23b-23d reframes + single-turn judge pass. Biggest sink = a reviewer catching
+the two overclaims (23b/23c) before we disclose them.
