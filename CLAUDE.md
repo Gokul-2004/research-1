@@ -10,7 +10,7 @@ An empirical AI-safety study, **"Authority-Graded Sycophancy in Open-Source LLMs
 
 ## Locked decisions (don't re-litigate)
 - **Contribution = methodological, NOT discovery.** Authority-graded sycophancy already exists in prior work (arXiv 2601.13433 + an ICML 2026 workshop paper). We measure it more rigorously/behaviorally and test a new question. Don't overclaim novelty.
-- **Logprob arm = GO ✅** (feasibility spike passed). **Behavior-vs-belief is the headline.** "Forbidden middle": never lead the abstract with behavior-vs-belief while deferring the logprob evidence.
+- **Logprob arm = GO ✅** (feasibility spike passed) — logprobs ARE collected and used, but the **original "behavior-vs-belief divergence" headline is DEAD** (falsified: fig4 shows behavior & belief are CONCORDANT; the anon ladder shows no clean belief gradient either — POINTS §3g/§16/§20). **Current headline = "Presence, Not Prestige":** presence of a counter-claim, not source authority, drives capitulation; direction dominates; susceptibility is model-dependent. Do NOT reintroduce divergence/"logits recover a masked gradient" language.
 - **Stats = ONE pooled GLMM, ONE confirmatory test:** the `authority_tier × endorsement_direction` interaction. Everything else is exploratory (BH-corrected as a family). Report two distinct numbers: (a) the interaction = the *test*; (b) `regressive_severity = flip(incorrect) − flip(zero-authority control)` = the *descriptive effect size*. Never present (b) as the test.
 - **Recency/position = a Limitations sentence, not machinery** (two-turn puts pushback last in every condition → held constant across tiers).
 - **Citations:** PDFs were downloaded from arXiv (IDs grounded). The workshop paper `746_A_Mechanistic_View_of_Auth.pdf` has **no arXiv ID — cite by authors/title/venue, never "746".**
@@ -60,24 +60,27 @@ Result files: `results/spike/spike_result.json`, `results/spike/spike_cpu_7b.jso
 - **Target: 40 questions/domain** (down from 75), pending power check that cells survive the baseline gate and power the `tier × direction` interaction (not just the marginal trend).
 - **Do not start the full run until power check is approved and question count is locked.**
 
-## Status & next steps
+## Status & next steps  (updated 2026-07-13)
 
-### ✅ Completed
+### ✅ Completed — ALL INFERENCE + ANALYSIS DONE
 - Phase 0: citation check, analysis plan, power pilot (all 3 domains)
 - Phase 2: 150-question dataset (`data/questions.json`) — ARC-Challenge / MMLU / TruthfulQA
 - Phase 2b: authority templates (`data/authority_templates.json`) — sourced from Mammen + Sharma PDFs
-- Phase 3 script: `src/run_inference.py` — behavioral + logprob arms, resume logic, single-letter output
+- Phase 3 inference: **all 6 models** (main 5-rung + Condition-B anon + domain-matched), both arms — DONE
+- Phase 4 judge: **Gemini 2.5 Flash** (not 2.0 — see deviations), human validation **Cohen's κ=0.967, Gwet AC1=0.980** — DONE
+- Phase 5 analysis: confirmatory GLMM (freq p=0.78 / GEE p=0.95 — NULL, triple-verified), Cochran-Armitage per model, ∆Entropy, Robustness Rate, direction asymmetry, 8 figures — DONE
+- **Single-turn ablation** (exploratory, POINTS §22): 5/6 models done; Gemma finishing ~2026-07-14 AM
+- Results frozen: `RESULTS_MANIFEST.sha256`. Everything pushed to github.com/Gokul-2004/research-1.
 
 ### 🔄 In progress
-- Phase 3 inference: Qwen2.5-3B running on all 150 questions (started 2026-06-30)
-  - Output: `results/inference/Qwen_Qwen2.5-3B-Instruct_20260630T070545Z.jsonl`
-  - If it crashes: re-run same command — resume logic will skip completed questions
+- Gemma-2-9b single-turn ablation (last model) — completes ~Tue 2026-07-14 morning.
 
 ### ⏳ Up next (in order)
-1. Inference: Llama-3.2-3B → Qwen2.5-7B → Mistral-7B (run sequentially, one per session)
-2. Phase 4: Judge prompt — Gemini 2.0 Flash, CoT-before-label, dual-run IRR. Needs Google AI Studio API key.
-3. Phase 5: Analysis — pooled GLMM, regressive severity, Wilson CIs
-4. Phase 6: Write-up — arXiv + IEEE Access + Alignment Forum
+1. Record final single-turn numbers in POINTS §22 (with Mistral p=0.088 / Phi p=0.107 counterpoint)
+2. Paired stats for the commitment penalty (McNemar / GEE — same gate-passed items both structures)
+3. Phase 6: Write-up — **IEEE Access** (framing = "Presence, Not Prestige"; cite 2509.16533 + 2508.02087 up front as findings we EXTEND, not discover). See POINTS §16 + lit-survey novelty reassessment.
+
+> **⚠️ Two 2025-26 papers partially scoop our findings** (2509.16533 = turn-structure/"commitment penalty"; 2508.02087 = "presence not prestige"). Contribution is **extension/replication, not discovery** — already locked here. Frame accordingly.
 
 ## Conventions & gotchas
 - **Log raw outputs to JSON; never overwrite** (append/timestamp — needed for re-analysis).

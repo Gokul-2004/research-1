@@ -4,6 +4,19 @@
 Every completed step is recorded here with the key result.
 When writing the paper, read this file first — it has every number, every decision, and why.
 
+> ⚠️ **HEADLINE UPDATE (2026-07-13) — read before trusting the mid-log framing.** This is a chronological
+> log, so its **early/middle entries capture the story as it evolved**, including a headline that was later
+> **FALSIFIED**. Specifically, the "🔑 MAJOR FINDING (2026-07-01)" block below and the several "behavior-vs-
+> belief divergence" statements are **DEAD** — do not use them:
+> - fig4 (POINTS §20): behavior & belief are **CONCORDANT**, not divergent.
+> - the **anon ladder** (POINTS §3g): no clean authority gradient in belief either (anon ≈ professor).
+> - pre-registered `tier×direction` interaction **NOT supported** (freq p=0.78, GEE p=0.95; POINTS §17).
+>
+> **CURRENT headline = "Presence, Not Prestige"** (POINTS §16). The falsified blocks are annotated inline
+> below and kept as the integrity trail (per the "correct, don't erase" rule). The **final, complete state**
+> of the project — judge, κ=0.967, domain-matched, single-turn, all analyses — is in the **"CURRENT STATE
+> (2026-07-13)" section appended at the very end of this file.** Read that section for what is actually true now.
+
 ---
 
 ## Phase 0 — Setup & Pre-specification
@@ -165,7 +178,14 @@ When writing the paper, read this file first — it has every number, every deci
   "authority-grading is capacity-dependent" (clean scaling story). If no → "saturation
   universal in open models ≤7B." Either is publishable.
 
-### 🔑 MAJOR FINDING (2026-07-01) — the gradient IS there, in BELIEF not behavior
+### 🔑 MAJOR FINDING (2026-07-01) — ⚠️ LATER FALSIFIED — the gradient IS there, in BELIEF not behavior
+> **[SUPERSEDED — DO NOT USE. Kept for the trail.]** This entry claimed a universal belief gradient +
+> behavior-vs-belief divergence. Both were overturned: the **anon ladder** (POINTS §3g) shows the belief gap
+> is NOT monotonic once the format-matched anon rung is included (anon ≈ professor in 5/6 models), and **fig4**
+> (POINTS §20) shows behavior and belief are **CONCORDANT**, not divergent. The persona-only monotonic trend
+> below is real only as a *persona-rank sub-trend in a subset* and does not aggregate into the pre-registered
+> interaction (which FAILED, p=0.95). Read the entry as "what we believed on 2026-07-01," not as a finding.
+
 Ran a persona-only trend check (excluding our over-aggressive control rung):
 - **Qwen-3B belief gap:** low −3.47 → medium −4.41 → high −5.24 = **MONOTONIC**
 - **Llama-3B belief gap:** low −2.92 → medium −3.13 → high −3.55 = **MONOTONIC**
@@ -286,3 +306,59 @@ Rule going forward: **check the survey + PDF FIRST for every step, then build.**
 ### Decisions deliberately NOT changed (with rationale):
 - **No m=50 repetition** — we use temp=0/greedy (deterministic); repetition is redundant. Mammen (predecessor) also single-trial greedy. [If we ever add temp>0 sampling, revisit.]
 - **No answer-order counterbalancing mid-study** — position is held constant across the conditions we compare, so it can't confound the `tier × direction` interaction. Logged as limitation instead (ANALYSIS_PLAN §7c).
+
+---
+
+# ⭐ CURRENT STATE (2026-07-13) — the authoritative "what is true now" section
+
+> The log above is chronological and contains a superseded headline (see the banner at the top of this file).
+> **This section is the current truth.** For full evidence + counterpoints see POINTS_FOR_PAPER.md; for
+> per-paper positioning see the lit-survey analysis.
+
+## Everything that is DONE
+- **Inference (all 6 models):** main run (5 rungs: control/anon/low/med/high × 2 arms), Condition-B anon
+  baseline, domain-matched institutional personas (low/med/high). Both behavioral + logprob arms.
+- **Judge:** Gemini **2.5** Flash (not 2.0 — deviation #3), 5,513 trials labeled, regex-vs-judge 99.9% agree.
+- **Human validation:** n=60, **Cohen's κ=0.967, Gwet's AC1=0.980, Beta(60,2) mean 0.968** — top-of-field.
+- **Confirmatory analysis (triple-verified NULL):** pre-registered `tier×direction` interaction NOT supported
+  — frequentist logit p=0.78, GEE (cluster=model) p=0.95, raw pooled accuracy non-monotonic (26→34→28→21%).
+  ⚠️ Variational-Bayes GLMM gave a FALSE z=10.4 artifact — do NOT use VB; use frequentist/GEE (POINTS §17).
+- **Supporting analyses:** ∆Entropy (Mammen's confident-error signal does NOT replicate at 3B-9B — positive ∆H),
+  Robustness Rate + Wilson CIs, direction asymmetry (+36 to +96pp — the recency rebuttal), generation-integrity
+  audit (40/40 well-formed), Cochran-Armitage per model (4/6 significant, persona-only coding).
+- **Figures:** 8 in `results/figures/` (fig1 null-visible, fig2 per-model ladders, fig3 generic-vs-domain,
+  fig4 behavior-vs-belief CONCORDANCE, fig5 ∆Acc Mammen-style, fig6 ∆Entropy, fig7 robustness split, fig8 direction asymmetry).
+- **Single-turn ablation (exploratory, POINTS §22):** 5/6 done (Gemma finishing ~2026-07-14 AM). Commitment
+  penalty replicates — two-turn caves 1.9–9.3× more than single-turn; flat gradient holds in single-turn too.
+- **Results frozen:** `RESULTS_MANIFEST.sha256`. Pushed to github.com/Gokul-2004/research-1.
+
+## The CURRENT findings (safe to write)
+1. **Presence, not prestige:** presence of a counter-claim — not source authority — drives capitulation.
+   Anon "someone" ≈ professor in almost every model.
+2. **Direction dominates:** incorrect endorsement devastates accuracy (coef −3.50, p<0.0001); correct barely helps.
+3. **Model-dependent susceptibility:** ~30% (Mistral) → ~99% (Qwen-7B/Llama) capitulation; NOT tracking size.
+   Taxonomy: saturators (Qwen×2, Llama), resisters (Mistral, Gemma), partial-grader (Phi).
+4. **Authority sub-trend, not a gradient:** per-model Cochran-Armitage significant in 4/6 (persona-only), does
+   NOT aggregate into the pooled interaction; anon-inclusive coding changes the count → report BOTH.
+5. **Behavior ≈ belief (CONCORDANT):** fig4 — behavioral flips faithfully track the belief shift (a validity
+   result, NOT the old "divergence" claim).
+6. **Commitment penalty (exploratory):** two-turn commit-then-challenge amplifies capitulation 1.9–9.3× vs
+   single-turn; flat authority gradient survives both structures.
+7. **Domain-matched personas (exploratory):** strengthen the gradient in 3/6, collapse Mistral (saturation ceiling).
+
+## Novelty status (honest) — contribution is EXTENSION, not discovery
+- Finding "presence not prestige" is anticipated by **2508.02087** (Wang/KAUST, AAAI 2026) on overlapping models.
+- The turn-structure "commitment penalty" is anticipated by **2509.16533** (Kim & Khashabi, EMNLP 2025 Findings).
+- Our contribution = a pre-registered, human-validated, small-open-model study that **crosses authority ×
+  turn-structure × persona-design** in one design, with a self-commitment gate and per-model amplification —
+  a rigorous extension/reconciliation. Cite both papers up front. Venue: **IEEE Access**.
+
+## What's LEFT (no new inference)
+1. Finish Gemma single-turn (Tue AM) → record §22 final numbers (with Mistral p=0.088 / Phi p=0.107 counterpoint).
+2. Paired stats for the commitment penalty (McNemar / GEE — same gate-passed items in both structures).
+3. Write-up (IEEE Access), arXiv, Alignment Forum.
+
+## Deviations from pre-registration (full table in DEVIATIONS_FROM_PREREGISTRATION.md)
+GEE/freq instead of VB-GLMM; Cochran-Armitage as primary trend (Spearman was intermediate); judge 2.5 not 2.0;
+n=60 not ~100; control reported separately (anon = the matched floor); domain-matched + single-turn are
+EXPLORATORY (not pre-registered; §7d covered model-set expansion only); single-letter output; "Factual" not "Geography".

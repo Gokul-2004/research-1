@@ -2,6 +2,22 @@
 
 **Target output:** arXiv preprint → Alignment Forum write-up → IEEE Access submission (optionally AAAI SafeAI / NeurIPS SoLaR workshop).
 
+> ⚠️ **READ BEFORE USING THIS PLAN (updated 2026-07-13).** This is the *pre-results* technical plan; the
+> design (two-turn, two-arm, length-matched control, pre-registered `tier×direction` interaction, baseline
+> gate, small-open-model scope) all still hold and were executed. **But the intended HEADLINE changed after
+> the data came in.** Wherever this file says the headline is **"behavior-vs-belief (divergence)"** (§1c, §6,
+> §8, Phase 0.5/3/6, checklist), that framing is **DEAD / FALSIFIED** — do not use it:
+> - fig4 shows behavior & belief are **CONCORDANT**, not divergent (POINTS §20).
+> - the **anon ladder** shows no clean authority gradient in belief either (anon ≈ professor; POINTS §3g).
+> - the pre-registered `tier×direction` interaction **was NOT supported** (freq p=0.78, GEE p=0.95; POINTS §17).
+>
+> **Current headline = "Presence, Not Prestige":** presence of a counter-claim — not source authority —
+> drives capitulation; **direction dominates**; susceptibility is **model-dependent**; a per-model authority
+> sub-trend exists (4/6, Cochran-Armitage, persona-only) but does not aggregate. Also note two papers now
+> partially scoop us (2509.16533 turn-structure; 2508.02087 presence-not-prestige) → contribution is
+> **extension, not discovery**. Source of truth for the CURRENT story: **POINTS_FOR_PAPER.md §16/§17/§20**
+> and the lit-survey novelty reassessment. The logprob arm is still used; it is just not a "divergence" story.
+
 ---
 
 ## 1. Research question & hypotheses

@@ -4,6 +4,15 @@
 
 Last updated: 2026-06-29 (updated with Linux workstation decisions — see §7b).
 
+> ⚠️ **STALE SNAPSHOT (2026-06-29) — this is the PRE-INFERENCE plan.** The *design* it describes was executed
+> and holds, but its stated **headline ("behavior-vs-belief is the intended headline," §0/§3b/§9) is DEAD** —
+> the data falsified it (behavior & belief are CONCORDANT; no clean belief gradient; pre-registered interaction
+> failed p=0.95). **Current headline = "Presence, Not Prestige"** (counter-claim presence, not source authority,
+> drives capitulation; direction dominates; model-dependent). All 6 models, the judge (κ=0.967), domain-matched
+> + single-turn ablations are DONE. Two papers (2509.16533, 2508.02087) partially scoop us → contribution is
+> **extension, not discovery**. **For the current state, read `PROGRESS.md` "CURRENT STATE (2026-07-13)" +
+> `POINTS_FOR_PAPER.md` §16/§17/§20 + `CLAUDE.md` — not this file.**
+
 ---
 
 ## 0. TL;DR — where we are right now

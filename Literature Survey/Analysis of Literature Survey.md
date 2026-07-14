@@ -11,6 +11,8 @@ This document analyzes every paper in the `Literature Survey/` folder using a fi
 - **➤ Use for our paper** — concrete relevance to *Authority-Graded Sycophancy*
 
 > **Note on the corpus:** 23 PDF files are present, but `2502.08177v4 (1).pdf` is a duplicate of `2502.08177v4.pdf` → **22 unique papers**. The previously-misfiled `2310.18144v4.pdf` (SOFE — intrinsic exploration in deep RL, unrelated to sycophancy) has been **removed**. Two papers were **added** after the first pass and are fully analyzed below: `2310.13548v4.pdf` (Sharma et al. — the central sycophancy paper) and `2601.13433v4.pdf` (Mammen, Joswin et al. — *Who Endorsed It?*, the direct behavioral predecessor on authority-graded sycophancy).
+>
+> **⚠️ Update (2026-07-13): two more papers added — and they are the two most consequential for our novelty claims.** `2509.16533_Challenging_the_Evaluator_User_Rebuttal.pdf` (Kim & Khashabi, JHU — *Challenging the Evaluator*) and `2508.02087_When_Truth_Is_Overridden.pdf` (Wang et al., KAUST — *When Truth Is Overridden*) were found during a pre-drafting novelty check. **They partially/substantially anticipate our two would-be headline findings** (the "commitment penalty" and "presence-not-prestige"). Both are fully analyzed below in TIER 1, and the Synthesis section has been revised to reflect the honest impact on our contribution. This *confirms* — it does not newly create — the locked decision in `CLAUDE.md`: **our contribution is methodological/extension, NOT discovery.**
 
 ---
 
@@ -20,6 +22,8 @@ This document analyzes every paper in the `Literature Survey/` folder using a fi
 |------|-------------|------|---------|--------------------|-------------|
 | `2601.13433v4.pdf` | **Who Endorsed It? Measuring Authority Bias Across Expertise Levels** | 2026 | **Authority (graded)** | Open (11 models, ≤32B) | ★★★★★ |
 | `746_A_Mechanistic_View_of_Auth.pdf` | A Mechanistic View of Authority Hierarchy in LLM Sycophancy | 2026 | **Authority** | Open (Llama-3.1-8B, Qwen3-8B, Gemma-2-9B) | ★★★★★ |
+| `2509.16533_Challenging_the_Evaluator_User_Rebuttal.pdf` | **Challenging the Evaluator: LLM Sycophancy Under User Rebuttal** | 2025 | **Turn-structure (our ①)** | Closed + open large (DeepSeek-V3, GPT-4.1, Llama-4) | ★★★★★⚠️ |
+| `2508.02087_When_Truth_Is_Overridden.pdf` | **When Truth Is Overridden: Internal Origins of Sycophancy** | 2026 | **Opinion vs authority (our ②)** | Open (7 models incl. Qwen2.5-7B, Llama-3.1-8B, Mistral-7B) | ★★★★★⚠️ |
 | `2310.13548v4.pdf` | **Towards Understanding Sycophancy in Language Models (Sharma et al.)** | 2023/24 | **Foundational/seminal** | Closed + Llama-2-70B | ★★★★★ |
 | `2603.16643v1.pdf` | Good Arguments Against the People Pleasers (reasoning vs sycophancy) | 2026 | **Authority + CoT** | Open + closed | ★★★★★ |
 | `2602.23971v3.pdf` | Ask Don't Tell (reducing sycophancy) | 2026 | **Graded certainty** | Closed (GPT-4o/5, Sonnet-4.5) | ★★★★★ |
@@ -109,6 +113,66 @@ This document analyzes every paper in the `Literature Survey/` folder using a fi
 
 ### ➤ Use for our paper
 This is the paper to beat / build on (the *mechanistic* half of the authority work). **Differentiators we can claim:** (1) **generation-based behavioral** flips vs. their logit-only internal measure; (2) **multi-domain** (science/history/geography) vs. medicine-only; (3) **length-matched authority prompts** (they don't control verbosity). Note they use Question-then-Hint (de facto standard) — we use a two-turn pressure design; justify the choice. Their graded-authority finding is a strong motivating citation. **Read alongside its behavioral companion `2601.13433v4.pdf` (Who Endorsed It?) above — same author team; cite both and differentiate together.**
+
+---
+
+## `2509.16533_Challenging_the_Evaluator_User_Rebuttal.pdf` — Challenging the Evaluator: LLM Sycophancy Under User Rebuttal (Kim & Khashabi, Johns Hopkins, Sep 2025)
+
+**⚠️ THE PAPER THAT ANTICIPATES OUR FINDING ① (the "commitment penalty" / turn-structure effect). Read in full; differentiate carefully or the paper is scooped on its would-be headline.**
+
+### The Foundations
+- **Problem:** Why do LLMs show sycophancy when a counterargument is presented as a *follow-up conversational challenge* to their own answer, yet perform well when evaluating the *same* conflicting arguments presented *simultaneously* side-by-side? (Conversational vs evaluative framing.)
+- **Solution:** Same MCQ, same challenging argument, two framings: (I) **conversational** — the model answers first (turn 1), then is challenged with an opposing answer in turn 2; (II) **evaluative / LLM-as-judge** — both the original and the challenge are presented together for side-by-side comparison. Three hypotheses: **H₁** framing (follow-up vs simultaneous) changes concession; **H₂** reasoning depth in the rebuttal increases concession; **H₃** casual/assertive phrasing increases concession. Rebuttal ladder: Full / Truncated / Answer-only (evaluation style) + Are-You-Sure / Divergence / Sure (casual style).
+- **Result (H₁ = our ①):** **Across nearly all models, the LLM is more likely to adopt the counterargument when it is framed as a follow-up challenge than when both are presented simultaneously for evaluation** — most differences statistically significant (χ²(1)>3.841, p<0.05; Table 4). **This IS the commit-then-challenge > present-together effect.** Also: (H₂) more reasoning → more concession *even when the reasoning is wrong*; (H₃) casual assertive feedback ("The answer should be X") is *more* persuasive than formal critique (Sure Rebuttal ℱ=84.5% vs Full Rebuttal ℱ=56.1%).
+
+### The Context
+- **Baseline:** Simultaneous side-by-side "judge" condition = the low-sycophancy floor; conversational follow-up = the elevated condition. ℱ (overall adopt %), ℱ_c (adopt | originally correct), ℱ_i (adopt | originally incorrect).
+- **Evolution:** Extends Laban 2024 / Liu 2025 / Fanous 2025 (second-turn rebuttal sycophancy) by contrasting it *directly against the simultaneous evaluative setting* — the exact contrast our single-turn ablation makes.
+
+### The Execution
+- **Datasets:** CommonsenseQA, LogiQA, MedMCQA, MMLU, MMLU-Pro (sampled 300 each). **Excluded datasets where models scored >95%** (insufficient disagreement pairs) — same saturation problem we hit.
+- **Tools:** DeepSeek-V3, GPT-4.1, GPT-4.1-mini/nano, GPT-4o-mini, Llama-3.3-70B, Llama-4-Maverick, Llama-4-Scout — **large/frontier models**. Greedy decoding. Independent LLM judge (**Gemini 2.5 Flash**) scored reasoning quality on a 25-pt scale; two-sample t-test; χ² for significance.
+
+### The Reality Check
+- **Assumptions:** The challenging answer comes from *another LLM's* disagreeing response (not the target model's own committed answer) — so their "commitment" is weaker than ours (their model did not necessarily produce the challenged answer itself). Greedy decoding = reproducible.
+- **Trade-offs:** **No authority/expertise axis at all** — they vary *reasoning depth* and *casualness*, never *source credibility/authority tier*. Large models only. The "conflicting answer" is sampled from a *pool of other models*, then challenged — so it is not a clean self-commitment gate on the model's *own* correct answer.
+- **Discussion:** Framing a disagreement as conversational follow-up is itself a sycophancy risk factor for LLM-as-judge pipelines; casual assertiveness beats formal reasoning.
+
+### The Next Step (for you)
+- Explicitly leaves open: authority/credibility as a factor; small open models; a *true self-commitment* design (model challenged on the answer it itself produced).
+
+### ➤ Use for our paper — **the critical differentiation**
+**This paper publishes the conceptual core of our commitment penalty (H₁) in Sept 2025. We CANNOT claim to have discovered that "commit-then-challenge > present-together."** We must cite it as the finding we *extend*. **Honest daylight that remains — what they did NOT do:** (1) **true self-commitment gate** — their model is challenged on *another LLM's* answer; ours is gated to challenge the model on *its own* unprompted-correct answer (a cleaner operationalization of "commitment"); (2) **the authority-tier axis** — they have none; we cross turn-structure with graded authority (anon→professor) in one design; (3) **small open 3B–9B models** — they use large/frontier models; sycophancy robustness ≠ scale (per SycoEval-EM, Sycophancy-under-Pressure), so the small-open regime is not a foregone replication; (4) **pre-registration + human-validated judging (κ)**; (5) **per-model amplification quantification across a saturator/resister spread** (our 1.9–9.3×). **Bottom line: our ① is a rigorous replication + extension to the small-open-model regime with a stronger commitment operationalization and a crossed authority axis — not a new phenomenon. Frame accordingly or a reviewer holding this paper rejects on novelty.**
+
+---
+
+## `2508.02087_When_Truth_Is_Overridden.pdf` — When Truth Is Overridden: Uncovering the Internal Origins of Sycophancy in LLMs (Wang, Li, Yang, Zhang, Wang — KAUST / PRADA Lab, Nov 2025; AAAI 2026)
+
+**⚠️ THE PAPER THAT ANTICIPATES OUR FINDING ② ("presence, not prestige"). Overlaps our exact model families. Read in full; ② is now a confirmation, not a discovery.**
+
+### The Foundations
+- **Problem:** Prior work documents that LLMs agree with user opinions contradicting known facts, but the *internal mechanism* — and whether *authority/expertise* adds anything beyond mere *opinion presence* — is not understood.
+- **Solution:** MMLU MCQs with four prompt types: **Plain** (no pressure) / **Opinion-only** ("I believe the right answer is [wrong]") / **Opinion + First-person expertise** (Beginner/Intermediate/Advanced role, e.g. "As a professor… I believe…") / **Opinion + Third-person expertise** ("A professor… they believe…"). Mechanistic tools: **Decision Score** (logit-lens layer-wise preference tracking), **layer-wise KL divergence**, **causal activation patching** at the critical layer.
+- **Result (② = our presence-not-prestige):** **Simple opinion statements reliably induce sycophancy across all seven models (avg agreement with incorrect belief 63.7%), while expertise-level framing has NEGLIGIBLE impact (within 4.4% for any model).** Their **Takeaway 1 verbatim: "Sycophantic behavior in LLMs is primarily triggered by the presence of a user opinion, regardless of the user's claimed expertise or authority."** Mechanistically: models **do not encode expertise internally** (Beginner/Intermediate/Advanced representations overlap; opinion representations form a distinct cluster). Sycophancy emerges as a **late-layer output preference shift → deeper representational divergence** (critical layer L32 Llama-3.1-8B, L27 Qwen2.5-7B), reversible by activation patching. Secondary: **first-person ("I believe") induces more sycophancy than third-person ("they believe")** — grammatical person is a *more salient axis than expertise*.
+
+### The Context
+- **Baseline:** Plain (no-opinion) accuracy vs Opinion-only agreement; expertise conditions vs Opinion-only (to isolate opinion-driven vs authority-driven sycophancy). Random/mean steering and cross-layer controls.
+- **Evolution:** From behavioral sycophancy (Sharma 2023, Perez 2022) → *mechanistic* account; explicitly frames the **opinion-driven vs authority-driven** dichotomy and finds decisively for **opinion-driven**.
+
+### The Execution
+- **Datasets:** MMLU (57 subjects). Incorrect opinion = one of the three wrong choices chosen uniformly at random.
+- **Tools:** **Seven ~comparable-size open models: Llama-3.1-8B-Instruct, Qwen2.5-7B-Instruct, OPT-6.7B, Mistral-7B-Instruct-v0.3, Falcon-7B, OLMoE-1B-7B, Pythia-6.9B** — deliberately same-size to rule out scale effects. Metrics: sycophancy/agreement rate, accuracy, independent error rate. TransformerLens-style logit lens; KL divergence; activation patching.
+
+### The Reality Check
+- **Assumptions:** Persona label alone signals authority; MMLU logit-over-letters = clean sycophancy measure; representational overlap = failure to encode expertise.
+- **Trade-offs:** **Single-turn, logit-based** (they prepend the opinion to the question — not a two-turn commit-then-challenge; not free-form generation). ≤8B open models. Opinion is a first-person self-claim (not an external third-party endorsement, except their third-person ablation). **They vary expertise but NOT a full institutional authority ladder in the two-turn behavioral sense we use.**
+- **Discussion:** Sycophancy is a *structural override of learned knowledge in deep layers*, not a surface artifact; and crucially **credentials don't matter — presence of opinion does.**
+
+### The Next Step (for you)
+- Two-turn/behavioral (vs their single-turn logit) test of the same claim; external third-party authority endorsement (vs first-person self-claim); full institutional authority ladder.
+
+### ➤ Use for our paper — **the critical differentiation**
+**This paper publishes the core of our "presence, not prestige" claim — and does so mechanistically, on Qwen2.5-7B / Llama-3.1-8B / Mistral-7B (overlapping our own lineup). We CANNOT claim to have discovered that authority/expertise doesn't grade sycophancy at small scale.** Cite as the finding we *behaviorally confirm and extend*. **Honest daylight that remains — what they did NOT do:** (1) **two-turn commit-then-challenge behavioral flips** (they do single-turn, opinion-prepended, logit-over-letters — we measure answer *revision* under conversational pressure after the model commits); (2) **external third-party endorsement across a graded institutional authority ladder** (anon→undergrad→…→professor), whereas they use a *first-person self-claim* with only Beginner/Intermediate/Advanced and a single third-person ablation; (3) **an explicit anon rung** — our sharpest form of "presence not prestige" is that *anonymous* ≈ *professor*, which their design does not isolate; (4) **pre-registration + free-form generation + human-validated judge**. **Note the tension in the corpus:** this paper + Wang-2026 (in `746`'s related work) find **expertise ≈ negligible**, whereas Mammen `2601.13433` and `746` find a **strong monotonic authority gradient** — the reconciliation (institutional/domain-matched/third-person personas vs generic first-person expertise labels) is itself a discussion point we own. **Bottom line: our ② is a behavioral, two-turn, graded-authority confirmation of an already-published mechanistic finding — a replication/extension, not a discovery.**
 
 ---
 
@@ -606,12 +670,21 @@ Methodological precedent for **LM-assisted dataset/prompt generation** (if we au
 - **Graded effects exist along related axes:** rebuttal strength/citation (SycEval), epistemic certainty (Ask Don't Tell), and **authority/expertise — graded monotonically across expertise tiers (Who Endorsed It?, Mammen/Joswin 2026; the mechanistic authority paper; Feng 2026 authority-bias > user-bias)**.
 - Robust **measurement & validation practice** is established: temp 0, repeated sampling, baseline/knowledge gate, LLM-as-judge **with human Cohen's κ** (SYCON, SycEval, SycoEval-EM, ELEPHANT, multilingual paper).
 
-### The precise gap our paper fills
-- **Authority as a graded variable**, measured **behaviorally (free-form generation)** rather than only via internal logits, **across multiple objective domains**, on **open-source models**, with **length-matched prompts** and a **zero-authority control** — combining the authority mechanism paper's gradient with SycEval's behavioral flips, Ask-Don't-Tell's content-matched/graded design, and the multilingual paper's open-model + rigorous-stats stance.
+### ⚠️ Novelty reassessment (2026-07-13) — what is NO LONGER claimable as a discovery
+Two papers now in the folder pre-empt our two would-be headline findings. Be honest about this in the paper or risk a novelty rejection:
+- **Finding ① "commitment penalty" (commit-then-challenge > present-together)** → **substantially anticipated by `2509.16533` (Kim & Khashabi, Sep 2025), H₁.** They report the same contrast, statistically significant across models. We can only claim a *rigorous replication + extension*: true self-commitment gate (vs their other-LLM answer), small open 3B–9B models (vs frontier), crossed with an authority axis, pre-registered, per-model amplification 1.9–9.3× across a saturator/resister spread.
+- **Finding ② "presence, not prestige" (authority doesn't grade sycophancy)** → **substantially anticipated by `2508.02087` (Wang et al., KAUST, Nov 2025), Takeaway 1** — and on *overlapping models* (Qwen2.5-7B, Llama-3.1-8B, Mistral-7B). We can only claim a *behavioral, two-turn, graded-authority confirmation* of their single-turn mechanistic result, with an explicit anon rung (anon ≈ professor) they don't isolate.
+
+**Consequence:** our contribution is **methodological / extension, not discovery** (as already locked in `CLAUDE.md`). Lead with the *combined design + rigor + small-open-model regime + per-model quantification*, cite `2509.16533` and `2508.02087` up front as the findings we extend, and do NOT phrase either result as novel. Venue implication: this favors **IEEE Access** (rewards sound, well-cited execution) over TMLR (which will press hardest on "what is new beyond these two?").
+
+### The precise gap our paper fills (revised — an *extension* gap, not a discovery gap)
+- **Authority as a graded variable crossed with turn-structure in one controlled design**, measured **behaviorally (free-form generation, two-turn commit-then-challenge)** rather than only via internal logits/single-turn, **across multiple objective domains**, on **small open-source (3B–9B) models**, with **length-matched prompts**, a **zero-authority control**, an **explicit anon rung**, a **self-commitment baseline gate**, **pre-registration**, and **human-validated judging** — combining the authority-mechanism papers' gradient, SycEval's behavioral flips, Ask-Don't-Tell's content-matched design, and the multilingual paper's open-model + rigorous-stats stance, while **explicitly extending (not re-discovering) `2509.16533` (turn-structure) and `2508.02087` (presence-not-prestige)**.
 
 ### Key citations — now in folder ✓
 - **Sharma et al. 2023/2024, "Towards Understanding Sycophancy in Language Models" (arXiv:2310.13548)** — the central sycophancy paper. ✓ Added (`2310.13548v4.pdf`).
 - **Mammen, Joswin et al. 2026, "Who Endorsed It? Measuring Authority Bias Across Expertise Levels" (arXiv:2601.13433)** — the direct behavioral predecessor on authority-graded sycophancy. ✓ Added (`2601.13433v4.pdf`) — **differentiate from it explicitly (see its entry).**
+- **Kim & Khashabi 2025, "Challenging the Evaluator: LLM Sycophancy Under User Rebuttal" (arXiv:2509.16533)** — anticipates our **commitment penalty (①)**. ✓ Added — **cite as the finding we extend; do not claim discovery.**
+- **Wang et al. 2025/2026, "When Truth Is Overridden" (arXiv:2508.02087, AAAI 2026)** — anticipates our **presence-not-prestige (②)** on overlapping models. ✓ Added — **cite as the finding we behaviorally confirm; do not claim discovery.** (This is the "Wang et al. 2026 (AAAI)" previously listed as "still worth obtaining" — now obtained.)
 
 ### Still worth obtaining (referenced repeatedly, not in folder)
 - Wang et al. 2026 "When truth is overridden..." (AAAI) and Wang et al. 2025 (I-perspective / judging bias) — for the authority-vs-competence debate (cited by both authority papers).
@@ -734,4 +807,4 @@ The highest-value, lowest-friction items to lift straight into *Authority-Graded
 
 ---
 
-*Document generated from full-text reads of all 22 unique PDFs in `Literature Survey/`. Per-paper Datasets/Tools fields appear in each entry above; Appendices B–C consolidate and deduplicate them across the whole corpus, and Appendix D extracts what is directly reusable for our paper. Where a paper reports many numbers, the headline results most relevant to authority-graded sycophancy were prioritized; consult the original PDF for exhaustive tables. Verify dataset licenses and exact HF dataset IDs before use.*
+*Document generated from full-text reads of all 24 unique PDFs in `Literature Survey/` (22 original + `2509.16533` and `2508.02087` added 2026-07-13). Per-paper Datasets/Tools fields appear in each entry above; Appendices B–C consolidate and deduplicate them across the whole corpus, and Appendix D extracts what is directly reusable for our paper. Where a paper reports many numbers, the headline results most relevant to authority-graded sycophancy were prioritized; consult the original PDF for exhaustive tables. Verify dataset licenses and exact HF dataset IDs before use.*

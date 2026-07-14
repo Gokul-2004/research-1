@@ -1,6 +1,6 @@
 # Citation Verification — Authority-Graded Sycophancy Study
 # Phase 0 citation check: PDF front matter verified against arXiv filename IDs.
-# Last checked: 2026-06-29
+# Last checked: 2026-06-29; 2 papers added 2026-07-13 (2509.16533, 2508.02087) → 24 papers total.
 
 ## Status key
 # ✅ = arXiv ID, title, authors, year all confirmed from PDF
@@ -14,6 +14,8 @@
 |---|---|---|---|---|---|
 | 2601.13433v4.pdf | 2601.13433 | Who Endorsed It? Measuring Authority Bias Across Expertise Levels in Language Models | Priyanka Mary Mammen, Emil Joswin, Shankar Venkitachalam | 2026 | ✅ |
 | 746_A_Mechanistic_View_of_Auth.pdf | **NO arXiv ID** | A Mechanistic View of Authority Hierarchy in LLM Sycophancy | Emil Joswin, Srujananjali Medicherla, Priyanka Mary Mammen | 2026 | ⚠️ See note |
+| 2509.16533_Challenging_the_Evaluator_User_Rebuttal.pdf | 2509.16533 | Challenging the Evaluator: LLM Sycophancy Under User Rebuttal | Sungwon Kim, Daniel Khashabi (Johns Hopkins) | 2025 | ✅ (EMNLP 2025 Findings) — **anticipates our "commitment penalty" (①); cite as extended, not discovered** |
+| 2508.02087_When_Truth_Is_Overridden.pdf | 2508.02087 | When Truth Is Overridden: Uncovering the Internal Origins of Sycophancy in Large Language Models | Keyu Wang, Jin Li, Shu Yang, Zhuoran Zhang, Di Wang (KAUST / PRADA Lab) | 2026 | ✅ (AAAI 2026) — **anticipates our "presence not prestige" (②) on overlapping models; cite as extended, not discovered** |
 | 2603.16643v1.pdf | 2603.16643 | Good Arguments Against the People Pleasers: How Reasoning Mitigates (Yet Masks) LLM Sycophancy | Zhaoxin Feng, Zheng Chen, Jianfei Ma, Yip Tin Po, Emmanuele Chersoni, Bo Li | 2026 | ✅ |
 | 2602.23971v3.pdf | 2602.23971 | Ask Don't Tell: Reducing Sycophancy in Large Language Models | Magda Dubois, Cozmin Ududec, Christopher Summerfield, Lennart Luettgau | 2026 | ✅ |
 | 2502.08177v4.pdf | 2502.08177 | SycEval: Evaluating LLM Sycophancy | Aaron Fanous, Jacob Goldberg, Ank Agarwal, Joanna Lin, Anson Zhou, Sonnet Xu, Vasiliki Bikia, Roxana Daneshjou, Sanmi Koyejo | 2025 | ✅ |
@@ -79,8 +81,26 @@
 
 ---
 
-## Summary: all 22 papers verified ✅
-- 21 arXiv papers: IDs, titles, authors, years confirmed from PDF front matter.
+### 2509.16533 — Kim & Khashabi (added 2026-07-13)
+- **Challenging the Evaluator: LLM Sycophancy Under User Rebuttal**, Sungwon Kim & Daniel Khashabi
+  (Johns Hopkins), 2025. **EMNLP 2025 Findings** (also on arXiv, 20 Sep 2025).
+- **Why it matters:** its H₁ (counterargument as follow-up challenge vs presented simultaneously) IS our
+  "commitment penalty" — cite as the finding we EXTEND to small open models with a self-commitment gate;
+  do NOT claim discovery. File renamed from `2509.16533v1.pdf` → meaningful name (2026-07-13).
+
+### 2508.02087 — Wang et al. (added 2026-07-13)
+- **When Truth Is Overridden: Uncovering the Internal Origins of Sycophancy in Large Language Models**,
+  Keyu Wang, Jin Li, Shu Yang, Zhuoran Zhang, Di Wang (KAUST / PRADA Lab). **AAAI 2026** (arXiv v4, 12 Nov 2025).
+- **Why it matters:** its Takeaway 1 ("sycophancy triggered by presence of a user opinion, regardless of
+  claimed expertise/authority") IS our "presence not prestige" — and on overlapping models (Qwen2.5-7B,
+  Llama-3.1-8B, Mistral-7B). Cite as the finding we behaviorally CONFIRM/extend; do NOT claim discovery.
+  File renamed from `2508.02087v4.pdf` → meaningful name (2026-07-13).
+
+## Summary: all 24 papers verified ✅
+- 22 arXiv papers: IDs, titles, authors, years confirmed from PDF front matter (21 original + 2509.16533 + 2508.02087).
 - 1 workshop paper (746): no arXiv ID — cite by authors/title/venue only.
+- Named venues confirmed: 2509.16533 = EMNLP 2025 Findings; 2508.02087 = AAAI 2026; 2310.13548 = ICLR 2024.
 - 1 discrepancy: 2310.13548 cite year = 2024 (ICLR), not 2025 (arXiv update).
 - 1 duplicate file: 2502.08177v4 (1).pdf — delete before archiving.
+- ⚠️ 2509.16533 + 2508.02087 partially SCOOP our two would-be headline findings → contribution is
+  extension/replication, not discovery (see POINTS §16 + lit-survey novelty reassessment).
