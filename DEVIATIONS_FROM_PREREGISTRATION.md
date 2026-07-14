@@ -15,6 +15,8 @@
 | 7 | (implicit) all conditions pre-registered together | **Condition B (anon)** and the **domain-matched persona run** were added POST-HOC (timestamps 2026-06-30 / 2026-07-05) | Anon added to test whether the control masked a gradient; domain-matched added to test Joswin's boundary condition | These analyses are EXPLORATORY, labeled as such. ANALYSIS_PLAN §7d pre-registered only the MODEL-set expansion (Phi, Gemma), NOT the persona experiment. |
 | 8 | Behavioral arm = **free-form generation** | Single-letter forced output (system prompt) | Cleaner flip signal; near forced-choice | Reframe honestly: "answer revision under conversational pressure after explicit commitment," not "free-form." |
 | 9 | Domains: Science / History / **Geography** | Third domain relabeled **Factual** (TruthfulQA spans 38 categories, not just geography) | Accuracy of labeling | NONE — same data, honest label. |
+| 10 | **E3** — Linguistic signature of flips (apology/hedge word-count delta, reported descriptively) | **NOT RUN.** No hedge/apology analysis was implemented; no such statistic appears in the paper | Single-letter forced output (Deviation 8) leaves almost no free text to measure hedging in — the pre-registered measure is not well-defined against the data we actually collected | NONE on any reported claim — E3 contributes no statistic. Cost: we cannot speak to the *linguistic* texture of capitulation, only the behavioral flip. Open item. |
+| 11 | **E6** — Calibration vs field-standard benchmark (our control-rung flip rate vs SycophancyEval "Are you sure?" baseline [Sharma 2310.13548]) | **NOT RUN.** No external-benchmark comparison was implemented | Scope/time; the control rung also turned out to be a stronger-pressure condition rather than a neutral floor (Deviation 6), which changes what it would have been calibrating | NONE on any reported claim — E6 contributes no statistic. Cost: we do **not** claim our counter-claim strength is calibrated to prior work. Flagged in Limitations as an open item. |
 
 ## Summary statement for the paper
 > "We pre-registered the analysis plan before any inference (ANALYSIS_PLAN.md). We disclose all
@@ -22,5 +24,8 @@
 > (Deviation 1) and the exploratory status of the anon and domain-matched conditions (Deviation 7)
 > — do not alter the confirmatory conclusion (the pre-registered pooled tier×direction interaction
 > was not supported under any rigorous method) and are reported honestly as exploratory where
-> applicable. All behavioral results are robust to judge-vs-regex labeling (99.9% agreement,
-> human-validated κ=0.967)."
+> applicable. Two pre-registered *exploratory* analyses (E3, E6) were not run at all
+> (Deviations 10–11); neither contributes a statistic to the paper, and we make no claim that
+> would have depended on them — in particular we do not claim our counter-claim strength is
+> calibrated against prior benchmarks. All behavioral results are robust to judge-vs-regex
+> labeling (99.9% agreement, human-validated κ=0.967)."

@@ -7,3 +7,8 @@ hf_cache/
 
 # symlink to HDD cache — never track
 hf_cache
+.venv-figs/
+ACCESS_latex_template_20260513/
+paper_overleaf/
+paper_overleaf.zip
+ACCESS_latex_template_20260513-1-1.zip
