@@ -689,6 +689,32 @@
    }
   }
  },
+ "confirmatory_named_rungs": {
+  "n": 4128,
+  "rungs": "low<medium<high",
+  "terms": {
+   "intercept": {
+    "coef": -2.1271,
+    "se": 0.1153,
+    "p": 0.0
+   },
+   "tier": {
+    "coef": -0.2872,
+    "se": 0.099,
+    "p": 0.003712649794526124
+   },
+   "dir_incorrect": {
+    "coef": 2.7889,
+    "se": 0.1372,
+    "p": 0.0
+   },
+   "tier_x_dir": {
+    "coef": 0.5985,
+    "se": 0.1163,
+    "p": 2.6735273395139814e-07
+   }
+  }
+ },
  "commitment_penalty": {
   "Gemma": {
    "n_pairs": 516,
@@ -761,6 +787,50 @@
    "adoptedX_2T_pct": 90.2,
    "adoptedX_1T_pct": 8.0,
    "adoptedX_share_of_1T_errors": 76.9
+  }
+ },
+ "commitment_penalty_item_collapsed": {
+  "Gemma": {
+   "n_items": 129,
+   "b10": 36,
+   "b01": 5,
+   "mcnemar_p": 7.8415723692159e-07
+  },
+  "Llama3B": {
+   "n_items": 96,
+   "b10": 46,
+   "b01": 0,
+   "mcnemar_p": 2.8421709430403995e-14
+  },
+  "Mistral": {
+   "n_items": 106,
+   "b10": 39,
+   "b01": 3,
+   "mcnemar_p": 5.631591193378036e-09
+  },
+  "Phi-instruct": {
+   "n_items": 116,
+   "b10": 41,
+   "b01": 3,
+   "mcnemar_p": 1.6183321349672238e-09
+  },
+  "Qwen3B": {
+   "n_items": 116,
+   "b10": 70,
+   "b01": 1,
+   "mcnemar_p": 6.09863722023093e-20
+  },
+  "Qwen7B": {
+   "n_items": 125,
+   "b10": 109,
+   "b01": 0,
+   "mcnemar_p": 3.0814879110195644e-33
+  },
+  "POOLED": {
+   "n_items": 688,
+   "b10": 341,
+   "b01": 12,
+   "mcnemar_p": 7.30748957529842e-85
   }
  },
  "anon_vs_high": {
@@ -1010,6 +1080,61 @@
    "p": 0.045108554751071006
   }
  },
+ "confidence_quintiles_within_model": {
+  "pooled_n": 2752,
+  "quintiles": [
+   {
+    "q": 1,
+    "n": 550,
+    "flip_pct": 75.3,
+    "z_range": [
+     -3.45,
+     -0.79
+    ]
+   },
+   {
+    "q": 2,
+    "n": 550,
+    "flip_pct": 72.4,
+    "z_range": [
+     -0.79,
+     -0.14
+    ]
+   },
+   {
+    "q": 3,
+    "n": 550,
+    "flip_pct": 74.7,
+    "z_range": [
+     -0.13,
+     0.41
+    ]
+   },
+   {
+    "q": 4,
+    "n": 550,
+    "flip_pct": 66.5,
+    "z_range": [
+     0.41,
+     0.83
+    ]
+   },
+   {
+    "q": 5,
+    "n": 552,
+    "flip_pct": 75.2,
+    "z_range": [
+     0.84,
+     2.13
+    ]
+   }
+  ],
+  "logistic_slope_per_sd": {
+   "coef": -0.0132,
+   "se": 0.0429,
+   "p": 0.7590930058321446
+  }
+ },
  "domain_matched": {
   "Gemma": {
    "belief_spearman_rho": -0.254,
@@ -1177,6 +1302,11 @@
  "E5_detail": {
   "H": 647.1,
   "df": 5
+ },
+ "E5_chisq_homogeneity": {
+  "chi2": 647.3,
+  "df": 5,
+  "p": 1.2019373615120187e-137
  },
  "E_family_BH": {
   "E1_CA_Gemma": {

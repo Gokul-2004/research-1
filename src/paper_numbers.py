@@ -315,6 +315,28 @@ OUT["pooled_tier_dir"] = {"n": len(rows),
                    "p": two_sided_p(beta[i] / ses[i])}
               for i, nm in enumerate(["intercept", "tier", "dir_incorrect", "tier_x_dir"])}}
 
+# 4b. pre-registration-faithful confirmatory over the three NAMED rungs only (low<med<high).
+#     The pre-registered Control rung was the first-person prompt, excluded as format-mismatched;
+#     the anonymous rung in pooled_tier_dir above is a post-hoc zero-authority floor.
+NAMED = {"low": 0.0, "medium": 1.0, "high": 2.0}
+rows_n = []
+for m in MODELS:
+    for r in two[m]:
+        if gate(r) != "PASS" or r.get("tier") not in NAMED:
+            continue
+        d = r.get("direction")
+        dv = 1.0 if d == "incorrect_endorsement" else (0.0 if d == "correct_endorsement" else None)
+        if dv is None:
+            continue
+        t = NAMED[r["tier"]]
+        rows_n.append(([1.0, t, dv, t * dv], 1.0 if r.get("flipped") else 0.0))
+beta_n, cov_n, _ = logistic_fit(rows_n, 4)
+ses_n = [math.sqrt(cov_n[i][i]) for i in range(4)]
+OUT["confirmatory_named_rungs"] = {"n": len(rows_n), "rungs": "low<medium<high",
+    "terms": {nm: {"coef": round(beta_n[i], 4), "se": round(ses_n[i], 4),
+                   "p": two_sided_p(beta_n[i] / ses_n[i])}
+              for i, nm in enumerate(["intercept", "tier", "dir_incorrect", "tier_x_dir"])}}
+
 # 5. commitment penalty: paired McNemar per model (2T flip vs 1T caving, same (q,tier), incorrect)
 def st_index(m):
     idx = {}
@@ -353,6 +375,37 @@ for m in MODELS:
              "adoptedX_2T_pct": round(100 * ax2 / n2, 1), "adoptedX_1T_pct": round(100 * ax1 / n1, 1),
              "adoptedX_share_of_1T_errors": round(100 * ax1 / k1, 1) if k1 else None}
 OUT["commitment_penalty"] = CP
+
+# 5b. robustness: item-collapsed McNemar (ONE pair per (model, question), majority-flip across
+#     the anon--high rungs) — removes the within-item non-independence of the per-rung pairs above.
+CPI = {}
+tot10 = tot01 = totn = 0
+for m in MODELS:
+    sidx = st_index(m)
+    per_q2, per_q1 = {}, {}
+    for r in two[m]:
+        if r.get("direction") != "incorrect_endorsement" or r.get("tier") not in TMAP \
+           or gate(r) != "PASS":
+            continue
+        s = sidx.get((r["question_id"], r["tier"]))
+        if s is None:
+            continue
+        q = r["question_id"]
+        per_q2.setdefault(q, []).append(1 if r.get("flipped") else 0)
+        per_q1.setdefault(q, []).append(0 if s.get("is_correct") else 1)
+    b10 = b01 = ni = 0
+    for q in per_q2:
+        a = 1 if sum(per_q2[q]) / len(per_q2[q]) >= 0.5 else 0
+        b = 1 if sum(per_q1[q]) / len(per_q1[q]) >= 0.5 else 0
+        ni += 1
+        if a and not b:
+            b10 += 1
+        elif b and not a:
+            b01 += 1
+    CPI[m] = {"n_items": ni, "b10": b10, "b01": b01, "mcnemar_p": mcnemar_exact(b10, b01)}
+    tot10 += b10; tot01 += b01; totn += ni
+CPI["POOLED"] = {"n_items": totn, "b10": tot10, "b01": tot01, "mcnemar_p": mcnemar_exact(tot10, tot01)}
+OUT["commitment_penalty_item_collapsed"] = CPI
 
 # 6. anon-vs-high McNemar (two-turn, incorrect), paired by question
 AH = {}
@@ -437,6 +490,37 @@ se_c = math.sqrt(cov_c[1][1])
 OUT["confidence_quintiles"] = {"pooled_n": len(pool), "quintiles": quint,
     "logistic_slope_per_logit": {"coef": round(b_c[1], 5), "se": round(se_c, 5),
                                  "p": two_sided_p(b_c[1] / se_c)}}
+
+# 9b. within-model-standardized version: z-score the turn-1 margin WITHIN each model before
+#     pooling, so cross-model logit-scale differences cannot create a composition (Simpson) artifact.
+per_model = {m: [] for m in MODELS}
+for m in MODELS:
+    for r in two[m]:
+        if r.get("direction") != "incorrect_endorsement" or r.get("tier") not in TMAP \
+           or gate(r) != "PASS":
+            continue
+        g = bg(r.get("turn1_logprobs"), r["correct_letter"], r["wrong_X_letter"])
+        if g is not None:
+            per_model[m].append((g, 1.0 if r.get("flipped") else 0.0))
+poolz = []
+for m in MODELS:
+    gs = [g for g, _ in per_model[m]]
+    mu = sum(gs) / len(gs)
+    sd = (sum((g - mu) ** 2 for g in gs) / len(gs)) ** 0.5 or 1.0
+    poolz.extend(((g - mu) / sd, y) for g, y in per_model[m])
+poolz.sort(key=lambda t: t[0])
+n5z = len(poolz) // 5
+quintz = []
+for i in range(5):
+    seg = poolz[i * n5z:(i + 1) * n5z] if i < 4 else poolz[4 * n5z:]
+    k = sum(y for _, y in seg)
+    quintz.append({"q": i + 1, "n": len(seg), "flip_pct": round(100 * k / len(seg), 1),
+                   "z_range": [round(seg[0][0], 2), round(seg[-1][0], 2)]})
+b_z, cov_z, _ = logistic_fit([([1.0, z], y) for z, y in poolz], 2)
+se_z = math.sqrt(cov_z[1][1])
+OUT["confidence_quintiles_within_model"] = {"pooled_n": len(poolz), "quintiles": quintz,
+    "logistic_slope_per_sd": {"coef": round(b_z[1], 4), "se": round(se_z, 4),
+                              "p": two_sided_p(b_z[1] / se_z)}}
 
 # 10. domain-matched: Spearman per model (belief, low/med/high, incorrect) + behavioral compare
 tm3 = {"low": 0, "medium": 1, "high": 2}
@@ -577,6 +661,19 @@ while i < N:
 H /= (1 - tie_term / (N ** 3 - N))
 E["E5_KruskalWallis"] = chi2_sf(H, len(groups) - 1)
 OUT["E5_detail"] = {"H": round(H, 1), "df": len(groups) - 1}
+
+# E5b: ordinary chi-square test of homogeneity across models (flip x model) — the standard test
+#      for a binary outcome (the Kruskal--Wallis above is retained for the pre-registered plan).
+flip_i = [sum(g) for g in groups]
+n_i = [len(g) for g in groups]
+Cf = sum(flip_i); Ntot = sum(n_i); Cn = Ntot - Cf
+chi_hom = 0.0
+for fi, nii in zip(flip_i, n_i):
+    for obs, col in ((fi, Cf), (nii - fi, Cn)):
+        exp = nii * col / Ntot
+        chi_hom += (obs - exp) ** 2 / exp
+OUT["E5_chisq_homogeneity"] = {"chi2": round(chi_hom, 1), "df": len(groups) - 1,
+                               "p": chi2_sf(chi_hom, len(groups) - 1)}
 
 qs = bh(E)
 OUT["E_family_BH"] = {k: {"p": E[k], "q": qs[k], "sig_at_q05": qs[k] < 0.05} for k in sorted(E)}

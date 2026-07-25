@@ -12,3 +12,14 @@ ACCESS_latex_template_20260513/
 paper_overleaf/
 paper_overleaf.zip
 ACCESS_latex_template_20260513-1-1.zip
+
+# LaTeX / run build artifacts
+*.aux
+*.log
+*.out
+*.synctex.gz
+# Word exports & submission bundles — LaTeX is the source of truth
+*.docx
+overleaf_upload.zip
+# local project card — kept locally, not in the public repo
+CLAUDE.md

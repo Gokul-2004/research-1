@@ -32,7 +32,7 @@
 \history{Date of publication xxxx 00, 0000, date of current version xxxx 00, 0000.}
 \doi{10.1109/ACCESS.2026.0000000}
 
-\title{Presence, Not Prestige: Commitment Structure Dominates Source Authority in the Sycophancy of Small Open LLMs}
+\title{Commitment Structure Outweighs Source Authority in the Sycophancy of Small Open Language Models}
 
 % TODO-AUTHORS (SUBMISSION_CHECKLIST.md): real names, order, ORCIDs, bios+photos, funding footnote.
 \author{\uppercase{Author One}\authorrefmark{1} and \uppercase{Author Two}\authorrefmark{2}}
@@ -44,31 +44,34 @@ at \url{github.com/Gokul-2004/research-1}. The analysis plan was
 committed before any inference (git 427d75a, 2026-06-29).}
 
 \markboth
-{Author \headeretal: Presence, Not Prestige: Commitment Structure Dominates Source Authority}
-{Author \headeretal: Presence, Not Prestige: Commitment Structure Dominates Source Authority}
+{Author \headeretal: Commitment Structure Outweighs Source Authority}
+{Author \headeretal: Commitment Structure Outweighs Source Authority}
 
 \corresp{Corresponding author: Author One (e-mail: author.one@example.org).}
 
 \begin{abstract}
 Sycophancy---capitulating to a user's counter-claim at the expense of a correct answer---is
-usually studied by varying who disagrees. We pre-registered exactly that hypothesis, a graded
-authority-tier by endorsement-direction interaction, and it failed (coefficient 0.01, p = 0.90,
-n = 5{,}504). What varies capitulation instead is when the disagreement arrives. Across six
-open-weight models (3B--9B, five families), three objective domains, four matched authority
-rungs, and two endorsement directions on identical, correctness-gated items, we crossed a
-two-turn commit-then-challenge protocol with a single-turn question-then-hint protocol. Prior
-self-commitment multiplied caving under incorrect endorsements by 1.9--9.3 times (paired
-McNemar p below 1e-15 in every model), the largest effect in the dataset: Qwen2.5-7B answers
-89.6 percent of challenged items correctly when the counter-claim arrives with the question,
-yet caves on 97.2 percent of the same items after it has committed. Endorsement direction is
-the second-largest effect (coefficient 3.5): incorrect endorsements devastate accuracy while
-correct ones barely help. The mere presence of a counter-claim---an anonymous ``someone''---%
-achieves most of the remaining effect, while source authority contributes only a small,
-model-dependent modulation with inconsistent sign: professor versus anonymous shifts caving
-+22, +18, and $-$17 percentage points in the three non-saturated models. The models' own prior
-confidence does not protect them: the highest-confidence quintile still flips 83.5 percent of
-the time. Labels are validated by a human-checked judge (kappa 0.967, main experiment); all
-data, code, the pre-registration, and every deviation from it are released.
+usually studied by varying who disagrees. What matters far more is when the disagreement
+arrives. Across six open-weight models (3B--9B, five families), three objective domains, four
+matched authority rungs, and two endorsement directions on identical, correctness-gated items,
+this study crosses a two-turn commit-then-challenge protocol with a single-turn
+question-then-hint protocol. Prior self-commitment multiplied caving under incorrect endorsements by 1.9--9.3
+times (paired McNemar p below 1e-15 in every model), the largest effect in the data:
+Qwen2.5-7B answers 89.6 percent of challenged items correctly when the counter-claim arrives
+with the question, yet caves on 97.2 percent of the same items after it has committed. Read as
+an intervention, the same contrast is a measured mitigation: re-asking the question with the
+objection included, instead of challenging the delivered answer in-thread, cuts caving by
+25--87 percentage points per model. Endorsement direction is the second-largest effect:
+incorrect endorsements devastate accuracy while correct ones barely help. The mere presence of
+a counter-claim---an anonymous ``someone''---achieves most of the remaining effect; source authority
+graduates caving further among named sources but adds less than presence; and the
+models' own prior confidence does not protect them---the highest-confidence quintile still
+flips 75.2 percent of the time. The pre-registered confirmatory hypothesis was the opposite---a graded
+authority-tier by endorsement-direction interaction---and it was not supported (p = 0.90); it
+is reported here as failed. Labels are validated by a human-checked judge (kappa 0.967, main
+experiment); all data, code, the pre-registration, and every deviation from it are released.
+Sycophancy evaluation and mitigation should treat conversational structure as a first-class
+variable.
 \end{abstract}
 
 \begin{keywords}
@@ -90,18 +93,21 @@ structure}---are confounded in most sycophancy evaluations, which vary the autho
 counter-claim while holding the conversational structure fixed
 \cite{sharma2024,fanous2025,mammen2026}.
 
-This paper separates them. We pre-registered the prestige hypothesis---a graded
-authority-tier $\times$ endorsement-direction interaction, motivated by reports of clean
-monotonic authority gradients \cite{mammen2026,joswin2026}---and it failed decisively
-($p=0.90$; Section~\ref{sec:null}). Rather than rescue it, we report what the factorial
-design shows actually governs capitulation, in descending order of effect size:
+This paper separates them. The prestige hypothesis---a graded authority-tier $\times$
+endorsement-direction interaction, motivated by reports of clean monotonic authority
+gradients \cite{mammen2026,joswin2026}---was pre-registered, and it failed decisively
+($p=0.90$; Section~\ref{sec:null}). Rather than rescue it, this paper reports what the
+factorial design shows actually governs capitulation, in descending order of effect size:
 
 \begin{enumerate}
 \item \textbf{Commitment structure} (Section~\ref{sec:commitment}). On identical items and
 authority rungs, moving the counter-claim from a single-turn hint to a second turn---after
 the model has answered once---multiplies caving by 1.9--9.3$\times$ (paired McNemar
-$p<10^{-15}$ in all six models). To our knowledge this is the first per-model quantification
-of the self-commitment penalty in small open-weight models under a true prior-answer gate.
+$p<10^{-15}$ in all six models). Prior authority-focused sycophancy evaluations varied the
+challenger's authority while holding conversational structure fixed; crossing the two factors
+separates this commitment-structure effect from source authority and quantifies it per model
+in small open-weight models under a true prior-answer gate. Read in reverse, the same contrast
+is a measured, per-model mitigation (Section~\ref{sec:mitigation}).
 \item \textbf{Endorsement direction} (Section~\ref{sec:direction}). Incorrect endorsements
 collapse accuracy; correct ones barely improve it ($|\beta|=3.5$, $p<10^{-15}$)---the
 regressive/progressive asymmetry of \cite{fanous2025}, reproduced under pre-registration.
@@ -112,57 +118,64 @@ $+22.4$\,pp (Phi-3.5-mini), $+17.8$\,pp (Gemma-2-9B), $-17.0$\,pp (Mistral-7B, w
 anonymous source \emph{out}-pushes the professor).
 \item \textbf{Confidence does not protect} (Section~\ref{sec:confidence}). The model's own
 pre-pressure belief margin fails to predict resistance; the most confident quintile flips
-83.5\% of the time.
+75.2\% of the time.
 \end{enumerate}
 
 Two recent papers bracket this contribution. Wang et al.~\cite{wang2025} show with
 single-turn logit and activation analysis that opinion \emph{presence}, not stated expertise
-(effects within 4.4\%), drives sycophancy; we provide independent, pre-registered,
+(effects within 4.4\%), drives sycophancy; this paper provides independent, pre-registered,
 \emph{behavioral} confirmation---and a refinement their design cannot see: under commitment
 pressure, authority framing moves behavior by $\pm$17--22\,pp in models with headroom, in
 model-specific directions. Kim and Khashabi~\cite{kim2025} report that LLM evaluators revise
-judgments under user rebuttal in frontier models; our contribution is the per-model
+judgments under user rebuttal in frontier models; the contribution here is the per-model
 \emph{factorial}: commitment structure crossed with authority tiers, an anonymous floor,
 endorsement direction, and a persona-design A/B, on one gated item set, in six small open
 models of the kind practitioners deploy on consumer hardware.
 
-We make five commitments to rigor. (i) The analysis plan was committed to version control
-before any inference ran; we cite it and report its confirmatory test as failed. (ii) Every
-deviation from the plan is disclosed in a dedicated table in the repository, following
-\cite{willroth2024}. (iii) Behavioral labels are validated against human annotation
-($\kappa=0.967$; scoped to the main experiment). (iv) All raw outputs are SHA-256--frozen
-and released; every statistic in this paper regenerates from one committed script.
-(v) Exploratory analyses are labeled as such and Benjamini--Hochberg (BH) corrected as
-families.
+This study makes five commitments to rigor. (i) The analysis plan was committed to version
+control before any inference ran; it is cited, and its confirmatory test is reported as
+failed. (ii) Every deviation from the plan is disclosed in a dedicated table in the
+repository, following \cite{willroth2024}. (iii) Behavioral labels are validated against
+human annotation ($\kappa=0.967$; scoped to the main experiment). (iv) All raw outputs are
+SHA-256--frozen and released; every statistic in this paper regenerates from one committed
+script. (v) Exploratory analyses are labeled as such and Benjamini--Hochberg (BH) corrected
+as families.
 
 \section{Related Work}
 \label{sec:related}
 \subsection{Sycophancy in LLMs}
 Sycophancy as capitulation to user pushback was systematized by Sharma et
 al.~\cite{sharma2024}, whose first-person ``I don't think that's right---are you sure?''
-challenge our control rung descends from. SycEval \cite{fanous2025} separated regressive from
+challenge is the ancestor of the control rung used here. SycEval \cite{fanous2025} separated regressive from
 progressive sycophancy and showed rebuttal strength matters. Zhang et al.~\cite{zhang2025}
 found susceptibility tracks alignment strategy rather than scale, and SycoEval-EM
 \cite{peng2026} reported bimodal ``general susceptibility'' with persuasion tactics
-statistically indistinguishable---a pattern our saturating models reproduce. Sycophancy has
+statistically indistinguishable---a pattern the saturating models here reproduce. Sycophancy has
 been connected to instruction tuning and human-feedback incentives \cite{wei2023,perez2022},
-and to unfaithful self-reports of reasoning \cite{turpin2023}.
+and to unfaithful self-reports of reasoning \cite{turpin2023}. Mechanistic evidence indicates
+sycophancy is not a single behavior: sycophantic agreement and sycophantic praise occupy
+distinct, independently steerable directions in latent space \cite{vennemeyer2026}.
 
 \subsection{Authority and source credibility}
 Mammen et al.~\cite{mammen2026} report a clean monotonic authority gradient across 11 models
 using question-then-hint logit measurement with domain-matched institutional personas over
-math, legal, and medical items; the companion mechanistic study \cite{joswin2026} argues the
-gradient requires socially meaningful institutional hierarchy. Wang et al.~\cite{wang2025}
+math, legal, and medical items, and further show that this authority bias is mechanistically
+encoded and can be steered away; the companion study \cite{joswin2026} localizes it as a
+layer-specific erasure of correct-answer representations that scales with authority, and
+argues the graded effect emerges specifically when personas carry socially meaningful
+institutional hierarchy. Wang et al.~\cite{wang2025}
 find the opposite under generic expertise framing on MMLU: presence of an opinion dominates
 (sycophancy on 46.6--95.1\% of items), expertise framing contributes $\leq$4.4\%, and
-expertise levels are not separable in the residual stream. Our design speaks to both. Our
-generic ladder reproduces Wang-style expertise-invariance \emph{on average}; our
-domain-matched arm partially recovers Mammen-style grading (3/6 models); and our paired
+expertise levels are not separable in the residual stream. This design speaks to both. The
+generic ladder reproduces Wang-style expertise-invariance \emph{on average}; the
+domain-matched arm partially recovers Mammen-style grading (3/6 models); and the paired
 per-model tests reveal a sign-inconsistent authority modulation that neither average-level
-analysis can see. Human analogues are classical: conformity saturates with the mere presence
-of unanimous dissent \cite{asch1951}; humans weight advisor expertise when taking advice
-\cite{bonaccio2006}; and public commitment entrenches positions \cite{kelman1958}. Our
-models show the commitment effect while largely lacking the expertise-weighting one.
+analysis can see. Human analogues are classical: conformity plateaus once a small unanimous
+majority is present, rather than scaling with majority size \cite{asch1951,asch1955}; humans
+weight advisor expertise when taking advice \cite{bonaccio2006}; and prior commitment---even
+private commitment---entrenches human judgments against group pressure
+\cite{deutschgerard1955}. The models here show a commitment effect of the opposite sign while
+largely lacking the expertise-weighting one.
 
 \subsection{Turn structure}
 Kim and Khashabi \cite{kim2025} manipulate whether an LLM evaluator is challenged after
@@ -170,35 +183,35 @@ issuing a judgment; Hong et al.~\cite{hong2025} track answer flips over multi-tu
 Neither crosses turn structure with authority tiers and endorsement direction on a
 prior-answer-gated item set in small open models; that crossing, with the commitment penalty
 quantified per model, is the gap filled here. Position and recency effects in such designs
-are a known concern \cite{bennatan2026}; the direction asymmetry we observe
-(Section~\ref{sec:direction}) argues against a pure recency account, since a
-last-message-wins model would gain as much from correct endorsements as it loses from
-incorrect ones.
+are a known concern \cite{bennatan2026}; in these data the strongest evidence against a pure
+recency account is the turn-structure contrast itself (Section~\ref{sec:commitment}): the
+counter-claim is the most recent content in both protocols, yet caving differs by multiples.
 
 \section{Method}
 \label{sec:method}
 Figure~\ref{fig:design} summarizes the design; full prompts, per-trial records, and the
 pre-registration are in the repository.
 
-\begin{figure}[!t]
+\begin{figure*}[!t]
 \centering
-\includegraphics[width=\columnwidth]{figures/fig9_design_schematic.png}
+\includegraphics[width=\textwidth]{figures/fig9_design_schematic.pdf}
 \caption{Study design. 150 verified MCQ items across three domains enter a per-model
 correctness gate; gated items receive counter-claims factorially varied by authority rung,
 endorsement direction, and---on identical items---turn structure. The confirmatory
 hypothesis was pre-registered before any inference (git 427d75a, 2026-06-29).}
 \label{fig:design}
-\end{figure}
+\end{figure*}
 
 \subsection{Items, models, and gate}
-We use 150 four-option MCQ items with verified ground truth: 50 science (ARC-Challenge
+This study uses 150 four-option MCQ items with verified ground truth: 50 science (ARC-Challenge
 \cite{clark2018}), 50 history (MMLU world history and prehistory \cite{hendrycks2021}), and
 50 general-factual (TruthfulQA mc1 \cite{lin2022}). Six
 instruction-tuned open-weight models span five families and 3B--9B parameters:
 Qwen2.5-3B-Instruct, Llama-3.2-3B-Instruct, Phi-3.5-mini-instruct, Mistral-7B-Instruct-v0.3,
 Qwen2.5-7B-Instruct, and Gemma-2-9B-it, run in fp16 at temperature~0 with a fresh session per
-trial. Each model is analyzed only on items it answers correctly unprompted---the knowledge
-gate \cite{vennemeyer2026}---yielding 96--129 of 150 items per model (64.0--86.0\%). The
+trial. Each model is analyzed only on items it answers correctly unprompted---a knowledge
+gate ensuring capitulation is measured only on items the model demonstrably knows---yielding
+96--129 of 150 items per model (64.0--86.0\%). The
 counter-claim asserts the most plausible distractor $X$ (incorrect arm) or the correct answer
 (correct arm).
 
@@ -209,15 +222,17 @@ the answer is [X]''), \emph{low} (a high-school student), \emph{medium} (a gradu
 believe the answer is [X]'' \cite{sharma2024}) behaves as a stronger, format-mismatched
 manipulation: consistent with the first-person $>$ third-person effect reported by
 \cite{wang2025}, it out-pushes even the professor rung in four of six models (e.g., Gemma
-92.2\% vs.\ 56.6\%; Mistral 84.9\% vs.\ 46.2\%). We therefore analyze it separately and
-exclude it from gradient tests;
+92.2\% vs.\ 56.6\%; Mistral 84.9\% vs.\ 46.2\%; the four-of-six count is robust to recoding
+Phi-3.5-mini's 14 free-text responses on this rung as flips rather than non-flips, which
+raises Phi's rate from 80.2\% to 92.2\% but leaves it below its own professor rung at 94.0\%).
+It is therefore analyzed separately and excluded from gradient tests;
 this and all other deviations are itemized in the repository.
 \textbf{Direction}: the counter-claim endorses the wrong answer $X$ or the correct answer.
 \textbf{Turn structure}: in the \emph{two-turn} protocol the model answers (turn 1: the
 commitment), receives the counter-claim, and answers again; in the \emph{single-turn}
 protocol the counter-claim is appended to the question and the model answers once. Items and
 rungs are identical across structures. Single-turn \emph{control}-rung prompts are excluded
-with reason: ``I don't think that's right'' has no referent before any answer exists.
+for a specific reason: ``I don't think that's right'' has no referent before any answer exists.
 \textbf{Persona design (exploratory)}: the generic ladder vs.\ domain-matched institutional
 personas (e.g., undergraduate $\to$ PhD researcher $\to$ Nobel laureate), re-run on all six
 models.
@@ -226,11 +241,21 @@ models.
 The behavioral outcome is answer revision. In two-turn, a flip is turn-2 letter $\neq$ turn-1
 letter (given the gate, equivalently leaving the correct answer); in single-turn, caving is
 answering incorrectly (loose metric) or adopting $X$ specifically (strict; both reported).
-Outputs are single letters enforced by the system prompt (0.0\% extraction failures in both
-structures). A--D log-probabilities are logged at both turns for descriptive belief analyses.
+Outputs are single letters enforced by the system prompt: zero extraction failures on the
+analyzed rungs (anon--high) in both structures; 14 free-text responses occurred on the
+excluded first-person control rung (all Phi-3.5-mini) and are counted as non-flips where
+that rung is displayed. A--D log-probabilities are logged at both turns for descriptive
+belief analyses.
 All main-run responses were additionally labeled by an LLM judge (Gemini 2.5 Flash) with a
 two-stage substance-matching rubric \cite{fanous2025}; judge labels agree with the
-deterministic letter comparison on 99.8\% of 5{,}497 trials and with $n=60$ human annotations
+deterministic letter comparison on 99.8\% of 5{,}497 trials\footnote{Trial totals differ by
+analysis: 5{,}504 gated two-turn trials (anon--high $\times$ two directions, deduplicated)
+enter the confirmatory model; the judge returned valid labels on 5{,}497 of them (seven API
+errors); the covariate-robustness model (\texttt{src/sdt\_analysis.py}) retains 5{,}510
+because it does not deduplicate six re-run rows (Llama \texttt{his\_047} and Mistral
+\texttt{sci\_023}, low/medium/high); and the single-turn arm comprises 6{,}880 trials---688
+gated items $\times$ five rungs $\times$ two directions, the first-person control rung
+generated but excluded from analysis.} and with $n=60$ human annotations
 at $\kappa=0.967$ (counting the judge's single API error as a disagreement; $\kappa=1.0$
 excluding it). \emph{The human validation covers the main two-turn experiment only}; the
 single-turn arm uses the deterministic metric, whose format integrity is checked by the
@@ -240,44 +265,25 @@ correct-endorsement arm (93.6--100\% accuracy retained).
 The analysis plan---one confirmatory test (the authority-tier $\times$ direction
 interaction), the gate, and an exploratory family with BH correction---was committed before
 any inference. Deviations are disclosed per \cite{willroth2024}; the consequential ones are:
-the pre-specified mixed-effects model was unstable with six model clusters, so we report
-fixed-effects logistic coefficients with per-model paired tests carrying the inferential
-weight; the anonymous rung and the entire single-turn arm were post-hoc additions
+the pre-specified mixed-effects model was unstable with six model clusters, so
+fixed-effects logistic coefficients are reported, with per-model paired tests carrying the
+inferential weight; the anonymous rung and the entire single-turn arm were post-hoc additions
 (timestamped in version control); and the judge model version changed. Trend tests are
 Cochran--Armitage (CA); paired comparisons are exact McNemar tests; rates carry Wilson 95\%
-intervals; the pre-registered exploratory family and the post-hoc McNemar family are BH
+intervals; the pre-registered exploratory family (E1--E5, 23 tests) and the post-hoc McNemar
+family (12 tests: the six commitment-penalty and six anonymous-vs-professor McNemars) are BH
 corrected separately. Every statistic regenerates from \url{src/paper_numbers.py} in the
 repository.
 
 \section{Results}
 \label{sec:results}
 
-\subsection{The pre-registered authority gradient is not supported}
-\label{sec:null}
-Pooled over the four matched rungs (anon--high) and both arms ($n=5{,}504$ gated two-turn
-trials), the pre-registered tier $\times$ direction interaction is null ($\beta=+0.010$,
-SE $0.077$, $p=0.90$), as is the tier main effect ($\beta=+0.083$, $p=0.21$).
-Figure~\ref{fig:null} shows why: both arms are nearly flat across rungs, separated by a
-chasm. We report this as a failed confirmatory hypothesis. It is not, however, a blanket
-``authority does nothing'': Sections~\ref{sec:presence} and \ref{sec:exploratory} report
-significant but small, sign-inconsistent, model-dependent authority effects that a single
-pooled coefficient correctly refuses to summarize as one gradient.
-
-\begin{figure}[!t]
-\centering
-\includegraphics[width=\columnwidth]{figures/fig1_interaction_null.png}
-\caption{The pre-registered interaction is null: accuracy retained after pushback by
-authority rung and endorsement direction, pooled over six models (gated trials; Wilson 95\%
-intervals). The direction gap dwarfs any tier structure.}
-\label{fig:null}
-\end{figure}
-
 \subsection{Commitment structure is the dominant factor}
 \label{sec:commitment}
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=\columnwidth]{figures/fig10_commitment_penalty.png}
+\includegraphics[width=\columnwidth]{figures/fig10_commitment_penalty.pdf}
 \caption{The commitment penalty. Caving rate on the incorrect-endorsement arm for identical
 items and authority rungs (anon--high), with and without a prior self-commitment turn.
 Amplification factors above bars; paired exact McNemar $p<10^{-15}$ for every model;
@@ -313,44 +319,122 @@ decisive (paired exact McNemar, all $p<10^{-15}$; all $q<10^{-14}$ within the po
 family) and is not a metric artifact: under the strict criterion (adopting $X$ itself rather
 than merely leaving the correct answer) amplification is as large or larger (Qwen2.5-7B:
 $90.2\%/8.0\%=11.3\times$). Nor is single-turn caving mere noise---59--93\% of single-turn
-errors adopt $X$ itself. The most suggestible models are the most structure-sensitive:
-Qwen2.5-7B answers 89.6\% of challenged items correctly when the counter-claim arrives with
-the question, yet caves on 97.2\% of the same items after committing (434 discordant pairs in
-the commitment direction, zero in reverse). Both resisters (Mistral, Gemma) show the same
-effect at lower levels. Because the two-turn protocol bundles self-commitment with being
-socially contradicted, we attribute the effect to \emph{commitment structure} (the
-conversational configuration) rather than commitment per se; Section~\ref{sec:limitations}
-details the decomposition this design cannot make.
+errors adopt $X$ itself. The single most suggestible model is also the most
+structure-sensitive: Qwen2.5-7B answers 89.6\% of challenged items correctly when the
+counter-claim arrives with the question, yet caves on 97.2\% of the same items after
+committing (434 discordant pairs in the commitment direction, zero in reverse).
+Structure-sensitivity does not track baseline susceptibility across the six models, however:
+the largest amplification after Qwen2.5-7B belongs to Mistral-7B ($4.2\times$), one of the
+two most resistant models, and every model shows the effect (median $2.6\times$). The result
+does not hinge on treating an item's four per-rung pairs as independent: collapsing each item
+to a single majority-flip observation and re-running the paired test leaves it decisive
+(pooled 341:12 discordant items, McNemar $p<10^{-15}$; every model $p<10^{-6}$).
 
-\subsection{Direction: incorrect endorsements devastate; correct ones barely help}
-\label{sec:direction}
-The direction main effect is the second largest in the data: $\beta=3.53$ (SE $0.15$,
-$p<10^{-15}$). Per model, incorrect-arm flip rates (anon--high) span 43.9--97.2\%, while
-correct-arm rates span 0.0--20.0\% (Phi 0.0\%, Gemma 0.4\%, Qwen2.5-7B 2.4\%, Qwen2.5-3B
-8.0\%, Llama 16.1\%, Mistral 20.0\%; Figure~\ref{fig:direction}). This is the
-regressive/progressive asymmetry of \cite{fanous2025}, and it doubles as a rebuttal to a
-pure recency account of the two-turn effect: a last-message-wins model would gain from
-correct endorsements as much as it loses from incorrect ones.
+The single-turn arm was a timestamped, post-hoc addition, and it is labeled exploratory
+(Section~\ref{sec:limitations}). It is nonetheless difficult to attribute the contrast to
+analytic flexibility: the direction is unanimous across six models of five families, decisive
+in each, larger under the stricter of the two pre-stated metrics, and in the extreme case
+rests on 434 discordant pairs against zero. Because the two-turn protocol bundles
+self-commitment with being socially contradicted, the effect is attributed to
+\emph{commitment structure} (the conversational configuration) rather than commitment per se;
+Section~\ref{sec:limitations} details the decomposition this design cannot make.
+
+\subsection{Re-asking is a measured mitigation}
+\label{sec:mitigation}
+The commitment penalty, read in reverse, is an intervention these data already measure: when
+a user objects to a delivered answer, \emph{re-asking the question with the objection
+included} (the single-turn configuration) rather than challenging the committed answer
+in-thread cuts caving on the same items by 25.2 (Gemma), 33.5 (Mistral), 35.9 (Phi), 51.8
+(Llama), 54.5 (Qwen2.5-3B), and 86.8 (Qwen2.5-7B) percentage points
+(Table~\ref{tab:commitment}). This is directly actionable: pipelines in which users push back
+on an already-delivered answer---chat interfaces, agent loops with critique steps---can route
+the objection into a fresh re-ask that carries no prior commitment, rather than extending the
+thread. Two caveats bound the recommendation. First, re-asking is protective, not immunizing:
+single-turn caving still runs 10.4--44.3\% per model, and 59--93\% of those errors adopt the
+challenger's specific answer. Second, the ordering is the reverse of the
+preemptive-versus-in-context difference SycEval reports for frontier models (61.75\% vs.\
+56.52\% sycophancy) \cite{fanous2025}; under a prior-answer gate on small open models, the
+in-context, commit-then-challenge structure is by far the more dangerous. That conflict
+warrants replication across scales before the recommendation is generalized beyond this
+model class.
+
+\subsection{The pre-registered authority gradient is not supported}
+\label{sec:null}
+Pooled over the four matched rungs (anon--high) and both arms ($n=5{,}504$ gated two-turn
+trials), the pre-registered tier $\times$ direction interaction is null ($\beta=+0.010$,
+SE $0.077$, $p=0.90$; 95\% CI $[-0.14,+0.16]$), as is the tier main effect ($\beta=+0.083$,
+$p=0.21$). This is reported as a failed confirmatory hypothesis---but, at $n=5{,}504$, an
+informative one: the interval rules out any tier $\times$ direction interaction larger than
+about $\pm0.16$ log-odds, a well-powered null rather than absent data.
+
+The nullness is specific to the full rung set, and the reason is instructive. The
+pre-registered tier factor was Control $<$ Low $<$ Medium $<$ High; the first-person Control
+rung proved format-mismatched and was excluded (a disclosed deviation), and the anonymous
+``someone'' rung was added post-hoc as the zero-authority floor. That floor already elicits
+high caving (Section~\ref{sec:presence}), so across the whole ladder the incorrect arm is
+non-monotonic and the pooled interaction vanishes. Restricted to the three \emph{named}
+authority rungs (high-schooler $<$ graduate student $<$ professor), the same interaction is
+significant and in the hypothesized direction ($\beta=+0.60$, $p=2.7\times10^{-7}$,
+$n=4{,}128$): among named sources, higher authority does graduate caving. The pre-registered
+gradient therefore fails as a description of the full ladder---the nameless floor already
+saturates most of the effect---while a real, graded prestige effect survives among named
+authority levels, consistent with \cite{mammen2026} and with the per-model trends of
+Section~\ref{sec:presence}. Figure~\ref{fig:null} shows the pooled picture: both arms vary far
+less across rungs than the chasm between them.
+
+This is not, therefore, a blanket ``authority does nothing.'' Sections~\ref{sec:presence} and
+\ref{sec:exploratory} characterize the authority effects that a single anon-inclusive pooled
+coefficient masks.
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=\columnwidth]{figures/fig8_direction_asymmetry.png}
+\includegraphics[width=\columnwidth]{figures/fig1_interaction_null.pdf}
+\caption{The pre-registered interaction is null: accuracy retained after pushback by
+authority rung and endorsement direction, pooled over six models (gated trials; Wilson 95\%
+intervals). The direction gap dwarfs any tier structure. Here ``accuracy retained'' means
+resisting the endorsement in the incorrect arm but complying with it in the correct arm---one
+axis indexing opposite behaviors.}
+\label{fig:null}
+\end{figure}
+
+\subsection{Direction: incorrect endorsements devastate; correct ones barely help}
+\label{sec:direction}
+The direction main effect is the second largest in the data ($\beta=3.53$, SE $0.15$); this
+pooled fixed-effects coefficient is reported descriptively---items recur across rungs and
+directions, so its nominal $p$-value overstates precision, and the per-model contrasts below
+carry the inference. Per model, incorrect-arm flip rates (anon--high) span 43.9--97.2\%, while
+correct-arm rates span 0.0--20.0\% (Phi 0.0\%, Gemma 0.4\%, Qwen2.5-7B 2.4\%, Qwen2.5-3B
+8.0\%, Llama 16.1\%, Mistral 20.0\%; Figure~\ref{fig:direction}). This is the
+regressive/progressive asymmetry of \cite{fanous2025}. It shows the flips are
+content-directed---models move \emph{toward} the challenger's asserted answer, not merely
+away from their own answer whenever a second user message arrives---though agreement is not
+perfectly stabilizing either: Mistral abandons a just-confirmed correct answer on 20.0\% of
+trials, Llama on 16.1\%. The asymmetry alone cannot rule out recency-weighted content
+adoption: because the gate starts every trial on the correct answer, a model that simply
+adopts the most recent asserted content would also flip under incorrect endorsements and stay
+put under correct ones. The stronger evidence against a pure recency account is the
+turn-structure contrast of Section~\ref{sec:commitment}: the counter-claim is the most recent
+content in both protocols, yet caving differs by 1.9--9.3$\times$.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{figures/fig8_direction_asymmetry.pdf}
 \caption{Direction asymmetry per model: flip rate under incorrect endorsement (regressive)
 vs.\ correct endorsement (progressive), rungs anon--high pooled (gated trials).}
 \label{fig:direction}
 \end{figure}
 
-\subsection{Presence achieves most of the effect; prestige is a small, sign-inconsistent modulation}
+\subsection{Presence achieves most of the effect; authority graduates it further among named sources}
 \label{sec:presence}
 
-\begin{figure}[!t]
+\begin{figure*}[!t]
 \centering
-\includegraphics[width=\columnwidth]{figures/fig2_permodel_ladders.png}
+\includegraphics[width=\textwidth]{figures/fig2_permodel_ladders.pdf}
 \caption{Two-turn flip rate by authority rung, per model (incorrect arm; gated; Wilson 95\%
 intervals). The anonymous rung already produces most of each model's effect; the first-person
-control rung is plotted as a separate, stronger, format-mismatched manipulation.}
+control rung (``1P'') is plotted as a separate, stronger, format-mismatched manipulation.}
 \label{fig:ladders}
-\end{figure}
+\end{figure*}
 
 \begin{table}[!t]
 \caption{Anonymous vs.\ professor rung (two-turn, incorrect arm): paired exact McNemar per
@@ -376,41 +460,46 @@ An anonymous ``someone thinks the answer is X'' already produces 38.8--96.9\% ca
 (Figure~\ref{fig:ladders}): the presence of a counter-claim, not its source, does most of
 the work, consistent with \cite{wang2025} and with saturation under generic pressure
 \cite{peng2026}. The paired analysis (Table~\ref{tab:anonhigh}) then refines the
-presence-only story in a way average-level analyses miss. In the three ceiling-saturated
-models, anon $\approx$ professor because nothing can differ at 96--98\%. In all three models
-with headroom, the professor rung differs from the anonymous rung significantly and in
-\emph{inconsistent directions}: $+22.4$\,pp (Phi), $+17.8$\,pp (Gemma), $-17.0$\,pp
-(Mistral---the nameless source out-pushes the professor). This $\pm$17--22\,pp behavioral
+presence-only story in a way average-level analyses miss. Two models are ceiling-saturated
+(Llama-3.2-3B and Qwen2.5-7B, at 96--99\% for the anonymous and professor rungs alike), so
+nothing can differ there. Among the four models with headroom, three show a significant
+anon-vs-professor difference in \emph{inconsistent directions}---$+22.4$\,pp (Phi),
+$+17.8$\,pp (Gemma), $-17.0$\,pp (Mistral, where the nameless source out-pushes the
+professor)---while the fourth, Qwen2.5-3B, shows no significant difference ($-5.2$\,pp,
+$p=0.15$). This $\pm$17--22\,pp behavioral
 modulation contrasts with the $\leq$4.4\% expertise effect Wang et al.\ report from
 single-turn logits: under commitment pressure, authority framing does move behavior in some
 models---just not in the universal, monotone way the graded-authority hypothesis presumed.
 
 Trend tests tell the same two-sided story. Within named personas (low$\to$high), a positive
 CA trend survives BH in 4/6 models (Phi $z{=}6.09$, $q{=}2.1\times10^{-9}$; Mistral
-$z{=}2.41$, $q{=}0.024$; Gemma $z{=}2.37$, $q{=}0.025$; Qwen2.5-7B $z{=}2.07$, $q{=}0.047$)---%
+$z{=}2.41$, $q{=}0.024$; Gemma $z{=}2.37$, $q{=}0.025$; Qwen2.5-7B $z{=}2.07$, $q{=}0.047$; and, pooled across models, the tier $\times$ direction interaction over these three named rungs is significant, $\beta=+0.60$, $p=2.7\times10^{-7}$)---%
 yet including the anonymous floor flips Mistral's trend to significantly \emph{negative}
 ($z{=}-2.10$, $p{=}0.036$), and no coding produces a trend in the other two models. In the
 single-turn structure no individual model shows a reliable gradient (per-model CA, all
 $p\geq0.087$); pooled with model fixed effects there is a small positive trend ($+0.094$
 log-odds per rung, $p=0.024$) whose raw pattern (24.0, 20.8, 26.6, 27.3\%) is non-monotonic.
-We report this pooled trend so that ``the gradient fails'' is not read as ``flat
+This pooled trend is reported so that ``the gradient fails'' is not read as ``flat
 everywhere.''
 
 \subsection{The model's own confidence does not protect it}
 \label{sec:confidence}
 If capitulation were rational belief updating, models that were more confident before the
-challenge should resist more. They do not (Figure~\ref{fig:confidence}). Flip probability is
-non-monotonic across pre-pressure belief-margin quintiles (82.0, 55.6, 73.3, 69.6, 83.5\%;
-pooled $n=2{,}752$), and the pooled logistic slope on the turn-1 margin is slightly
-\emph{positive} ($+0.012$ per logit, $p=0.045$)---the opposite of protective. The
-highest-confidence quintile (margins 20.3--34.4 logits) still flips 83.5\% of the time.
-Post-pressure belief margins corroborate the behavioral picture descriptively; we do not
-formalize a behavior--belief model here (a signal-detection analysis failed in this data and
-is deferred).
+challenge should resist more. They do not (Figure~\ref{fig:confidence}). With turn-1 belief
+margins $z$-scored within each model (raw logit margins are not comparable across models whose
+base flip rates span 43.9--97.2\%, and pooling them produces a spurious non-monotonic dip),
+flip probability is flat across the five margin quintiles (75.3, 72.4, 74.7, 66.5, 75.2\%;
+pooled $n=2{,}752$), and the pooled logistic slope is null ($-0.013$ per within-model SD,
+$p=0.76$). The highest-confidence quintile still flips 75.2\% of the time.
+Post-pressure belief margins corroborate the behavioral picture descriptively. The belief
+margin also serves as a robustness check on the confirmatory null: adding the turn-1 margin
+and model fixed effects to the pre-registered interaction model leaves the interaction null
+(coefficient $+0.022$, $p=0.78$; belief covariate $p=0.40$; $n=5{,}510$;
+\texttt{src/sdt\_analysis.py})---the failed test is not an artifact of omitted covariates.
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=\columnwidth]{figures/fig11_confidence.png}
+\includegraphics[width=\columnwidth]{figures/fig11_confidence.pdf}
 \caption{Prior confidence does not protect: two-turn flip rate under incorrect endorsement
 by quintile of the model's own pre-pressure belief margin, pooled over models ($n=2{,}752$
 gated trials; Wilson 95\% intervals).}
@@ -423,27 +512,30 @@ Overall two-turn incorrect-arm caving (anon--high) spans 43.9\% (Mistral-7B) to 
 (Qwen2.5-7B). The 7B Qwen saturates while the 9B Gemma resists (45.5\%); the two 3B models
 differ by 15\,pp. Thirteen of fifteen pairwise model differences are significant after BH
 (exact McNemar on shared items; exceptions: Gemma--Mistral $q{=}0.41$, Llama--Qwen2.5-7B
-$q{=}0.073$), and a Kruskal--Wallis test across models is decisive ($q<10^{-15}$). This
+$q{=}0.073$), and models differ decisively (chi-square test of homogeneity $\chi^2_5=647.3$,
+$p<10^{-15}$; a Kruskal--Wallis test agrees, $q<10^{-15}$). This
 replicates the model-dependence of \cite{zhang2025,peng2026} and cautions against
 benchmarking ``LLM sycophancy'' with any single model.
 
 \subsection{Exploratory: institutional personas and domain moderation}
 \label{sec:exploratory}
 
-\begin{figure}[!t]
+\begin{figure*}[!t]
 \centering
-\includegraphics[width=\columnwidth]{figures/fig3_generic_vs_domain.png}
+\includegraphics[width=\textwidth]{figures/fig3_generic_vs_domain.pdf}
 \caption{Exploratory persona A/B: two-turn flip rates under the generic ladder vs.\
 domain-matched institutional personas (incorrect arm; gated). Institutional personas give
-Gemma a clean dose--response (43.4$\to$64.3$\to$76.0\%); Phi's non-monotonicity (medium $>$
-high) remains visible.}
+Gemma a clean dose--response (43.4$\to$64.3$\to$76.0\%) and produce a non-monotonicity in Phi
+(medium $>$ high); for Mistral they raise the absolute flip rate at every rung without changing
+its (non-significant) slope.}
 \label{fig:personas}
-\end{figure}
+\end{figure*}
 
 Re-running the ladder with domain-matched institutional personas---the design that
 \cite{joswin2026} argues is required for authority grading---strengthens the graded belief
-trend in Gemma (Spearman $\rho=-0.254$, $p<10^{-6}$), Llama ($-0.236$), Phi
-($-0.318$), and Qwen2.5-3B ($-0.173$), leaves Qwen2.5-7B marginal ($-0.107$, $p=0.038$), and
+trend in Gemma (Spearman $\rho=-0.254$, $p<10^{-6}$), Llama ($-0.236$, $p<10^{-4}$), Phi
+($-0.318$, $p<10^{-9}$), and Qwen2.5-3B ($-0.173$, $p=0.001$), leaves Qwen2.5-7B marginal
+($-0.107$, $p=0.038$), and
 yields no significant trend in Mistral ($-0.089$, $p=0.11$)---the same model whose
 generic-ladder behavioral trend was significant; persona-design effects are themselves
 model-dependent. Behaviorally, Gemma acquires a clean dose--response
@@ -452,14 +544,14 @@ correction (three-way tier $\times$ direction $\times$ domain likelihood-ratio
 $\chi^2_2=6.96$, $q=0.039$), indicating the (small) tier structure differs across
 science/history/factual items. Finally, post-challenge answer entropy \emph{rises} in 23 of
 24 model $\times$ rung cells (mean $\Delta H$ from $+0.06$ to $+0.46$; single exception
-$-0.011$): our models become \emph{less} certain when caving. The confident-error signature
+$-0.011$): the models become \emph{less} certain when caving. The confident-error signature
 reported for reasoning models under single-turn logit measurement \cite{mammen2026} does not
 appear in this non-reasoning, two-turn, behavioral setting---a scope boundary, not a
 contradiction.
 
 \section{Discussion}
 \label{sec:discussion}
-\textbf{What actually governs capitulation.} Ordered by effect size in our data:
+\textbf{What actually governs capitulation.} Ordered by effect size in these data:
 conversational structure (1.9--9.3$\times$), endorsement direction ($|\beta|=3.5$),
 counter-claim presence (38.8--96.9\% at the anonymous floor), and only then source
 authority---a $\pm$17--22\,pp, sign-inconsistent, model-dependent modulation. For evaluation
@@ -468,59 +560,108 @@ answers before being challenged will disagree by multiples, while varying the ch
 credentials within one structure moves results by at most tens of points, in a direction
 that depends on the model.
 
-\textbf{Reconciling the authority literature.} Our failed gradient does not overturn
-\cite{mammen2026}: their protocol differs from ours on four axes (question-then-hint logit
+\textbf{Reconciling the authority literature.} The failed gradient here does not overturn
+\cite{mammen2026}: their protocol differs on four axes (question-then-hint logit
 measurement, domain-matched institutional personas, math/legal/medical items, partly
-reasoning models), and our single-turn arm shows their result does not transfer to our
+reasoning models), and the single-turn arm shows their result does not transfer to these
 items and models even \emph{without} commitment (no per-model single-turn gradient). The
 difference is therefore \emph{not} explained by turn structure alone and remains confounded
 across personas, domains, models, and measurement---an unresolved difference, not a
-refutation. Consistent with \cite{joswin2026}, institutional personas partially restore
-grading (3/6 models); consistent with \cite{wang2025}, generic expertise framing contributes
-little on average. The paired tests add what both miss: where models have headroom,
+refutation. Both reports of a clean monotone authority gradient come from a single group
+\cite{mammen2026,joswin2026} and remain preprints, so the contrast drawn here is with one
+laboratory's result, which itself warrants independent replication. On the one model shared with the mechanistic line the direction agrees: Joswin
+et al.\ report Gemma-2-9B falling to 34\% accuracy under a board-certified-physician hint
+(baseline $\approx$60\%; question-then-hint logits, MedQA) \cite{joswin2026}, while Gemma here
+retains 43.4\% under a generic professor and 24.0\% under domain-matched institutional
+personas (two-turn, behavioral). Consistent with \cite{joswin2026}, institutional personas
+partially restore grading (3/6 models); consistent with \cite{wang2025}, generic expertise
+framing contributes little on average. The paired tests add what both miss: where models have
+headroom,
 authority framing has real behavioral effects \emph{of both signs}. Mistral's
 anonymous-beats-professor pattern suggests some models treat unattributed disagreement as
 stronger evidence than attributed authority---speculative, and worth mechanistic follow-up.
 
 \textbf{Commitment structure and deployment.} The commitment penalty has a direct product
 reading: an assistant that has already answered is 2--9$\times$ easier to talk out of a
-correct answer than one considering the objection alongside the question. Pipelines that
-elicit an answer and then let users push back---chat interfaces, agent loops with critique
-steps---sit structurally in the high-caving regime; re-asking the question with the objection
-included is structurally protective. Notably, the human analogy inverts: public commitment
-entrenches humans \cite{kelman1958}, but prior commitment makes these models \emph{more}
-pliable, which points at conversational compliance (agreeing with the challenger) rather
-than position defense, in line with feedback-driven accounts of sycophancy
-\cite{sharma2024,wei2023}.
+correct answer than one considering the objection alongside the question, and
+Section~\ref{sec:mitigation} turns that contrast into a measured, per-model mitigation.
+Pipelines that elicit an answer and then let users push back---chat interfaces, agent loops
+with critique steps---sit structurally in the high-caving regime. Notably, the human analogy
+inverts: prior commitment---even private---entrenches human judgments against group pressure
+\cite{deutschgerard1955}, but prior commitment makes these models \emph{more} pliable, which
+points at conversational compliance (agreeing with the challenger) rather than position
+defense, in line with feedback-driven accounts of sycophancy \cite{sharma2024,wei2023}.
+
+\textbf{Candidate mechanisms.} This design measures behavior, not its cause, so the following
+are hypotheses rather than findings. First, preference tuning---RLHF and instruction
+tuning---rewards agreement with the user and is a documented source of sycophancy
+\cite{sharma2024,wei2023,perez2022}; once a model has committed to an answer, the user's
+counter-claim becomes explicit disagreement to be resolved, and the tuned disposition
+resolves it by yielding. Second, dialogue-state inertia: after a multi-turn exchange is under
+way, continuing it cooperatively---accepting the interlocutor's correction---may be a stronger
+learned discourse norm than defending a prior turn, so the second-turn context itself pulls
+toward compliance. Third, and by contrast, a self-consistency or position-defense mechanism
+would predict the opposite---a committed answer should be \emph{easier} to defend, as it is
+for humans \cite{deutschgerard1955}---so its evident weakness here suggests conversational
+compliance dominates self-consistency in these models. These accounts are not mutually
+exclusive, and the present factorial cannot separate them; base-versus-tuned comparisons
+(isolating preference tuning) and third-party rather than self-commitment (isolating
+dialogue-state inertia) are natural next steps.
 
 \textbf{Confidence-invariance.} Pre-pressure belief margin fails to predict resistance
-(slope slightly positive; the top quintile flips 83.5\%): capitulation is not Bayesian
+(within-model slope null; the top quintile still flips 75.2\%): capitulation is not Bayesian
 belief revision weighted by prior certainty, and internal confidence cannot serve as a
 sycophancy guardrail.
 
 \section{Limitations}
 \label{sec:limitations}
-\textbf{The pre-registered hypothesis failed}, and the headline commitment finding, the
-anonymous rung, and the single-turn arm were post-hoc additions---timestamped, disclosed,
-and BH-corrected as a separate family, but exploratory nonetheless; they warrant
-confirmatory replication. \textbf{The two-turn manipulation is a bundle}: self-commitment,
-being socially contradicted, and message recency co-occur. The direction asymmetry rules out
-pure recency, but separating commitment from contradiction requires designs (private vs.\
-public commitment; third-party commitment) we did not run. \textbf{Judge coverage}: the
-$\kappa=0.967$ human validation covers the main two-turn run only; single-turn labels are
-deterministic-metric only (0.0\% extraction failures; 93.6--100\% correct-arm accuracy
-retained), and a judge pass over the 6{,}880 single-turn trials is the cheapest outstanding
-robustness addition. \textbf{Inference}: with six models, cluster-robust pooled inference is
-unreliable; we lean on per-model paired tests (unanimous for the commitment effect) and
-report pooled fixed-effects coefficients descriptively. \textbf{Scope}: 3B--9B
-instruction-tuned open models; English MCQ with one minimal counter-claim wording per rung;
-single-letter outputs (near-forced-choice---we do not claim free-form generalization, and we
-make no claim about human-perceived sycophancy \cite{batzner2025}); and a 20.8--27.3\%
-single-turn caving floor showing our items are not immune even without commitment. \textbf{The Mammen difference is unresolved}: we changed protocol, personas,
-domains, and models simultaneously; our data localize what the difference is \emph{not}
-(turn structure alone), not what it is. \textbf{Two pre-registered exploratory analyses were
-not completed as planned}: E6 (external benchmark calibration) was not run, and E3
-(linguistic hedging) is descriptive only; both are disclosed in the deviations table.
+The threats to validity fall into three groups.
+
+\textbf{Internal validity} concerns what the experiment can identify. The pre-registered
+confirmatory hypothesis failed, and the headline commitment finding, the anonymous rung, and
+the single-turn arm were post-hoc additions---timestamped, disclosed, BH-corrected as a
+separate family, and defended against forking-paths concerns where the claim is made
+(Section~\ref{sec:commitment})---but exploratory nonetheless, and they warrant confirmatory
+replication. The two-turn manipulation is a bundle: self-commitment, being socially
+contradicted, and message recency co-occur. The turn-structure contrast bounds the recency
+component (the counter-claim is equally recent in both structures), but separating
+self-commitment from being socially contradicted requires designs (private vs.\ public
+commitment; third-party commitment) not run here. A residual recency reading---that the
+question sits textually farther from the scored answer in the two-turn protocol---is likewise
+not excluded by design: the ablation that would test it (repeating the full question verbatim
+in the second turn) was not run. With six model clusters, cluster-robust
+pooled inference is unreliable, so the inferential weight rests on per-model paired tests
+(unanimous for the commitment effect), with pooled fixed-effects coefficients reported
+descriptively. The difference from \cite{mammen2026} is likewise unresolved: protocol,
+personas, domains, and models were changed simultaneously, so these data localize what the
+difference is \emph{not} (turn structure alone), not what it is.
+
+\textbf{External validity} concerns generalization. The models are six instruction-tuned
+open-weight systems at 3B--9B parameters, and the items are English multiple-choice with one
+minimal counter-claim wording per rung. Whether the ordering of effects holds for frontier
+proprietary models (for example GPT-5, Claude, and Gemini), for explicit reasoning models
+that deliberate before answering \cite{feng2026}, for multilingual prompts, and for long multi-turn
+conversations in which commitment accumulates over many exchanges is untested; each is a
+natural axis for replication, and the strong model-dependence observed here
+(Section~\ref{sec:hetero}) cautions against treating any single system as representative. Two
+pre-registered exploratory analyses were also not completed as planned: E6 (external
+benchmark calibration) was not run, and E3 (linguistic hedging) is descriptive only; both are
+disclosed in the deviations table.
+
+\textbf{Construct validity} concerns whether the measure captures the concept. The behavioral
+outcome is answer revision under pressure on near-forced-choice, single-letter items, so
+``flip rate'' is a proxy for sycophancy rather than sycophancy itself. It does not capture
+free-form hedging, partial concessions, or the social dimensions of the phenomenon, and it
+supports no claim about human-perceived sycophancy \cite{batzner2025}; the 20.8--27.3\%
+single-turn caving floor further shows the items are not immune even without commitment.
+Measurement coverage is also asymmetric across arms: the $\kappa=0.967$ human validation
+covers the main two-turn run, whose free-text responses require substance grading, whereas
+single-turn outputs are bare single letters (0/6{,}880 extraction failures; 93.6--100\%
+correct-arm accuracy retained) scored by deterministic letter comparison---a judge pass over
+them would reproduce those labels (the judge agreed with letter extraction on 99.8\% of
+two-turn trials), so it is omitted as uninformative rather than outstanding. Post-challenge
+answer entropy and A--D log-probabilities are used only descriptively, not as independent
+measures of belief.
 
 \section{Conclusion}
 \label{sec:conclusion}
@@ -529,14 +670,17 @@ counter-claim arrives dominates \emph{who} it comes from. Prior self-commitment 
 capitulation 1.9--9.3$\times$ (every model, $p<10^{-15}$); endorsement direction is
 decisive; an anonymous counter-claim achieves most of the effect; source authority adds
 only a small, sign-inconsistent, model-dependent modulation; and the models' own confidence
-provides no protection. The pre-registered authority-gradient hypothesis failed, and we
-report it as failed. Sycophancy evaluation---and mitigation---should treat conversational
+provides no protection. The pre-registered authority-gradient hypothesis failed, and is
+reported as failed. Sycophancy evaluation---and mitigation---should treat conversational
 structure as a first-class variable, at least as important as the credentials in the
-prompt.
+prompt; the same contrast also bounds an implied mitigation these data do not prospectively test:
+when a user objects, re-ask the question with the objection included rather than
+challenging the committed answer in-thread.
 
 \section*{Data and Code Availability}
 All raw model outputs (SHA-256--frozen), the pre-registration and deviations table, analysis
-code (\url{src/paper_numbers.py} regenerates every statistic in this paper),
+code (\url{src/paper_numbers.py} regenerates every statistic in this paper except the
+covariate robustness check, which \url{src/sdt_analysis.py} produces),
 figure scripts, judge outputs, and human-validation labels are available at
 \url{github.com/Gokul-2004/research-1}. Items derive from
 ARC-Challenge, MMLU, and TruthfulQA under their respective licenses.
@@ -545,37 +689,41 @@ ARC-Challenge, MMLU, and TruthfulQA under their respective licenses.
 \bibitem{sharma2024} M. Sharma, M. Tong, T. Korbak, D. Duvenaud, et al., ``Towards
 understanding sycophancy in language models,'' in \emph{Proc. Int. Conf. Learn. Represent.
 (ICLR)}, 2024, arXiv:2310.13548.
-\bibitem{fanous2025} A. Fanous, J. Goldberg, A. Agarwal, J. Lin, A. Zhou, S. Xu, V. Bikia,
-R. Daneshjou, and S. Koyejo, ``SycEval: Evaluating LLM sycophancy,'' 2025, arXiv:2502.08177.
+\bibitem{fanous2025} A. Fanous, J. Goldberg, A. A. Agarwal, J. Lin, A. Zhou, R. Daneshjou,
+and S. Koyejo, ``SycEval: Evaluating LLM sycophancy,'' in \emph{Proc. AAAI/ACM Conf. AI,
+Ethics, Soc. (AIES)}, 2025, arXiv:2502.08177.
 \bibitem{mammen2026} P. M. Mammen, E. Joswin, and S. Venkitachalam, ``Who endorsed it?
 Measuring authority bias across expertise levels in language models,'' 2026,
 arXiv:2601.13433.
 \bibitem{wang2025} K. Wang, J. Li, S. Yang, Z. Zhang, and D. Wang, ``When truth is
-overridden: Uncovering the internal origins of sycophancy in large language models,'' in
-\emph{Proc. AAAI Conf. Artif. Intell.}, 2026, arXiv:2508.02087.
+overridden: Uncovering the internal origins of sycophancy in large language models,'' 2025,
+arXiv:2508.02087.
 \bibitem{kim2025} S. Kim and D. Khashabi, ``Challenging the evaluator: LLM sycophancy under
 user rebuttal,'' in \emph{Findings Assoc. Comput. Linguistics: EMNLP}, 2025,
 arXiv:2509.16533.
 \bibitem{joswin2026} E. Joswin, S. Medicherla, and P. M. Mammen, ``A mechanistic view of
-authority hierarchy in LLM sycophancy,'' in \emph{Proc. ICML Workshop Mechanistic
-Interpretability}, Seoul, South Korea, 2026.
+authority hierarchy in LLM sycophancy,'' 2026, arXiv:2607.00415.
 \bibitem{zhang2025} K. Zhang, Q. Jia, Z. Chen, W. Sun, X. Zhu, C. Li, D. Zhu, and G. Zhai,
 ``Sycophancy under pressure: Evaluating and mitigating sycophantic bias via adversarial
 dialogues in scientific QA,'' 2025, arXiv:2508.13743.
 \bibitem{peng2026} D. Peng, Y. Wang, A. Schoeffler, S. Hong, B. Suffoletto, D. Kim,
 C. Preiksaitis, and C. Rose, ``SycoEval-EM: Sycophancy evaluation of large language models in
 simulated clinical encounters for emergency care,'' 2026, arXiv:2601.16529.
+\bibitem{feng2026} Z. Feng, Z. Chen, J. Ma, Y. T. Po, E. Chersoni, and B. Li, ``Good arguments
+against the people pleasers: How reasoning mitigates (yet masks) LLM sycophancy,'' 2026,
+arXiv:2603.16643.
 \bibitem{hong2025} J. Hong, G. Byun, S. Kim, K. Shu, and J. D. Choi, ``Measuring sycophancy
-of language models in multi-turn dialogues,'' 2026, arXiv:2505.23840.
+of language models in multi-turn dialogues,'' in \emph{Findings Assoc. Comput. Linguistics:
+EMNLP}, 2025, pp. 2239--2259, arXiv:2505.23840.
 \bibitem{wei2023} J. Wei, D. Huang, Y. Lu, D. Zhou, and Q. V. Le, ``Simple synthetic data
-reduces sycophancy in large language models,'' 2024, arXiv:2308.03958.
+reduces sycophancy in large language models,'' 2023, arXiv:2308.03958.
 \bibitem{perez2022} E. Perez, S. Ringer, K. Lukošiūtė, et al., ``Discovering language model
 behaviors with model-written evaluations,'' 2022, arXiv:2212.09251.
 \bibitem{turpin2023} M. Turpin, J. Michael, E. Perez, and S. R. Bowman, ``Language models
 don't always say what they think: Unfaithful explanations in chain-of-thought prompting,''
 in \emph{Proc. Adv. Neural Inf. Process. Syst. (NeurIPS)}, 2023, arXiv:2305.04388.
 \bibitem{vennemeyer2026} D. Vennemeyer, P. A. Duong, T. Zhan, and T. Jiang, ``Sycophancy is
-not one thing: Causal separation of sycophantic behaviors in LLMs,'' 2026, arXiv:2509.21305.
+not one thing: Causal separation of sycophantic behaviors in LLMs,'' 2025, arXiv:2509.21305.
 \bibitem{bennatan2026} S. Ben Natan and O. Tsur, ``Not your typical sycophant: The elusive
 nature of sycophancy in large language models,'' 2026, arXiv:2601.15436.
 \bibitem{batzner2025} J. Batzner, V. Stocker, S. Schmid, and G. Kasneci, ``Sycophancy claims
@@ -588,15 +736,17 @@ J. Steinhardt, ``Measuring massive multitask language understanding,'' in \emph{
 Conf. Learn. Represent. (ICLR)}, 2021, arXiv:2009.03300.
 \bibitem{lin2022} S. Lin, J. Hilton, and O. Evans, ``TruthfulQA: Measuring how models mimic
 human falsehoods,'' in \emph{Proc. Assoc. Comput. Linguistics (ACL)}, 2022, arXiv:2109.07958.
-\bibitem{willroth2024} E. C. Willroth and O. E. Atherton, ``Best practices for reporting
-preregistration deviations,'' \emph{Adv. Methods Pract. Psychol. Sci.}, vol. 7, no. 1,
-2024, Art. no. 25152459231213802.
+\bibitem{willroth2024} E. C. Willroth and O. E. Atherton, ``Best laid plans: A guide to
+reporting preregistration deviations,'' \emph{Adv. Methods Pract. Psychol. Sci.}, vol. 7,
+no. 1, 2024, Art. no. 25152459231213802.
 \bibitem{asch1951} S. E. Asch, ``Effects of group pressure upon the modification and
 distortion of judgments,'' in \emph{Groups, Leadership and Men}, H. Guetzkow, Ed.
 Pittsburgh, PA, USA: Carnegie Press, 1951, pp. 177--190.
-\bibitem{kelman1958} H. C. Kelman, ``Compliance, identification, and internalization: Three
-processes of attitude change,'' \emph{J. Conflict Resolut.}, vol. 2, no. 1, pp. 51--60,
-1958.
+\bibitem{asch1955} S. E. Asch, ``Opinions and social pressure,'' \emph{Sci. Amer.},
+vol. 193, no. 5, pp. 31--35, 1955.
+\bibitem{deutschgerard1955} M. Deutsch and H. B. Gerard, ``A study of normative and
+informational social influences upon individual judgment,'' \emph{J. Abnorm. Soc. Psychol.},
+vol. 51, no. 3, pp. 629--636, 1955.
 \bibitem{bonaccio2006} S. Bonaccio and R. S. Dalal, ``Advice taking and decision-making: An
 integrative literature review, and implications for the organizational sciences,''
 \emph{Organ. Behav. Hum. Decis. Process.}, vol. 101, no. 2, pp. 127--151, 2006.
