@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite it as below."
+title: "Commitment Structure Outweighs Source Authority in the Sycophancy of Small Open Language Models"
+authors:
+  - family-names: "Nair"
+    given-names: "Gokul Krishnan"
+    email: "gokul.krishnan.ng@gmail.com"
+repository-code: "https://github.com/Gokul-2004/research-1"
+date-released: 2026-07-27
+keywords:
+  - sycophancy
+  - large language models
+  - AI safety
+  - pre-registered study
+  - trustworthy AI
